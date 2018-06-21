@@ -1,0 +1,43 @@
+{
+  "name": "ttam-style",
+  "version": "1.0.0",
+  "description": "23andMe styleguide",
+  "dependencies": {
+    "nunjucks": "^3.1.3"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0",
+    "jest": "^23.1.0",
+    "node-sass": "^4.9.0",
+    "nodemon": "^1.17.5",
+    "rollup": "^0.61.0",
+    "rollup-plugin-multi-entry": "^2.0.2"
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "start": "concurrently \"npm:build:*\" \"npm:serve\"",
+    "serve": "python -m SimpleHTTPServer 8888",
+    "watch": "nodemon --ext js,scss,html",
+    "build:site-sass": "node-sass src/styleguide/assets/scss/main.scss site/css/main.css",
+    "build:component-sass": "node-sass src/components/main.scss dist/ttam-style.css",
+    "build:js": "rollup -c rollup.config.js",
+    "build:site-html": "node build-site.js > index.html"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*",
+      "site/*",
+      "index.html"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/23andMe/Style.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/23andMe/Style/issues"
+  },
+  "homepage": "https://github.com/23andMe/Style#readme"
+}
