@@ -1,2 +1,156 @@
-body {
-  background-color: blue; }
+a[href*='//'].no-external-icon:after, a.ttam-button[href*='//']:after, a.ttam-secondary-button[href*='//']:after, a[href*='//'].ttam-button:after, a[href*='//'].button:after,
+.a-link[href*='//'].no-external-icon:after,
+.a-link.ttam-button[href*='//']:after,
+.ttam-button.button-anchor[href*='//']:after,
+.a-link.ttam-secondary-button[href*='//']:after,
+.ttam-secondary-button.button-anchor[href*='//']:after,
+.button-anchor[href*='//'].no-external-icon:after,
+.a-link[href*='//'].ttam-button:after,
+.button-anchor[href*='//'].ttam-button:after,
+.a-link[href*='//'].button:after,
+.button-anchor[href*='//'].button:after {
+  content: none !important; }
+
+/* ---- USAGE ----
+@include ttam-button(color, size, type);
+
+Default:
+    With no arguments, the button will be blue, large, solid. The background is $accessible-blue with $dark-periwinkle hover,
+    size is large (48px high) with $white text.
+
+Options:
+    Color: blue, green, pink, gray, white
+    Size: large, medium, small
+    Type: solid, outlined
+
+Modifiers:
+    mod-wide (expands horizontally to fill the width of its parent container)
+    mod-wide-mobile (expands horizontally to fill the width of its parent container when screen size is mobile)
+
+Example Sass:
+    .default {
+        @include ttam-button();
+    }
+    .another-example {
+        @include ttam-button(green, medium, outlined);
+    }
+
+Example HTML:
+    <button class="another-example">Button</button>
+
+    with modifier:
+    <button class="another-example mod-wide">Button</button>
+
+
+---------------- */
+.ttam-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: "Avenir Next", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  height: 48px;
+  min-width: 120px;
+  padding: 0 24px;
+  background-color: #1976D2;
+  color: #FFF; }
+  .ttam-button:hover, .ttam-button:focus {
+    background-color: #005B98;
+    color: #FFF;
+    text-decoration: none; }
+  .ttam-button:disabled {
+    background-color: #EDEFF0;
+    box-shadow: unset;
+    color: #C0C1C2;
+    cursor: not-allowed; }
+  .ttam-button.mod-wide {
+    width: 100%; }
+  @media screen and (min-width: new-breakpoint(max-width 767px 3)) {
+    .ttam-button.mod-wide-mobile {
+      display: flex;
+      width: 100%; } }
+
+.ttam-secondary-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: "Avenir Next", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  height: 48px;
+  min-width: 120px;
+  padding: 0 24px;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #2F850D;
+  color: #2F850D; }
+  .ttam-secondary-button:hover, .ttam-secondary-button:focus {
+    box-shadow: inset 0 0 0 3px #327216;
+    color: #327216;
+    background-color: transparent;
+    text-decoration: none; }
+  .ttam-secondary-button:disabled {
+    background-color: #EDEFF0;
+    box-shadow: unset;
+    color: #C0C1C2;
+    cursor: not-allowed; }
+  .ttam-secondary-button.mod-wide {
+    width: 100%; }
+  @media screen and (min-width: new-breakpoint(max-width 767px 3)) {
+    .ttam-secondary-button.mod-wide-mobile {
+      display: flex;
+      width: 100%; } }
+
+.unbutton, .button-anchor {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  height: auto;
+  line-height: normal;
+  min-width: 0;
+  padding: 0;
+  text-align: left;
+  vertical-align: baseline;
+  white-space: normal; }
+  .unbutton:hover, .button-anchor:hover {
+    background-color: transparent; }
+
+.unbutton {
+  color: inherit;
+  font-weight: 400; }
+
+.button-anchor {
+  display: inline;
+  font-weight: 500; }

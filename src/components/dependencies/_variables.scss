@@ -1,0 +1,81 @@
+// Typography
+$avenir-next: "Avenir Next", Helvetica, Roboto, Arial, sans-serif;
+$avenir-condensed: "Avenir Next Condensed", Helvetica, Roboto, Arial, sans-serif;
+$base-font-family: $avenir-next;
+$header-font-family: $base-font-family;
+
+// Font Sizes
+// body
+$base-font-size: 100%;
+
+// Breakpoints
+$mobile-columns: 3;
+$desktop-columns: 12;
+
+$column: rem(80);
+$gutter: rem(20);
+$grid-columns: $mobile-columns; // Mobile grid is default.
+$max-width: em(1180);
+
+$mobile-max: 767px;
+$tablet-min: $mobile-max + 1;
+$tablet-max: 979px;
+$desktop-min: $tablet-max + 1;
+
+$mobile: new-breakpoint(max-width $mobile-max $mobile-columns);
+$tablet: new-breakpoint(min-width $tablet-min max-width $tablet-max $desktop-columns);
+$desktop: new-breakpoint(min-width $tablet-min $desktop-columns);
+$desktop-only: new-breakpoint(min-width $desktop-min $desktop-columns);
+
+// Headings
+$jumbo-text:        rem(32);
+$x-large-text:      rem(28);
+$large-text:        rem(24);
+$med-large-text:    rem(20);
+$medium-text:       rem(18);
+$base-text:         rem(16);
+$small-text:        rem(15);
+$x-small-text:      rem(14);
+$tiny-text:         rem(13);
+$mini-text:         rem(12);
+
+// Mobile
+$jumbo-text-mobile: rem(26);
+$large-text-mobile: rem(22);
+
+// Font Weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-demi: 700;
+$font-weight-heavy-bold: 800;
+
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+// Spacing
+$base-spacing: 30px;
+$small-spacing: $base-spacing / 2;
+$mobile-gutter: 6.26%;
+$mobile-card-gutter: 2%;
+$mobile-card-padding: $mobile-gutter - $mobile-card-gutter;
+
+// Returns the percentage an element needs to reset its parent's percentage
+// based padding
+// Takes in a percentage
+@function reset-padding($percent) {
+    @return (((2 * $percent) / (100 - (2 * $percent))) / 2) * 100%;
+}
+
+$mobile-gutter-reset: reset-padding($mobile-gutter);
+$mobile-card-padding-reset: reset-padding($mobile-card-padding);
+
+// Other Sizes
+$base-border-radius: 3px;
+$button-border-radius: 100px;
+$base-z-index: 0;
+$select-box-height: 41px;
+$tap-target: 44px;
+
+// Misc
+$default-feature: min-width;
