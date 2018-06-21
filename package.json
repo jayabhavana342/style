@@ -29,7 +29,8 @@
     "ignore": [
       "dist/*",
       "site/*",
-      "index.html"
+      "index.html",
+      "__test__/*"
     ]
   },
   "repository": {
