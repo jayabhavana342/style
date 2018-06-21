@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "10"
+
+script:
+  - npm run build:component-sass
+  - npm run build:js
+  - npm test
+
+cache:
+  directories:
+    - "node_modules"
