@@ -14,7 +14,7 @@
     "rollup-plugin-multi-entry": "^2.0.2"
   },
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest __test__",
     "start": "concurrently \"npm:build:*\" \"npm:serve\"",
     "serve": "python -m SimpleHTTPServer 8888",
     "watch": "nodemon --ext js,scss,html",
