@@ -3,8 +3,7 @@ node_js:
   - "10"
 
 script:
-  - npm run build:component-sass
-  - npm run build:js
+  - npm run ci
   - npm test
 
 cache:

@@ -18,9 +18,11 @@
     "start": "concurrently \"npm:build:*\" \"npm:serve\"",
     "serve": "python -m SimpleHTTPServer 8888",
     "watch": "nodemon --ext js,scss,html",
+    "ci": "concurrently \"npm:build:*\"",
     "build:site-sass": "node-sass src/styleguide/assets/scss/main.scss site/css/main.css",
     "build:component-sass": "node-sass src/components/main.scss dist/ttam-style.css",
     "build:js": "rollup -c rollup.config.js",
+    "build:test-js": "rollup -c rollup.test.js",
     "build:site-html": "node build-site.js > index.html"
   },
   "nodemonConfig": {
