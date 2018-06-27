@@ -1,0 +1,166 @@
+// layouts.scss
+
+body {
+    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+    width: 100%;
+    background-color: $gray1;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .05);
+    &-wrapper {
+        display: flex;
+        height: 100%;
+    }
+    &-current-section {
+        @include type-current;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.guide {
+    &-item {
+        overflow: auto;
+    }
+    &-title {
+        @include type-title;
+        width: 100%;
+        border-bottom: 1px solid $gray3;
+    }
+}
+
+.contents-wrapper {
+    width: 100%;
+}
+
+.nav {
+    @include type-nav;
+    a {
+        color: $gray7;
+    }
+    li {
+        list-style: none;
+    }
+    .nav-current {
+        @include type-nav-current;
+    }
+    .nav-brand,
+    .nav-components {
+        position: relative;
+        max-width: 55vw;
+        padding: 0 0 15px 0;
+    }
+    &-brand-divider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        background-color: $gray3;
+    }
+    &-subsection {
+        padding-left: 18px;
+        li {
+            list-style: circle;
+        }
+    }
+}
+
+@include media($mobile) {
+    .header {
+        height: 50px;
+    }
+    .contents {
+        padding-top: 50px;
+    }
+    .nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100vw;
+        height: 100vh;
+        padding: 30px 0 0 50px;
+        box-shadow: 2px 0 0 rgba(0, 0, 0, .05);
+        overflow: auto;
+        opacity: .75;
+        background: $white url('../img/23wire.svg') no-repeat;
+        background-position: 80% 25%;
+        transition: left $transition-timing;
+        &.mod-showing {
+            left: 0;
+            opacity: 1;
+        }
+        &-link {
+            display: block;
+            height: 40px;
+            padding-top: 10px;
+        }
+        &-sub-link {
+            display: block;
+            height: 30px;
+            padding-top: 7px;
+            width: 100%;
+        }
+        &-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 70px;
+            width: 70px;
+            border: none;
+            background-color: transparent;
+            > img {
+                width: 17px;
+                height: 17px;
+            }
+
+        }
+        &-subsection {
+            @include type-nav-sub;
+            margin-bottom: 7px;
+        }
+        &-brand-divider {
+            width: 67px;
+        }
+    }
+}
+
+@include media($tablet-plus) {
+    .header {
+        height: 60px;
+        &-current-section {
+            padding-top: 2px;
+            margin-left: 30px;
+        }
+        &-wrapper {
+            @include max-width;
+            margin: 0 auto;
+        }
+    }
+    .contents {
+        @include max-width;
+        display: flex;
+        margin: 0 auto;
+        padding-top: 60px;
+    }
+    .guide-item {
+        margin-top: 20px;
+    }
+    .nav {
+        width: 175px;
+        flex-shrink: 0;
+        &-close {
+            display: none;
+        }
+    }
+}

@@ -23,7 +23,7 @@
     "build:component-sass": "node-sass src/components/main.scss dist/ttam-style.css",
     "build:js": "rollup -c rollup.config.js",
     "build:test-js": "rollup -c rollup.test.js",
-    "build:site-html": "node build-site.js > index.html"
+    "build:site-html": "node build-site.js > site/index.html"
   },
   "nodemonConfig": {
     "ignore": [
