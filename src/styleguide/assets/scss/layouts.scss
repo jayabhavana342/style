@@ -87,16 +87,27 @@ h1 {
         height: 50px;
         padding: 0 $padding;
         &-wrapper {
+            position: relative;
+            left: 0;
             display: flex;
             align-items: center;
+            transition-duration: $transition-timing;
+            transition-timing-function: $transition-function;
+            &.mod-moved {
+                position: relative;
+                left: 20px;
+                opacity: 0;
+            }
         }
         &-burg {
             position: absolute;
-            right: 5px;
+            right: -15px;
             height: 50px;
             width: 50px;
             padding: 0;
             margin: 0;
+
+            opacity: 1;
         }
         &-current-section {
             position: absolute;
@@ -112,14 +123,10 @@ h1 {
     .contents {
         padding-top: 50px;
         &-wrapper {
-            position: relative;
-            left: 0;
-            opacity: 1;
             margin-top: 20px;
             transition-duration: $transition-timing;
             &.mod-moved {
-                left: 20px;
-                opacity: 0;
+                padding-left: 20px;
             }
         }
     }
