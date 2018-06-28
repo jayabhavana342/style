@@ -18,4 +18,5 @@ $mobile-max: 768px;
 $tablet-max: 1024px;
 
 // Miosc
-$transition-timing: .2s;
+$transition-timing: .5s;
+$transition-function: cubic-bezier(0.305, 0.940, 0.480, 0.995);

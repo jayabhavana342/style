@@ -11,12 +11,18 @@ h1 {
     margin-top: 0;
 }
 
+.noscroll {
+    overflow: hidden;
+}
+
 .header {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: $white;
+    overflow: hidden;
+    background-color: rgba($white, .97);
     box-shadow: 0 2px 0 rgba(0, 0, 0, .05);
     &-wrapper {
         display: flex;
@@ -24,8 +30,6 @@ h1 {
     }
     &-current-section {
         @include type-current;
-        display: flex;
-        align-items: center;
     }
 }
 
@@ -55,11 +59,10 @@ h1 {
     .nav-current {
         @include type-nav-current;
     }
-    .nav-brand,
-    .nav-components {
+    &-brand,
+    &-components {
         position: relative;
-        max-width: 55vw;
-        padding: 0 0 15px 0;
+        margin-top: 15px;
     }
     &-brand-divider {
         position: absolute;
@@ -69,22 +72,73 @@ h1 {
         background-color: $gray3;
     }
     &-subsection {
+        @include type-nav-sub;
         padding-left: 18px;
         li {
-            list-style: circle;
+            text-indent: -3px;
+            list-style: disc;
         }
     }
 }
 
 @include media($mobile) {
+    $padding: 20px;
     .header {
         height: 50px;
+        padding: 0 $padding;
+        &-wrapper {
+            display: flex;
+            align-items: center;
+        }
+        &-burg {
+            position: absolute;
+            right: 5px;
+            height: 50px;
+            width: 50px;
+            padding: 0;
+            margin: 0;
+        }
+        &-current-section {
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            padding-top: 17px;
+            height: 50px;
+            &.mod-showing {
+                top: 0;
+            }
+        }
     }
     .contents {
         padding-top: 50px;
+        &-wrapper {
+            position: relative;
+            left: 0;
+            opacity: 1;
+            margin-top: 20px;
+            transition-duration: $transition-timing;
+            &.mod-moved {
+                left: 20px;
+                opacity: 0;
+            }
+        }
+    }
+    .guide {
+        &-item {
+            padding-left: $padding;
+            padding-right: $padding;
+            &.mod-example {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        &-title {
+            padding-bottom: 10px;
+        }
     }
     .nav {
         position: absolute;
+        z-index: 1;
         top: 0;
         left: -100%;
         width: 100vw;
@@ -92,13 +146,17 @@ h1 {
         padding: 30px 0 0 50px;
         box-shadow: 2px 0 0 rgba(0, 0, 0, .05);
         overflow: auto;
-        opacity: .75;
         background: $white url('../img/23wire.svg') no-repeat;
         background-position: 80% 25%;
-        transition: left $transition-timing;
+        transition: left $transition-timing / 2;
         &.mod-showing {
             left: 0;
-            opacity: 1;
+            transition: left $transition-timing $transition-function;
+        }
+        &-brand,
+        &-components {
+            padding: 0 0 15px 0;
+            max-width: 55vw;
         }
         &-link {
             display: block;
@@ -113,20 +171,21 @@ h1 {
         }
         &-close {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            height: 70px;
-            width: 70px;
+            top: 0;
+            right: 0;
+            height: 60px;
+            width: 60px;
             border: none;
             background-color: transparent;
             > img {
+                position: relative;
+                top: -4px;
                 width: 17px;
                 height: 17px;
             }
 
         }
         &-subsection {
-            @include type-nav-sub;
             margin-bottom: 7px;
         }
         &-brand-divider {
@@ -136,6 +195,12 @@ h1 {
 }
 
 @include media($tablet-plus) {
+    a {
+        transition-duration: .1s;
+        &:hover {
+            color: $gray8;
+        }
+    }
     .header {
         height: 60px;
         &-current-section {
@@ -145,6 +210,16 @@ h1 {
         &-wrapper {
             @include max-width;
             margin: 0 auto;
+            align-items: center;
+        }
+        &-burg {
+            display: none;
+        }
+        &-current-section {
+            &.mod-showing {
+                display: flex;
+                align-items: center;
+            }
         }
     }
     .contents {
@@ -152,15 +227,41 @@ h1 {
         display: flex;
         margin: 0 auto;
         padding-top: 60px;
+        &-wrapper {
+            margin-left: 175px;
+        }
     }
-    .guide-item {
-        margin-top: 20px;
+    .guide {
+        &-item {
+            margin-top: 20px;
+        }
+        &-title {
+            padding-bottom: 10px;
+        }
     }
     .nav {
-        width: 175px;
-        flex-shrink: 0;
+        position: fixed;
         &-close {
             display: none;
+        }
+        &-brand,
+        &-components {
+            padding: 0 0 20px 0;
+            max-width: 55vw;
+        }
+        &-link {
+            display: block;
+            height: 30px;
+            padding-top: 10px;
+        }
+        &-sub-link {
+            display: block;
+            height: 25px;
+            padding-top: 7px;
+            width: 100%;
+        }
+        &-brand-divider {
+            width: 66px;
         }
     }
 }
