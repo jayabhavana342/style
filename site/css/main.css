@@ -395,6 +395,9 @@ template {
 a {
   text-decoration: none; }
 
+ul {
+  margin: 0; }
+
 @font-face {
   font-family: "Avenir Next";
   src: url("../fonts/e9167238-3b3f-4813-a04a-a384394eed42.eot?#iefix");
@@ -425,12 +428,17 @@ body {
 h1 {
   margin-top: 0; }
 
+.noscroll {
+  overflow: hidden; }
+
 .header {
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #FFF;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.97);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05); }
   .header-wrapper {
     display: flex;
@@ -439,9 +447,7 @@ h1 {
     @extends %font-family;
     color: #6B6B6B;
     font-weight: 500;
-    font-size: 16px;
-    display: flex;
-    align-items: center; }
+    font-size: 16px; }
 
 .guide-item {
   overflow: auto; }
@@ -477,11 +483,9 @@ h1 {
     font-weight: 400;
     font-size: 16px;
     font-weight: 800; }
-  .nav .nav-brand,
-  .nav .nav-components {
+  .nav-brand, .nav-components {
     position: relative;
-    max-width: 55vw;
-    padding: 0 0 15px 0; }
+    margin-top: 15px; }
   .nav-brand-divider {
     position: absolute;
     bottom: 0;
@@ -489,17 +493,60 @@ h1 {
     height: 1px;
     background-color: #E3E5E6; }
   .nav-subsection {
+    @extends %font-family;
+    color: #6B6B6B;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 15px;
     padding-left: 18px; }
     .nav-subsection li {
-      list-style: circle; }
+      text-indent: -3px;
+      list-style: disc; }
 
 @media screen and (max-width: 768px) {
   .header {
-    height: 50px; }
+    height: 50px;
+    padding: 0 20px; }
+    .header-wrapper {
+      display: flex;
+      align-items: center; }
+    .header-burg {
+      position: absolute;
+      right: 5px;
+      height: 50px;
+      width: 50px;
+      padding: 0;
+      margin: 0; }
+    .header-current-section {
+      position: absolute;
+      top: 100%;
+      left: 20px;
+      padding-top: 17px;
+      height: 50px; }
+      .header-current-section.mod-showing {
+        top: 0; }
   .contents {
     padding-top: 50px; }
+    .contents-wrapper {
+      position: relative;
+      left: 0;
+      opacity: 1;
+      margin-top: 20px;
+      transition-duration: 0.5s; }
+      .contents-wrapper.mod-moved {
+        left: 20px;
+        opacity: 0; }
+  .guide-item {
+    padding-left: 20px;
+    padding-right: 20px; }
+    .guide-item.mod-example {
+      padding-left: 0;
+      padding-right: 0; }
+  .guide-title {
+    padding-bottom: 10px; }
   .nav {
     position: absolute;
+    z-index: 1;
     top: 0;
     left: -100%;
     width: 100vw;
@@ -507,13 +554,15 @@ h1 {
     padding: 30px 0 0 50px;
     box-shadow: 2px 0 0 rgba(0, 0, 0, 0.05);
     overflow: auto;
-    opacity: .75;
     background: #FFF url("../img/23wire.svg") no-repeat;
     background-position: 80% 25%;
-    transition: left 0.2s; }
+    transition: left 0.25s; }
     .nav.mod-showing {
       left: 0;
-      opacity: 1; }
+      transition: left 0.5s cubic-bezier(0.305, 0.94, 0.48, 0.995); }
+    .nav-brand, .nav-components {
+      padding: 0 0 15px 0;
+      max-width: 55vw; }
     .nav-link {
       display: block;
       height: 40px;
@@ -525,26 +574,27 @@ h1 {
       width: 100%; }
     .nav-close {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      height: 70px;
-      width: 70px;
+      top: 0;
+      right: 0;
+      height: 60px;
+      width: 60px;
       border: none;
       background-color: transparent; }
       .nav-close > img {
+        position: relative;
+        top: -4px;
         width: 17px;
         height: 17px; }
     .nav-subsection {
-      @extends %font-family;
-      color: #6B6B6B;
-      font-weight: 400;
-      font-size: 16px;
-      font-size: 15px;
       margin-bottom: 7px; }
     .nav-brand-divider {
       width: 67px; } }
 
 @media screen and (min-width: 769px) {
+  a {
+    transition-duration: .1s; }
+    a:hover {
+      color: #333435; }
   .header {
     height: 60px; }
     .header-current-section {
@@ -554,7 +604,13 @@ h1 {
       max-width: 1320px;
       min-width: 960px;
       padding: 0 20px;
-      margin: 0 auto; }
+      margin: 0 auto;
+      align-items: center; }
+    .header-burg {
+      display: none; }
+    .header-current-section.mod-showing {
+      display: flex;
+      align-items: center; }
   .contents {
     max-width: 1320px;
     min-width: 960px;
@@ -562,10 +618,27 @@ h1 {
     display: flex;
     margin: 0 auto;
     padding-top: 60px; }
+    .contents-wrapper {
+      margin-left: 175px; }
   .guide-item {
     margin-top: 20px; }
+  .guide-title {
+    padding-bottom: 10px; }
   .nav {
-    width: 175px;
-    flex-shrink: 0; }
+    position: fixed; }
     .nav-close {
-      display: none; } }
+      display: none; }
+    .nav-brand, .nav-components {
+      padding: 0 0 20px 0;
+      max-width: 55vw; }
+    .nav-link {
+      display: block;
+      height: 30px;
+      padding-top: 10px; }
+    .nav-sub-link {
+      display: block;
+      height: 25px;
+      padding-top: 7px;
+      width: 100%; }
+    .nav-brand-divider {
+      width: 66px; } }
