@@ -10,6 +10,7 @@
     "jest": "^23.1.0",
     "node-sass": "^4.9.0",
     "nodemon": "^1.17.5",
+    "prismjs": "^1.15.0",
     "rollup": "^0.61.0",
     "rollup-plugin-multi-entry": "^2.0.2"
   },
