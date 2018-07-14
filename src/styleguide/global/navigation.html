@@ -1,16 +1,26 @@
 <nav class="nav">
-    <button class="nav-close" aria-label="Close"><img src="img/close.svg" alt="close" /></button>
-    <h3 class="nav-heading">Pattern Libary v1.0</h3>
+    <div class="nav-header">
+        <button class="nav-close" aria-label="Close"><img src="img/close.svg" alt="close" /></button>
+        <h3>Pattern Libary</h3>
+    </div>
     <ul class="nav-items">
         <li><a href="#" class="nav-link" role="link" aria-label="Home">Home</a></li>
         <li><a href="#" class="nav-link" role="link" aria-label="Getting Started">Getting Started</a></li>
-        <li><a href="#" class="nav-link" role="link" aria-label="Style">Style</a></li>
+        <li><a href="#" class="nav-link nav-link-exp" role="link" aria-label="Style">Style</a></li>
 
-        <li><a href="#" class="nav-link" role="link" aria-label="Components">Components</a></li>
+        <li><a href="#" class="nav-link nav-link-exp mod-expanded" role="link" aria-label="Components">Components</a></li>
         <ul class="nav-subsection">
             <li><a href="#" class="nav-sub-link" aria-label="Specs">Accordion</a></li>
             <li><a href="#" class="nav-sub-link" aria-label="Styles">Breadcrumbs</a></li>
-            <li><a href="#" class="nav-sub-link mod-current" aria-label="Buttons">Buttons</a></li>
+            <li>
+                <a href="#" class="nav-sub-link mod-current" aria-label="Buttons">Buttons</a>
+                <ul class="nav-sub-subsection">
+                    <li><a href="#" class="nav-sub-sub-link">Link 1</a></li>
+                    <li><a href="#" class="nav-sub-sub-link">Link 2</a></li>
+                    <li><a href="#" class="nav-sub-sub-link">Link 3</a></li>
+                    <li><a href="#" class="nav-sub-sub-link">Link 4</a></li>
+                </ul>
+            </li>
             <li><a href="#" class="nav-sub-link" aria-label="Cards">Cards</a></li>
             <li><a href="#" class="nav-sub-link" aria-label="Content Switch">Content Switch</a></li>
             <li><a href="#" class="nav-sub-link" aria-label="Forms">Forms</a></li>
