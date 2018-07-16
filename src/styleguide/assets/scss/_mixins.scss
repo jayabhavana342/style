@@ -1,29 +1,28 @@
 // mixins
 
-@mixin max-width {
-    max-width: 1320px;
-    min-width: 960px;
-    padding: 0 20px;
-}
-
 @mixin media($device) {
     @if $device == mobile {
-        @media screen and (max-width: $mobile-max) {
+        @media screen and (max-width: $mobile-max - 1) {
             @content;
         }
     }
     @else if $device == tablet {
-        @media screen and (min-width: $mobile-max + 1) and (max-width: $tablet-max - 1) {
+        @media screen and (min-width: $mobile-max) and (max-width: $tablet-max) {
             @content;
         }
     }
     @else if $device == desktop {
-        @media screen and (min-width: $tablet-max) {
+        @media screen and (min-width: $tablet-max + 1) {
             @content
         }
     }
     @else if $device == tablet-plus {
-        @media screen and (min-width: $mobile-max + 1) {
+        @media screen and (min-width: $mobile-max) {
+            @content;
+        }
+    }
+    @else if $device == mobile-tablet {
+        @media screen and (max-width: $tablet-max) {
             @content;
         }
     }
@@ -37,25 +36,20 @@
 @mixin type-title {
     @extends %font-family;
     color: $gray8;
-    font-weight: 500;
+    font-weight: 400;
     @include media($mobile) {
         font-size: 24px;
     }
     @include media($tablet-plus) {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
 @mixin type-subtitle {
     @extends %font-family;
     color: $gray7;
-    font-weight: 500;
-    @include media($mobile) {
-        font-size: 18px;
-    }
-    @include media($tablet-plus) {
-        font-size: 24px;
-    }
+    font-weight: 400;
+    font-size: 16px;
 }
 
 @mixin type-body {

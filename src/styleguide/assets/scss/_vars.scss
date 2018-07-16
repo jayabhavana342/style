@@ -9,10 +9,11 @@ $gray8: #333435;
 $white: #FFF;
 
 // For identifying breakpoints
-$mobile: mobile;
-$tablet: tablet;
-$tablet-plus: tablet-plus;
-$desktop: desktop;
+$mobile: mobile;                // only mobile sizes
+$tablet: tablet;                // only tablet sizes
+$tablet-plus: tablet-plus;      // all sizes beyond tablet min
+$desktop: desktop;              // desktop sizes only
+$mobile-tablet: mobile-tablet;  // all sizes up to tablet max
 
 // Actua breakpoints
 $mobile-max: 768px;
