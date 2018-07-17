@@ -425,6 +425,18 @@ body {
   width: 100%;
   background-color: #F7F9FA; }
 
+a,
+a:visited,
+a:active {
+  color: #1976D2;
+  font-weight: 500;
+  text-decoration: none; }
+  a:hover,
+  a:visited:hover,
+  a:active:hover {
+    text-decoration: underline;
+    color: #1976D2; }
+
 h1 {
   margin-top: 0; }
 
@@ -449,26 +461,47 @@ h1 {
 .guide-item {
   width: 100%; }
   .guide-item-heading {
+    margin-top: 70px;
+    padding-bottom: 15px;
     border-bottom: solid 1px #E3E5E6; }
     .guide-item-heading > div {
       padding: 0 20px;
       max-width: 920px;
       margin: 0 auto; }
-      .guide-item-heading > div .guide-title {
-        @extends %font-family;
-        color: #333435;
-        font-weight: 400; }
-        @media screen and (max-width: 767px) {
-          .guide-item-heading > div .guide-title {
-            font-size: 24px; } }
-        @media screen and (min-width: 768px) {
-          .guide-item-heading > div .guide-title {
-            font-size: 30px; } }
-      .guide-item-heading > div .guide-subtext {
-        @extends %font-family;
-        color: #6B6B6B;
-        font-weight: 400;
-        font-size: 16px; }
+  .guide-item-title {
+    @extends %font-family;
+    color: #333435;
+    font-weight: 400;
+    position: relative; }
+    @media screen and (max-width: 767px) {
+      .guide-item-title {
+        font-size: 24px; } }
+    @media screen and (min-width: 768px) {
+      .guide-item-title {
+        font-size: 30px; } }
+    .guide-item-title.mod-updated::after {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 7px;
+      right: 0;
+      content: "updated";
+      height: 16px;
+      width: 69px;
+      background-color: #FADA6C;
+      border-radius: 2px;
+      font-size: 10px;
+      color: #333435;
+      font-weight: 500;
+      text-transform: uppercase; }
+  .guide-item-desc {
+    @extends %font-family;
+    color: #6B6B6B;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 10px 0 30px;
+    line-height: 1.5em; }
   .guide-item-section {
     @extends %font-family;
     color: #6B6B6B;
@@ -476,13 +509,54 @@ h1 {
     font-size: 16px;
     max-width: 920px;
     padding: 0 20px;
-    margin: 0 auto;
-    border-bottom: solid 1px #E3E5E6; }
-  .guide-item-sub {
+    margin: 32px auto 0; }
+    .guide-item-section-wrapper {
+      border-bottom: solid 1px #E3E5E6; }
+  .guide-item-subtitle {
     @extends %font-family;
     font-size: 18px;
     font-weight: 400;
-    color: #333435; }
+    color: #333435;
+    margin-top: 0; }
+  .guide-item-examples {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+  .guide-item-example {
+    margin-bottom: 30px; }
+    .guide-item-example > div {
+      min-height: 70px;
+      min-width: 150px;
+      text-align: center; }
+    .guide-item-example-caption {
+      @extends %font-family;
+      font-weight: 400;
+      font-size: 14px;
+      color: #333435;
+      display: block;
+      width: 100%;
+      text-align: center; }
+  .guide-item-usage-list, .guide-item-location-list {
+    display: flex;
+    flex-wrap: wrap; }
+  .guide-item-usage-list li,
+  .guide-item-location-list span {
+    @extends %font-family;
+    color: #6B6B6B;
+    font-weight: 400;
+    font-size: 16px;
+    width: 47%;
+    margin-bottom: 10px;
+    line-height: 1.5em; }
+    .guide-item-usage-list li:nth-child(odd),
+    .guide-item-location-list span:nth-child(odd) {
+      margin-right: 6%; }
+  .guide-item-usage-list {
+    padding-left: 30px; }
+    .guide-item-usage-list li {
+      padding-left: 10px; }
+  .guide-item-location-list span {
+    display: block; }
 
 .nav {
   @extends %font-family;
@@ -657,7 +731,17 @@ h1 {
   .header-wrapper.mod-moved {
     position: relative;
     left: 20px;
-    opacity: .2; } }
+    opacity: .2; }
+  .guide-item-usage-list {
+    padding-left: 20px; }
+    .guide-item-usage-list li {
+      width: 100%;
+      margin-right: 0; }
+  .guide-item-location-list span {
+    width: 100%; }
+  .guide-item-location-list,
+  .guide-item-usage-list {
+    flex-direction: column; } }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .nav {

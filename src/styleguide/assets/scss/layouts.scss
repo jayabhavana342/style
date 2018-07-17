@@ -6,6 +6,18 @@ body {
     background-color: $gray1;
 }
 
+a,
+a:visited,
+a:active {
+    color: $accessible-blue;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        color: $accessible-blue;
+    }
+}
+
 h1 {
     margin-top: 0;
 }
@@ -37,28 +49,96 @@ h1 {
 .guide-item {
     width: 100%;
     &-heading {
+        margin-top: 70px;
+        padding-bottom: 15px;
         border-bottom: solid 1px $gray3;
         > div {
             padding: 0 20px;
             max-width: 920px;
             margin: 0 auto;
-            .guide-title {
-                @include type-title;
-            }
-            .guide-subtext {
-                @include type-body;
-            }
         }
+    }
+    &-title {
+        @include type-title;
+        position: relative;
+        &.mod-updated::after {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 7px;
+            right: 0;
+            content: "updated";
+            height: 16px;
+            width: 69px;
+            background-color: $yellow;
+            border-radius: 2px;
+            font-size: 10px;
+            color: $gray8;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+    &-desc {
+        @include type-body;
+        margin: 10px 0 30px;
+        line-height: 1.5em;
     }
     &-section {
         @include type-body;
         max-width: 920px;
         padding: 0 20px;
-        margin: 0 auto;
-        border-bottom: solid 1px $gray3;
+        margin: 32px auto 0;
+        &-wrapper {
+            border-bottom: solid 1px $gray3;
+        }
     }
-    &-sub {
+    &-subtitle {
         @include type-subsection;
+        margin-top: 0;
+    }
+    &-examples {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    &-example {
+        margin-bottom: 30px;
+        > div {
+            min-height: 70px;
+            min-width: 150px;
+            text-align: center;
+        }
+        &-caption {
+            @include type-caption;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    &-usage-list,
+    &-location-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &-usage-list li,
+    &-location-list span {
+        @include type-body;
+        width: 47%;
+        margin-bottom: 10px;
+        line-height: 1.5em;
+        &:nth-child(odd) {
+            margin-right: 6%;
+        }
+    }
+    &-usage-list {
+        padding-left: 30px;
+        li {
+            padding-left: 10px;
+        }
+    }
+    &-location-list span {
+        display: block;
     }
 }
 
@@ -275,6 +355,20 @@ h1 {
         position: relative;
         left: 20px;
         opacity: .2;
+    }
+    .guide-item-usage-list {
+        padding-left: 20px;
+        li {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    .guide-item-location-list span {
+        width: 100%;
+    }
+    .guide-item-location-list,
+    .guide-item-usage-list {
+        flex-direction: column;
     }
 }
 

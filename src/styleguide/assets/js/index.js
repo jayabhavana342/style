@@ -1,6 +1,4 @@
-import Prism from 'prismjs';
-
-const body = document.getEdlementsByTagName('body')[0];
+const body = document.getElementsByTagName('body')[0];
 const headerBurg = document.querySelector('.header-burg');
 const nav = document.querySelector('.nav');
 const closeMobileNav = document.querySelector('.nav-close');

@@ -1,12 +1,10 @@
 (function (global, factory) {
-    typeof exports === 'object' && typeof module !== 'undefined' ? factory(require('prismjs')) :
-    typeof define === 'function' && define.amd ? define(['prismjs'], factory) :
-    (factory(global.prismjs));
-}(this, (function (prismjs) { 'use strict';
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+    typeof define === 'function' && define.amd ? define(factory) :
+    (factory());
+}(this, (function () { 'use strict';
 
-    prismjs = prismjs && prismjs.hasOwnProperty('default') ? prismjs['default'] : prismjs;
-
-    const body = document.getEdlementsByTagName('body')[0];
+    const body = document.getElementsByTagName('body')[0];
     const headerBurg = document.querySelector('.header-burg');
     const nav = document.querySelector('.nav');
     const closeMobileNav = document.querySelector('.nav-close');
