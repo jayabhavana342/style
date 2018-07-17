@@ -45,23 +45,25 @@
     }
 }
 
-@mixin type-subtitle {
+@mixin type-subsection {
+    @extends %font-family;
+    font-size: 18px;
+    font-weight: 400;
+    color: $gray8;
+}
+
+@mixin type-body {
     @extends %font-family;
     color: $gray7;
     font-weight: 400;
     font-size: 16px;
 }
 
-@mixin type-body {
+@mixin type-caption {
     @extends %font-family;
-    color: $gray8;
     font-weight: 400;
-    @include media($mobile) {
-        font-size: 16px;
-    }
-    @include media($tablet-plus) {
-        font-size: 18px;
-    }
+    font-size: 14px;
+    color: $gray8;
 }
 
 @mixin type-nav {

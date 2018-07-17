@@ -46,16 +46,19 @@ h1 {
                 @include type-title;
             }
             .guide-subtext {
-                @include type-subtitle;
+                @include type-body;
             }
         }
     }
     &-section {
-        @include type-subtitle;
+        @include type-body;
         max-width: 920px;
         padding: 0 20px;
         margin: 0 auto;
         border-bottom: solid 1px $gray3;
+    }
+    &-sub {
+        @include type-subsection;
     }
 }
 
