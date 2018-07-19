@@ -6,15 +6,16 @@
   "scripts": {
     "prebuild": "npm run std --silent",
     "build": "rollup -c config/prod.js",
+    // "prebuild:dev": "npm run std --silent",
     "build:dev": "rollup -c config/dev.js -w",
+    // "preversion": "git pull && npm up && npm run std --silent",
     "version": "npm run build && git add -A .",
     "postversion": "git push --tags origin HEAD",
     "browse": "browser-sync start --s --ss build --index html/index-dev.html --files html/**/*.html,build/**/*.js --no-notify",
-    "start": "npm-run-all --parallel build:dev browse watch-css",
+    "start": "npm-run-all --parallel build:dev browse",
+    // "std": "standard --verbose | snazzy",
     "test": "npm run build:dev",
-    "test-jest": "rollup -c rollup.test.js",
-    "build-css": "node-sass src/assets/scss/main.scss -o build/",
-    "watch-css": "npm run build-css && node-sass src/assets/scss/main.scss -o build/main.css --watch --recursive"
+    "test-jest": "rollup -c rollup.test.js"
   },
   "repository": {
     "type": "git",
@@ -38,7 +39,6 @@
     "babel-eslint": "^8.2.6",
     "browser-sync": "2.23.6",
     "jest": "^23.4.1",
-    "node-sass": "^4.9.2",
     "npm-run-all": "4.1.2",
     "rollup": "0.56.5",
     "rollup-plugin-buble": "0.19.2",
