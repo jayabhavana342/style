@@ -10,13 +10,13 @@
     "version": "npm run build && git add -A .",
     "postversion": "git push --tags origin HEAD",
     "browse": "browser-sync start --s --ss build --index html/index-dev.html --files html/**/*.html,build/**/*.js --no-notify",
-    "start": "npm-run-all --parallel build:dev browse watch-sg-css watch-ds-css",
+    "start": "npm-run-all --parallel build:dev browse build-sg-css build-ds-css watch-sg-css watch-ds-css",
     "test": "npm run build:dev",
     "test-jest": "rollup -c rollup.test.js",
-    "build-sg-css": "node-sass src/guide/scss/main.scss build/guide_main.css",
-    "watch-sg-css": "npm run build-sg-css && node-sass src/guide/scss/main.scss build/guide_main.css --watch --recursive",
+    "build-sg-css": "node-sass src/guide/scss/main.scss build/css/guide_main.css",
+    "watch-sg-css": "node-sass src/guide/scss/main.scss build/css/guide_main.css --watch --recursive",
     "build-ds-css": "node-sass src/design_system/scss/main.scss dist/ttam-design-system.css",
-    "watch-ds-css": "npm run build-sg-css && node-sass src/design_system/scss/main.scss dist/ttam-design-system.css --watch --recursive"
+    "watch-ds-css": "node-sass src/design_system/scss/main.scss dist/ttam-design-system.css --watch --recursive"
   },
   "repository": {
     "type": "git",
