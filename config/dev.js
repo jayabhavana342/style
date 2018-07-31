@@ -16,14 +16,11 @@ export default {
         buble(),
         cjs({
             exclude: 'node_modules/process-es6/**',
-            include: [
-                'node_modules/create-react-class/**',
-                'node_modules/fbjs/**',
-                'node_modules/object-assign/**',
-                'node_modules/react/**',
-                'node_modules/react-dom/**',
-                'node_modules/prop-types/**'
-            ]
+            include: 'node_modules/**',
+            namedExports: {
+                'node_modules/react-syntax-highlighter/index.js': ['SyntaxHighlighter'],
+                'node_modules/react-syntax-highlighter/styles/hljs/index.js': ['docco']
+            }
         }),
         globals(),
         replace({ 'process.env.NODE_ENV': JSON.stringify('development') }),

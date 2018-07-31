@@ -1,6 +1,6 @@
 import React from 'react'
 
-export class Nav extends React.Component {
+class Nav extends React.Component {
     render () {
         return (
             <nav className={`nav ${this.props.showingClass}`}>
@@ -9,12 +9,16 @@ export class Nav extends React.Component {
                     <h3>Pattern Libary</h3>
                 </div>
                 <ul className="nav-items">
+                    {/*
                     <li><a href="#" className="nav-link" role="link" aria-label="Home">Home</a></li>
                     <li><a href="#" className="nav-link" role="link" aria-label="Getting Started">Getting Started</a></li>
                     <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Style">Style</a></li>
-
-                    <li><a href="#" className="nav-link nav-link-exp mod-expanded" role="link" aria-label="Components">Components</a></li>
+                    */}
+                    <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Components">Components</a></li>
                     <ul className="nav-subsection">
+                        <li><a href="#" className="mod-current nav-sub-link" aria-label="Colors">Colors</a></li>
+
+                        {/*
                         <li><a href="#" className="nav-sub-link" aria-label="Specs">Accordion</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Styles">Breadcrumbs</a></li>
                         <li>
@@ -26,6 +30,7 @@ export class Nav extends React.Component {
                                 <li><a href="#" className="nav-sub-sub-link">Link 4</a></li>
                             </ul>
                         </li>
+
                         <li><a href="#" className="nav-sub-link" aria-label="Cards">Cards</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Content Switch">Content Switch</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Forms">Forms</a></li>
@@ -33,12 +38,15 @@ export class Nav extends React.Component {
                         <li><a href="#" className="nav-sub-link" aria-label="Loading">Loading</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Pagination">Pagination</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Tags">Tags</a></li>
+                        */}
                     </ul>
 
+                    {/*
                     <li><a href="#" className="nav-link" role="link">Modules</a></li>
                     <li><a href="#" className="nav-link" role="link">Contribute</a></li>
                     <li><a href="#" className="nav-link" role="link">Pricinples</a></li>
                     <li><a href="#" className="nav-link" role="link">Resources</a></li>
+                    */}
                 </ul>
                 <div className="nav-footer">
                     &copy;<script type="text/javascript">document.write(new Date().getFullYear())</script> 23andMe, Inc.

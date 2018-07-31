@@ -9,6 +9,32 @@ h1 {
     margin-top: 0;
 }
 
+.code-example {
+    position: relative;
+    background-color: $white;
+    border-radius: 3px;
+    border: 1px solid $gray3;
+    &-tab {
+        $tab-height: 17px;
+        position: absolute;
+        top: -$tab-height;
+        left: 0;
+        min-width: 72px;
+        height: $tab-height;
+        padding-top: 3px;
+        text-align: center;
+        border-radius: 3px 3px 0 0;
+        background-color: $gray3;
+        color: $gray7;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    pre {
+        background-color: $white;
+    }
+}
+
 .noscroll {
     overflow: hidden;
 }
@@ -169,7 +195,7 @@ h1 {
         &::after {
             position: absolute;
             right: 24px;
-            top: 6px;
+            top: 8px;
             content: "";
             height: 24px;
             width: 24px;
@@ -211,6 +237,10 @@ h1 {
 }
 
 @include media($mobile-tablet) {
+    .contents-wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
     .header {
         height: 50px;
         padding: 0;
@@ -305,6 +335,10 @@ h1 {
 @include media($desktop) {
     .u-hide-for-desktop {
         display: none;
+    }
+    .contents-wrapper {
+        max-width: 780px;
+        margin: 0 auto;
     }
     .nav {
         width: 256px;
