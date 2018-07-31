@@ -6,7 +6,7 @@ class Nav extends React.Component {
             <nav className={`nav ${this.props.showingClass}`}>
                 <div className="nav-header">
                     <button onClick={this.props.navClickHandler} className="nav-close" aria-label="Close"><img src="img/close.svg" alt="close" /></button>
-                    <h3>Pattern Libary</h3>
+                    <h3>Pattern Library</h3>
                 </div>
                 <ul className="nav-items">
                     {/*

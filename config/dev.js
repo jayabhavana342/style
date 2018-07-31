@@ -19,7 +19,7 @@ export default {
             include: 'node_modules/**',
             namedExports: {
                 'node_modules/react-syntax-highlighter/index.js': ['SyntaxHighlighter'],
-                'node_modules/react-syntax-highlighter/styles/hljs/index.js': ['docco']
+                'node_modules/react-syntax-highlighter/styles/hljs/index.js': ['githubGist']
             }
         }),
         globals(),

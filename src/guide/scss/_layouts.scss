@@ -9,16 +9,24 @@ h1 {
     margin-top: 0;
 }
 
+.code-example,
+.path {
+    border: 1px solid $gray3;
+    pre {
+        background-color: $white;
+        margin: 0;
+    }
+}
 .code-example {
     position: relative;
     background-color: $white;
-    border-radius: 3px;
-    border: 1px solid $gray3;
+    border-radius: 0 3px 3px 3px;
+    margin-top: 48px;
     &-tab {
         $tab-height: 17px;
         position: absolute;
         top: -$tab-height;
-        left: 0;
+        left: -1px;
         min-width: 72px;
         height: $tab-height;
         padding-top: 3px;
@@ -31,7 +39,20 @@ h1 {
         text-transform: uppercase;
     }
     pre {
-        background-color: $white;
+        padding: 15px !important; // Necessary to overwrite HighlightJS styling
+        border-radius: 0 3px 3px 3px;
+    }
+}
+.path {
+    position: relative;
+    display: inline-block;
+    background-color: $white;
+    border-radius: 3px;
+    pre {
+        display: inline-block;
+        padding: 5px 10px !important; // Necessary to overwrite HighlightJS styling
+        border-radius: 3px;
+        color: $gray7;
     }
 }
 
@@ -56,6 +77,7 @@ h1 {
 .contents {
     &-wrapper {
         width: 100%;
+        overflow: auto;
     }
 }
 
@@ -96,6 +118,11 @@ h1 {
             opacity: 1;
         }
     }
+    @keyframes hideLinks { // Hides nav links for tabbing and screen readers while nav is hidden
+        0% { visibility: visible }
+        99% { visibility: visible }
+        100% { visibility: hidden }
+    }
     @include type-nav;
     position: absolute;
     z-index: 2;
@@ -104,12 +131,8 @@ h1 {
     box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
     background-color: $white;
     overflow: auto;
-    transition: left $transition-timing;
-    @keyframes hideLinks { // Hides nav links for tabbing and screen readers while nav is hidden
-        0% { visibility: visible }
-        99% { visibility: visible }
-        100% { visibility: hidden }
-    }
+    transition: transform $transition-timing;
+
     a {
         visibility: hidden;
         position: relative;
@@ -154,7 +177,6 @@ h1 {
         width: 100%;
     }
     &-header {
-        position: fixed;
         z-index: 1;
         display: flex;
         align-items: center;
@@ -178,6 +200,8 @@ h1 {
         border: none;
         background-color: transparent;
         > img {
+            position: relative;
+            top: 2px;
             width: 32px;
             height: 32px;
         }
@@ -268,21 +292,21 @@ h1 {
         }
         &-burg {
             height: 50px;
-            width: 50px;
+            width: 60px;
             padding: 0;
             opacity: 1;
             border: none;
             background-color: transparent;
+            > img {
+                position: relative;
+                top: 2px;
+            }
         }
     }
-    .contents {
-        padding-top: 50px;
-        &-wrapper {
-            margin-top: 20px;
-            transition-duration: $transition-timing;
-            &.mod-moved {
-                padding-left: 10px;
-            }
+    .contents-wrapper {
+        margin-top: 80px;
+        &.mod-moved {
+            padding-left: 10px;
         }
     }
     .nav-header {
@@ -294,14 +318,16 @@ h1 {
         }
     }
     .nav {
-        left: -100%;
+        transform: translateX(-105%);
         &.mod-showing {
-            left: 0;
-            transition: left $transition-timing;
+            transform: translateX(0);
         }
         &-link,
         &-sub-link {
             padding-left: 30px;
+        }
+        &-header {
+            position: fixed;
         }
         &-footer {
             margin-left: 30px;
@@ -337,17 +363,10 @@ h1 {
         display: none;
     }
     .contents-wrapper {
+        position: relative;
+        left: 30px; // Offset for navbar on left
         max-width: 780px;
-        margin: 0 auto;
-    }
-    .nav {
-        width: 256px;
-        &.mod-showing {
-            left: 64px;
-        }
-        &-footer {
-            margin-left: 24px;
-        }
+        margin: 55px auto 0;
     }
     a {
         transition-duration: .1s;
@@ -391,12 +410,22 @@ h1 {
         margin: 0 auto;
     }
     .nav {
-        left: -200px;
+        transform: translateX(-200px);
+        width: 256px;
         a {
             height: 40px;
             padding-top: 13px;
         }
+        &.mod-showing {
+            transform: translateX(64px);
+        }
+        &-footer {
+            margin-left: 24px;
+        }
         &-header {
+            position: absolute;
+            width: 256px;
+            z-index: 1;
             h3 {
                 margin: 20px 0 0 24px;
             }
