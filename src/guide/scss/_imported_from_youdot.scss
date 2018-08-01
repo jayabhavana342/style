@@ -1,7 +1,19 @@
 // body.styleguide.components
 
 // Colors
-.ttam-colors-section {
+.sg-colors {
+    .sg-colors-code-example {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 130px;
+        width: 130px;
+        background-color: $pink;
+        color: $white;
+        &:hover {
+            background-color: $dark-pink;
+        }
+    }
     .colors {
         display: flex;
         flex-wrap: wrap;
