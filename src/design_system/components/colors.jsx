@@ -17,7 +17,7 @@ class Contents extends React.Component {
             '$gray1'
         ]
         return (
-            <div>
+            <div class="sg-colors">
                 <h1 className="mod-updated">Colors</h1>
                 <p>
                     This is the color palette for YouDot. Use Sass (SCSS) variables to keep these colors
@@ -28,7 +28,7 @@ class Contents extends React.Component {
                 <hr />
                 <p>File location: <Path>{path1}</Path></p>
 
-                <div className="sub-section ttam-colors-section">
+                <div className="sub-section">
                     <div className="colors">
                         <div className="lime">
                             $lime <span className="def">#92C746</span>
@@ -164,6 +164,9 @@ class Contents extends React.Component {
 
                 <h2>Example</h2>
                 <hr />
+                <div className="sg-colors-code-example">
+                    TEXT
+                </div>
                 <Code language='scss'>{exampleCode1}</Code>
             </div>
         );

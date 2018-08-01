@@ -24,7 +24,7 @@ export class Main extends React.Component {
         const showingClass = this.state.navShowing ? 'mod-showing' : '';
         return (
             <div>
-                <div className={`nav-overlay ${showingClass}`}></div>
+                <div className={`nav-overlay ${showingClass}`} onClick={this.navClickHandler}></div>
                 <Header navShowing={this.state.navShowing} navClickHandler={this.navClickHandler} />
                 <Nav navShowing={this.state.navShowing} navClickHandler={this.navClickHandler} showingClass={showingClass} />
                 <Contents />
