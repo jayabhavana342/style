@@ -1,0 +1,15 @@
+h1 {
+    @include type-title;
+}
+
+h2 {
+    @include type-subtitle;
+}
+
+p {
+    @include type-body;
+}
+
+.caption-text {
+    @include type-caption;
+}

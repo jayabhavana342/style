@@ -1,0 +1,124 @@
+// Basic
+$white: #FFF;
+$black: #000;
+$red: #F04155; // used by bourbon, use $pink instead for our styles
+$transparent: rgba(0, 0, 0, 0);
+
+// Style Guide Colors -- add as needed
+$lime: #92C746;
+$dark-lime: #74A529;
+$green: #3BA510;
+$dark-green: #327216;
+$accessible-green: #2F850D;
+$teal: #00B5B5;
+$dark-teal: #0E8C8C;
+$blue: #53C8ED;
+$dark-blue: #0081A5;
+$periwinkle: #3595D6;
+$dark-periwinkle: #005B98;
+$accessible-blue: #1976D2;
+$ultra-marine: #425DBF;
+$dark-ultra-marine: #132D89;
+$violet: #6F3598;
+$dark-violet: #4A1672;
+$purple: #9F0F7B;
+$dark-purple: #74125D;
+$pink: #D50F67;
+$dark-pink: #8C0E45;
+$scarlet: #FF6D19;
+$dark-scarlet: #D12F11;
+$booster-red: #AF1111;
+$orange: #FFBA32;
+$dark-orange: #E58900;
+$yellow: #FADA6C;
+$dark-yellow: #F2C100;
+
+// Grays
+$gray1: #F7F9FA;
+$gray1b: #F2F5F7;
+$gray2: #EDEFF0;
+$gray3: #E3E5E6;
+$gray4: #D4D6D6;
+$gray5: #C0C1C2;
+$gray6: #9C9EA1;
+$gray7: #6B6B6B;
+$gray8: #333435;
+
+// Print Grays
+$print-gray1: #F6F6F6;
+$print-gray2: #E1E1E1;
+$print-gray3: #424242;
+
+// System Styles
+$base-link: $accessible-blue;
+$hover-link: $dark-periwinkle;
+$button-color: $accessible-blue;
+$button-hover: $dark-periwinkle;
+$action-color: $accessible-green;
+$filter-color: $accessible-green;
+
+// Ancestry Composition Regions
+$european: $dark-periwinkle;    // broadly european
+$north-european: $blue;         // northern european
+$south-european: $dark-blue;    // southern european
+$east-european: $teal;          // eastern european
+$ashkenazi: $dark-teal;         // ashkenazi jewish
+
+$asian-native-american: $dark-scarlet;// broadly asian and native american
+$east-asian: $scarlet;          // east asian
+$south-asian: $dark-orange;     // south asian
+$southeast-asian: $orange;      // south east asian
+$native-american: $yellow;      // native american
+
+$oceania: $lime;                // oceania
+
+$sub-saharan: $dark-pink;       // broadly sub-saharan african
+$west-african: $pink;           // west african
+$east-african: $purple;         // east african
+$south-african: $dark-purple;   // central/south african
+
+$mena: $dark-violet;            // broadly middle eastern and north african
+$middle-eastern: $ultra-marine; // middle eastern
+$north-african: $violet;        // north african
+
+// Countries
+$balkan: #015B89;
+$british-irish: #145B96;
+$chinese: #E7310E;
+$finnish: #0A75A9;
+$french-german: #0079E1;
+$iberian: #26AEDA;
+$italian: #0A75A9;
+$japanese: #640000;
+$korean: #AD0D00;
+$mongolian: #F45844;
+$sardinian: #148CC7;
+$scandinavian: #0C3B60;
+$yakut: #F05A19;
+
+$unassigned: $gray5;            // unassigned
+
+// Traits, hair color
+$brown: #E48800;
+$light-brown: #FFB931;
+$blond: #F1C100;
+$light-blond: #F9DA6C;
+
+// Background Color
+$base-background-color: $white;
+
+// Font Colors
+$base-font-color: $gray8;
+
+// Border color
+$base-border-color: $gray3;
+$base-border: 1px solid $base-border-color;
+$print-border: 1pt solid $print-gray2;
+
+// Social
+$facebook: #3B5998;
+$dark-facebook: #304A80;
+$twitter: #55ACEE;
+$dark-twitter: #4A96D0;
+$instagram: #4090DB;
+$youtube: #E52D27;

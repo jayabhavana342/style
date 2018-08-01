@@ -6,7 +6,33 @@ body {
 }
 
 h1 {
+    position: relative;
     margin-top: 0;
+    &.mod-updated::after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        content: "updated";
+        box-sizing: border-box;
+        padding-top: 3px;
+        height: 16px;
+        width: 70px;
+        background-color: $yellow;
+        border-radius: 2px;
+        font-size: 10px;
+        font-weight: 500;
+        color: $gray8;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+
+hr {
+    margin-bottom: 20px;
+    border: none;
+    height: 1px;
+    background-color: $gray3;
 }
 
 .code-example,
@@ -46,8 +72,11 @@ h1 {
 .path {
     position: relative;
     display: inline-block;
+    max-width: 100%;
     background-color: $white;
     border-radius: 3px;
+    overflow-x: auto;
+    vertical-align: middle;
     pre {
         display: inline-block;
         padding: 5px 10px !important; // Necessary to overwrite HighlightJS styling
@@ -78,34 +107,6 @@ h1 {
     &-wrapper {
         width: 100%;
         overflow: auto;
-    }
-}
-
-.guide-item {
-    width: 100%;
-    &-heading {
-        border-bottom: solid 1px $gray3;
-        > div {
-            padding: 0 20px;
-            max-width: 920px;
-            margin: 0 auto;
-            .guide-title {
-                @include type-title;
-            }
-            .guide-subtext {
-                @include type-body;
-            }
-        }
-    }
-    &-section {
-        @include type-body;
-        max-width: 920px;
-        padding: 0 20px;
-        margin: 0 auto;
-        border-bottom: solid 1px $gray3;
-    }
-    &-sub {
-        @include type-subsection;
     }
 }
 
@@ -312,11 +313,6 @@ h1 {
     .nav-header {
         box-shadow: 0 1px 0 rgba(0, 0, 0, .15);
     }
-    .guide {
-        &-title {
-            padding-bottom: 10px;
-        }
-    }
     .nav {
         transform: translateX(-105%);
         &.mod-showing {
@@ -403,6 +399,7 @@ h1 {
             margin: 12px auto 0;
             border: none;
             background-color: transparent;
+            cursor: pointer;
         }
     }
     .contents {
