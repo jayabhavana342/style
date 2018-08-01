@@ -4,7 +4,6 @@
   "description": "23andMe styleguide",
   "main": "index.js",
   "scripts": {
-    "prebuild": "npm run std --silent",
     "build": "rollup -c config/prod.js",
     "build:dev": "rollup -c config/dev.js -w",
     "version": "npm run build && git add -A .",
