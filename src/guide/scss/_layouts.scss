@@ -107,6 +107,27 @@ hr {
     &-wrapper {
         width: 100%;
         overflow: auto;
+        a {
+            color: $accessible-blue;
+            text-decoration: none;
+            &:active,
+            &:visited {
+                color: $accessible-blue;
+            }
+            &:hover {
+                text-decoration: underline;
+            }
+            &::after {
+                height: 0;
+                width: 0;
+                border-top: 5px solid #1976D2;
+                border-left: 5px solid transparent;
+                border-top-color: inherit;
+                content: '';
+                display: inline-block;
+                vertical-align: text-top;
+            }
+        }
     }
 }
 
@@ -125,7 +146,7 @@ hr {
         100% { visibility: hidden }
     }
     @include type-nav;
-    position: absolute;
+    position: fixed;
     z-index: 2;
     top: 0;
     height: 100vh;
@@ -338,11 +359,6 @@ hr {
             width: 77vw;
         }
     }
-    .header-wrapper.mod-moved {
-        position: relative;
-        left: 20px;
-        opacity: .2;
-    }
 }
 
 @include media($tablet) {
@@ -362,7 +378,8 @@ hr {
         position: relative;
         left: 30px; // Offset for navbar on left
         max-width: 780px;
-        margin: 55px auto 0;
+        margin: 0 auto;
+        padding-top: 55px;
     }
     a {
         transition-duration: .1s;
