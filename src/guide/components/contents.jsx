@@ -1,5 +1,5 @@
 import React from 'react'
-import Colors from './sections/colors.jsx'
+import Colors from '../sections/colors.jsx'
 
 class Contents extends React.Component {
     render() {

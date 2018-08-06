@@ -4,6 +4,9 @@
 @import 'normalize';
 @import 'normalize_ext';
 
+// Design System Stylings
+@import '../../design_system/scss/colors';
+
 // Vars and mixins
 @import 'vars';
 @import 'mixins';
@@ -14,5 +17,4 @@
 @import 'imported_from_youdot';
 @import 'layouts';
 
-// Design System Styles
-@import 'colors';
+

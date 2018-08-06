@@ -1,10 +1,10 @@
 import React from 'react'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 
-class Path extends React.Component {
+class Inline extends React.Component {
     render() {
         return (
-            <div className="path">
+            <div className="inline-code">
                 <SyntaxHighlighter
                     language='html'
                     useInlineStyles={false}>
@@ -15,4 +15,4 @@ class Path extends React.Component {
     }
 }
 
-export default Path
+export default Inline
