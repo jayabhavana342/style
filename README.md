@@ -6,7 +6,7 @@ Note: this project is based off of the [buble-react-rollup-starter](https://gith
 
 ## Getting going
 
-1. Clone this repo: `https://github.com/23andMe/style.git`
+1. Clone this repo: `git clone https://github.com/23andMe/style.git`
 2. CD into the dir: `cd style`
 3. Start er up: `npm run start`
 4. View in browser: `https://localhost:3000`
