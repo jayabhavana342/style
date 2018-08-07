@@ -38,9 +38,12 @@
   "devDependencies": {
     "babel-eslint": "^8.2.6",
     "browser-sync": "2.23.6",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^23.4.1",
     "node-sass": "^4.9.2",
     "npm-run-all": "4.1.2",
+    "react-addons-test-utils": "^15.6.2",
     "react-syntax-highlighter": "^8.0.1",
     "rollup": "0.56.5",
     "rollup-plugin-buble": "0.19.2",

@@ -5,7 +5,7 @@ import InlineCode from '../components/inline_code.jsx'
 class Contents extends React.Component {
     render() {
         return (
-            <div class="sg-colors">
+            <div className="sg-colors">
                 <h1 className="mod-updated">Colors</h1>
                 <p>
                     This is the color palette for YouDot. Use Sass (SCSS) variables to keep these colors
@@ -106,12 +106,12 @@ class Contents extends React.Component {
                     More on color contrast</a>. <a href="http://contrast-grid.eightshapes.com/" target="_blank" rel="noopener noreferrer">A useful contrast tool</a>.
                 </p>
                 <div className="sub-section ttam-colors-section">
-                    <div class="colors">
-                        <div class="accessible-blue">
-                            $accessible-blue <span class="def">#1976D2</span>
+                    <div className="colors">
+                        <div className="accessible-blue">
+                            $accessible-blue <span className="def">#1976D2</span>
                         </div>
-                        <div class="accessible-green">
-                            $accessible-green <span class="def">#2F850D</span>
+                        <div className="accessible-green">
+                            $accessible-green <span className="def">#2F850D</span>
                         </div>
                     </div>
                 </div>
