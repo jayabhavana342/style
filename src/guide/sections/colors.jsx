@@ -4,18 +4,6 @@ import InlineCode from '../components/inline_code.jsx'
 
 class Contents extends React.Component {
     render() {
-        const exampleCode1 = `.example {
-    background-color: $pink;
-    color: $white;
-    &:hover {
-        background-color: $dark-pink;
-    }
-}`
-        const path1 = 'you/assets/scss/base/_colors.scss'
-        const variables = [
-            '$white',
-            '$gray1'
-        ]
         return (
             <div class="sg-colors">
                 <h1 className="mod-updated">Colors</h1>
@@ -113,7 +101,7 @@ class Contents extends React.Component {
                 <p>
                     For accessibility purposes, these colors are intended to be used with white overlaying text, or
                     olored text on top of
-                    <InlineCode>{variables[0]}</InlineCode> or <InlineCode>{variables[1]}</InlineCode>.
+                    <InlineCode>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
                     <a href="https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/" target="_blank" rel="noopener noreferrer">
                     More on color contrast</a>. <a href="http://contrast-grid.eightshapes.com/" target="_blank" rel="noopener noreferrer">A useful contrast tool</a>.
                 </p>
@@ -170,7 +158,17 @@ class Contents extends React.Component {
                 <div className="sg-colors-code-example">
                     TEXT
                 </div>
-                <BlockCode language='scss'>{exampleCode1}</BlockCode>
+                <BlockCode language='scss'>
+                    {
+`.example {
+    background-color: $pink;
+    color: $white;
+    &:hover {
+        background-color: $dark-pink;
+    }
+}`
+                    }
+                </BlockCode>
             </div>
         );
     }
