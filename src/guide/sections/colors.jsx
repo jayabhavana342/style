@@ -158,7 +158,7 @@ class Contents extends React.Component {
                 <div className="sg-colors-code-example">
                     TEXT
                 </div>
-                <BlockCode language='scss'>
+                <BlockCode language='scss' test_class='test-comp-colors-code'>
                     {
 `.example {
     background-color: $pink;
