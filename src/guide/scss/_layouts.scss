@@ -89,6 +89,14 @@ hr {
     overflow: hidden;
 }
 
+.widerule {
+    position: absolute;
+    left: 50%;
+    width: 100vw;
+    margin: 0;
+    transform: translateX(-50%);
+}
+
 .header {
     position: fixed;
     z-index: 1;
@@ -106,7 +114,6 @@ hr {
 .contents {
     &-wrapper {
         width: 100%;
-        overflow: auto;
         a {
             color: $accessible-blue;
             text-decoration: none;
@@ -325,6 +332,9 @@ hr {
             }
         }
     }
+    .sg-section {
+        margin-top: 80px;
+    }
     .contents-wrapper {
         margin-top: 80px;
         &.mod-moved {
@@ -374,15 +384,25 @@ hr {
 }
 
 @include media($desktop) {
+    body {
+        overflow-x: hidden;
+    }
     .u-hide-for-desktop {
         display: none;
+    }
+    .widerule {
+        top: 0;
+    }
+    .sg-section {
+        position: relative;
+        margin-top: 35px;
+        padding-top: 35px;
     }
     .contents-wrapper {
         position: relative;
         left: 30px; // Offset for navbar on left
         max-width: 780px;
         margin: 0 auto;
-        padding-top: 55px;
     }
     a {
         transition-duration: .1s;

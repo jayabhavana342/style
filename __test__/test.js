@@ -67,7 +67,7 @@ var Contents = (function (superclass) {
 
     Contents.prototype.render = function render () {
         return (
-            React.createElement( 'div', { className: "sg-colors" },
+            React.createElement( 'div', { className: "sg-section sg-colors" },
                 React.createElement( 'h1', { className: "mod-updated" }, "Colors"),
                 React.createElement( 'p', null, "This is the color palette for YouDot. Use Sass (SCSS) variables to keep these colors consistent. We should not be using any colors outside of these variables. ", React.createElement( 'a', { href: "https://sass-lang.com/guide#topic-2", target: "_blank", rel: "noopener noreferrer" }, "More on Sass Variables")
                 ),
