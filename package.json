@@ -9,7 +9,7 @@
     "lib:watch": "babel src/lib --watch --out-dir lib --copy-files --source-maps inline",
     "docs": "webpack --mode production",
     "docs:watch": "webpack-dev-server --mode development -d",
-    "test": "jest --testPathIgnorePatterns src"
+    "test": "jest --testPathIgnorePatterns src --silent"
   },
   "keywords": [],
   "license": "MIT",
@@ -32,6 +32,8 @@
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.4.1",
+    "enzyme-adapter-react-16": "^1.2.0",
     "eslint": "^5.3.0",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-jest": "^21.21.0",
