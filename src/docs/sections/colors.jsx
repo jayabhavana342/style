@@ -10,7 +10,7 @@ class Contents extends React.Component {
                 <p>
                     This is the color palette for YouDot. Use Sass (SCSS) variables to keep these colors
                     consistent. We should not be using any colors outside of these variables.
-                    <a href="https://sass-lang.com/guide#topic-2" target="_blank" rel="noopener noreferrer">
+                    &nbsp;<a href="https://sass-lang.com/guide#topic-2" target="_blank" rel="noopener noreferrer">
                     More on Sass Variables</a>
                 </p>
                 <hr />
@@ -100,9 +100,8 @@ class Contents extends React.Component {
                 <hr />
                 <p>
                     For accessibility purposes, these colors are intended to be used with white overlaying text, or
-                    olored text on top of
-                    <InlineCode>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
-                    <a href="https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/" target="_blank" rel="noopener noreferrer">
+                    olored text on top of <InlineCode>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
+                    &nbsp;<a href="https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/" target="_blank" rel="noopener noreferrer">
                     More on color contrast</a>. <a href="http://contrast-grid.eightshapes.com/" target="_blank" rel="noopener noreferrer">A useful contrast tool</a>.
                 </p>
                 <div className="sub-section ttam-colors-section">

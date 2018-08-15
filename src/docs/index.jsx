@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Main } from './main.jsx'
-import './styles.scss'
+import './scss/main.scss'
 
 const root = document.querySelector('#app')
 ReactDOM.render(<Main />, root)

@@ -1,10 +1,8 @@
 // Doc specific styles
 
-@include media($mobile-tablet) {
-    .sg-colors  {
-        display: none;
+@include media($mobile) {
+    .sg-colors .colors > div {
+        width: 33.333%;
     }
 }
-.sg-colors .colors > div {
 
-}
