@@ -1,9 +1,6 @@
 import React from 'react';
-import Enzyme, { shallow, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow, mount } from 'enzyme';
 import Colors from '../src/docs/sections/colors.jsx';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 const colorWrapperShallow = shallow(<Colors />);
 const colorWrapperFull = mount(<Colors />);
