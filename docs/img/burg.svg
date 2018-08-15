@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>A269B7DD-8111-457B-9028-27A2644E341D</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons-/-32px-/-menu-/-grey" fill="#6B6B6B">
+            <g id="ic_menu_32" transform="translate(6.000000, 9.000000)">
+                <path d="M0.78321199,6 C0.350644008,6 0,6.447725 0,7 C0,7.5523 0.350644008,8 0.78321199,8 L19.216788,8 C19.649356,8 20,7.5523 20,7 C20,6.447725 19.649356,6 19.216788,6 L0.78321199,6 Z" id="line"></path>
+                <path d="M0.78321199,12 C0.350644008,12 0,12.447725 0,13 C0,13.5523 0.350644008,14 0.78321199,14 L19.216788,14 C19.649356,14 20,13.5523 20,13 C20,12.447725 19.649356,12 19.216788,12 L0.78321199,12 Z" id="line"></path>
+                <path d="M0.78321199,0 C0.350644008,0 0,0.447725 0,1 C0,1.5523 0.350644008,2 0.78321199,2 L19.216788,2 C19.649356,2 20,1.5523 20,1 C20,0.447725 19.649356,0 19.216788,0 L0.78321199,0 Z" id="line"></path>
+            </g>
+        </g>
+    </g>
+</svg>

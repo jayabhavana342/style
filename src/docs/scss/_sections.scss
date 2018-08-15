@@ -1,0 +1,10 @@
+// Doc specific styles
+
+@include media($mobile-tablet) {
+    .sg-colors  {
+        display: none;
+    }
+}
+.sg-colors .colors > div {
+
+}
