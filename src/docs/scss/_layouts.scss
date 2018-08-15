@@ -92,6 +92,7 @@ hr {
 .widerule {
     position: absolute;
     left: 50%;
+    top: 0;
     width: 100vw;
     margin: 0;
     transform: translateX(-50%);
@@ -136,6 +137,10 @@ hr {
             }
         }
     }
+}
+
+.sg-section {
+    position: relative;
 }
 
 .nav {
@@ -333,10 +338,10 @@ hr {
         }
     }
     .sg-section {
-        margin-top: 80px;
+        margin-top: 40px;
+        padding-top: 40px;
     }
     .contents-wrapper {
-        margin-top: 80px;
         &.mod-moved {
             padding-left: 10px;
         }

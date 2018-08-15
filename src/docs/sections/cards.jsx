@@ -14,6 +14,7 @@ class Contents extends React.Component {
                 <hr />
 
                 <div className="sub-section">
+                    <h2 className="subsection-title">Card 1 (24px padding on desktop and mobile)</h2>
 
                 </div>
             </div>

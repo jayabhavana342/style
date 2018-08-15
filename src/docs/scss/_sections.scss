@@ -3,6 +3,10 @@
 @include media($mobile) {
     .sg-colors .colors > div {
         width: 33.333%;
+        font-size: 14px;
+        span.def {
+            font-size: 14px;
+        }
     }
 }
 
