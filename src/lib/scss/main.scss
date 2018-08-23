@@ -1,4 +1,12 @@
 // ds main.scss
 
-@import 'ds_cards';
+// Dependencies
+@import '../../docs/scss/vars';
+@import '../../docs/scss/mixins';
+@import 'ds_variables';
+
+// Component SCSS
+// Loiad order matters
 @import 'ds_colors';
+@import 'ds_elevations';
+@import 'ds_cards';

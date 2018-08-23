@@ -1,6 +1,33 @@
 // body.styleguide.components
 
 // Colors
+
+%non-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    height: auto;
+    line-height: normal;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: baseline;
+    white-space: normal;
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.unbutton {
+    @extend %non-button;
+    color: inherit;
+    font-weight: $font-weight-regular;
+}
+
+.button {
+    cursor: pointer;
+}
+
 .sg-colors {
     .sg-colors-code-example {
         display: flex;

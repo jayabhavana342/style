@@ -495,5 +495,8 @@ hr {
     }
     .subsection-title {
         margin-top: 80px;
+        &.mod-shorttop {
+            margin-top: 50px;
+        }
     }
 }
