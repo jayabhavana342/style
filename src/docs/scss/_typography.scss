@@ -6,6 +6,10 @@ h2 {
     @include type-subtitle;
 }
 
+h3 {
+    @include type-sectitle;
+}
+
 p {
     @include type-body;
 }

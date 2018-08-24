@@ -36,19 +36,26 @@
 @mixin type-title {
     @extends %font-family;
     color: $gray8;
-    font-weight: 400;
+    font-weight: 500;
     @include media($mobile) {
-        font-size: 24px;
+        font-size: 26px;
     }
     @include media($tablet-plus) {
-        font-size: 30px;
+        font-size: 32px;
     }
 }
 
 @mixin type-subtitle {
     @extends %font-family;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 500;
+    color: $gray8;
+}
+
+@mixin type-sectitle {
+    @extends %font-family;
+    font-size: 20px;
+    font-weight: 500;
     color: $gray8;
 }
 

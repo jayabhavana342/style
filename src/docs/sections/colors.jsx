@@ -13,9 +13,10 @@ class Contents extends React.Component {
                     &nbsp;<a href="https://sass-lang.com/guide#topic-2" target="_blank" rel="noopener noreferrer">
                     More on Sass Variables</a>
                 </p>
-                <hr />
                 <p>File location: <InlineCode>you/assets/scss/base/_colors.scss</InlineCode></p>
+                <hr />
 
+                <h2 className="subsection-title mod-shorttop">Common colors</h2>
                 <div className="sub-section">
                     <div className="colors">
                         <div className="lime">
@@ -97,7 +98,6 @@ class Contents extends React.Component {
                 </div>
 
                 <h2 className="subsection-title">Accessible colors</h2>
-                <hr />
                 <p>
                     For accessibility purposes, these colors are intended to be used with white overlaying text, or
                     olored text on top of <InlineCode>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
@@ -116,7 +116,6 @@ class Contents extends React.Component {
                 </div>
 
                 <h2 className="subsection-title">Grays</h2>
-                <hr />
                 <div className="sub-section ttam-colors-section">
                     <div className="colors">
                         <div className="white">
@@ -152,7 +151,7 @@ class Contents extends React.Component {
                     </div>
                 </div>
 
-                <h2 className="subsection-title">Example</h2>
+                <h3 className="subsection-title">Example: A box with a background color applied</h3>
                 <hr />
                 <div className="sg-colors-code-example">
                     TEXT

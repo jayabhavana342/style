@@ -31,7 +31,7 @@ class Contents extends React.Component {
                 </p>
                 <hr />
 
-                <h2 className="subsection-title mod-shorttop">Example: Card 1 (24px padding on desktop and mobile)</h2>
+                <h3 className="subsection-title mod-shorttop">Example: Card 1 (24px padding on desktop and mobile)</h3>
                 <div className="sg-colors-code-example">
                     <div className="cards-container">
                         <div className="ttam-card mod-card-1 ttam-elevation-2">
@@ -50,7 +50,7 @@ class Contents extends React.Component {
                     }
                 </BlockCode>
 
-                <h2 className="subsection-title mod-shorttop">Example: Card 2 (32px padding on desktop, 24px padding on mobile)</h2>
+                <h3 className="subsection-title mod-shorttop">Example: Card 2 (32px padding on desktop, 24px padding on mobile)</h3>
                 <div className="sg-colors-code-example">
                     <div className="cards-container">
                         <div className="ttam-card mod-card-2 ttam-elevation-2">
@@ -69,7 +69,7 @@ class Contents extends React.Component {
                     }
                 </BlockCode>
 
-                <h2 className="subsection-title mod-shorttop">Example: Card 3 (40px padding on desktop, 24px padding on mobile)</h2>
+                <h3 className="subsection-title mod-shorttop">Example: Card 3 (40px padding on desktop, 24px padding on mobile)</h3>
                 <div className="sg-colors-code-example">
                     <div className="cards-container">
                         <div className="ttam-card mod-card-3 ttam-elevation-2">
