@@ -296,9 +296,19 @@ hr {
 }
 
 @include media($mobile-tablet) {
+    .code-example {
+        margin: 5vw 0 2.5vw;
+    }
     .contents-wrapper {
         width: 100%;
         padding: 0 15px;
+    }
+    ul {
+        line-height: 1.5;
+        padding-left: 7vw;
+        li {
+            margin-bottom: 2vw;
+        }
     }
     .header {
         height: 50px;
@@ -401,14 +411,27 @@ hr {
     }
     .sg-section {
         position: relative;
-        margin-top: 35px;
+        margin-top: 100px;
         padding-top: 35px;
+        &:first-of-type {
+            margin-top: 35px;
+        }
+    }
+    .code-example {
+        margin: 25px 0 10px;
     }
     .contents-wrapper {
         position: relative;
         left: 30px; // Offset for navbar on left
         max-width: 780px;
         margin: 0 auto;
+    }
+    ul {
+        line-height: 1.4;
+        padding-left: 22px;
+        li {
+            margin-bottom: 6px;
+        }
     }
     a {
         transition-duration: .1s;

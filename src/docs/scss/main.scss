@@ -4,16 +4,20 @@
 @import 'normalize';
 @import 'normalize_ext';
 
-// Design System Lib
-@import '../../lib/scss/main.scss';
+// Legacy Dependencies
+@import 'legacy_dependencies';
+
+// Design System
+@import '../../lib/scss/main';
 
 // Vars and mixins
 @import 'vars';
+@import 'links';
 @import 'mixins';
 @import 'fonts';
 @import 'typography';
 
 // Framing
-@import 'imported_from_youdot';
 @import 'layouts';
 @import 'sections';
+

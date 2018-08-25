@@ -6,6 +6,7 @@ class Contents extends React.Component {
     render() {
         return (
             <div className="sg-section sg-colors">
+                <hr className="widerule" />
                 <h1 className="mod-updated">Colors</h1>
                 <p>
                     This is the color palette for YouDot. Use Sass (SCSS) variables to keep these colors
@@ -13,7 +14,6 @@ class Contents extends React.Component {
                     &nbsp;<a href="https://sass-lang.com/guide#topic-2" target="_blank" rel="noopener noreferrer">
                     More on Sass Variables</a>
                 </p>
-                <p>File location: <InlineCode>you/assets/scss/base/_colors.scss</InlineCode></p>
                 <hr />
 
                 <h2 className="subsection-title mod-shorttop">Common colors</h2>
@@ -153,11 +153,12 @@ class Contents extends React.Component {
 
                 <h3 className="subsection-title">Example: A box with a background color applied</h3>
                 <hr />
-                <div className="sg-colors-code-example">
-                    TEXT
-                </div>
-                <BlockCode language='scss' test_class='test-comp-colors-code'>
-                    {
+                <div className="code-example">
+                    <div className="color-square-example">
+                        TEXT
+                    </div>
+                    <BlockCode language='scss' test_class='test-comp-colors-code'>
+                        {
 `.example {
     background-color: $pink;
     color: $white;
@@ -165,8 +166,9 @@ class Contents extends React.Component {
         background-color: $dark-pink;
     }
 }`
-                    }
-                </BlockCode>
+                        }
+                    </BlockCode>
+                </div>
             </div>
         );
     }
