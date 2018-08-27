@@ -2,6 +2,7 @@ import React from 'react'
 import Buttons from '../sections/buttons.jsx'
 import Colors from '../sections/colors.jsx'
 import Cards from '../sections/cards.jsx'
+import Elevations from '../sections/elevations.jsx'
 
 
 class Contents extends React.Component {
@@ -11,6 +12,7 @@ class Contents extends React.Component {
                 <Buttons />
                 <Colors />
                 <Cards />
+                <Elevations />
             </section>
         );
     }
