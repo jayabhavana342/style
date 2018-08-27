@@ -183,6 +183,7 @@ class Contents extends React.Component {
                     If you are using <InlineCode>{`<a>`}</InlineCode> with no href, please consider using the <InlineCode>{`<button>`}</InlineCode> element instead for accessibility reasons.
                 </p>
                 <div className="code-example">
+                    <a class="ttam-button" href="https://marcysutton.com/links-vs-buttons-in-modern-web-applications/" target="_blank" rel="noopener noreferrer">This button uses an anchor element</a>
                     <BlockCode language='html'>
                         {
 `<a class="ttam-button" href="...">This button uses an anchor element</a>`
