@@ -1,23 +1,11 @@
 import React from 'react'
-import Code from '../../guide/components/code.jsx'
-import Path from '../../guide/components/path.jsx'
+import BlockCode from '../components/block_code.jsx'
+import InlineCode from '../components/inline_code.jsx'
 
 class Contents extends React.Component {
     render() {
-        const exampleCode1 = `.example {
-    background-color: $pink;
-    color: $white;
-    &:hover {
-        background-color: $dark-pink;
-    }
-}`
-        const path1 = 'you/assets/scss/base/_colors.scss'
-        const variables = [
-            '$white',
-            '$gray1'
-        ]
         return (
-            <div class="sg-colors">
+            <div className="sg-colors">
                 <h1 className="mod-updated">Colors</h1>
                 <p>
                     This is the color palette for YouDot. Use Sass (SCSS) variables to keep these colors
@@ -26,7 +14,7 @@ class Contents extends React.Component {
                     More on Sass Variables</a>
                 </p>
                 <hr />
-                <p>File location: <Path>{path1}</Path></p>
+                <p>File location: <InlineCode>you/assets/scss/base/_colors.scss</InlineCode></p>
 
                 <div className="sub-section">
                     <div className="colors">
@@ -107,25 +95,28 @@ class Contents extends React.Component {
                         </div>
                     </div>
                 </div>
+
+                <h2 className="subsection-title">Accessible colors</h2>
+                <hr />
                 <p>
                     For accessibility purposes, these colors are intended to be used with white overlaying text, or
                     olored text on top of
-                    <Path>{variables[0]}</Path> or <Path>{variables[1]}</Path>.
+                    <InlineCode>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
                     <a href="https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/" target="_blank" rel="noopener noreferrer">
-                    More on color contrast</a>
+                    More on color contrast</a>. <a href="http://contrast-grid.eightshapes.com/" target="_blank" rel="noopener noreferrer">A useful contrast tool</a>.
                 </p>
                 <div className="sub-section ttam-colors-section">
-                    <div class="colors">
-                        <div class="accessible-blue">
-                            $accessible-blue <span class="def">#1976D2</span>
+                    <div className="colors">
+                        <div className="accessible-blue">
+                            $accessible-blue <span className="def">#1976D2</span>
                         </div>
-                        <div class="accessible-green">
-                            $accessible-green <span class="def">#2F850D</span>
+                        <div className="accessible-green">
+                            $accessible-green <span className="def">#2F850D</span>
                         </div>
                     </div>
                 </div>
 
-                <h2>Grays</h2>
+                <h2 className="subsection-title">Grays</h2>
                 <hr />
                 <div className="sub-section ttam-colors-section">
                     <div className="colors">
@@ -162,12 +153,22 @@ class Contents extends React.Component {
                     </div>
                 </div>
 
-                <h2>Example</h2>
+                <h2 className="subsection-title">Example</h2>
                 <hr />
                 <div className="sg-colors-code-example">
                     TEXT
                 </div>
-                <Code language='scss'>{exampleCode1}</Code>
+                <BlockCode language='scss' test_class='test-comp-colors-code'>
+                    {
+`.example {
+    background-color: $pink;
+    color: $white;
+    &:hover {
+        background-color: $dark-pink;
+    }
+}`
+                    }
+                </BlockCode>
             </div>
         );
     }
