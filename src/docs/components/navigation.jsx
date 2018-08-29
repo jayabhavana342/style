@@ -1,7 +1,32 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 class Nav extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentSection: false,
+        }
+        this.sectionClickHandler = this.sectionClickHandler.bind(this)
+    }
+    sectionClickHandler = (e) => {
+        console.log(e.target);
+        const currentState = this.state.currentSection;
+        this.setState({ currentSection: e.target})
+    }
+    // sectionClickHandler() {
+    //     const currentState = this.state.currentSection;
+    //     this.setState({ currentSection: id})
+    // }
+    componentDidUpdate() {
+        this.setState((currentSection) => {
+            console.log('a thing got clicked');
+        })
+    }
+
     render () {
+
         return (
             <nav className={`nav ${this.props.showingClass}`}>
                 <div className="nav-header">
@@ -16,8 +41,10 @@ class Nav extends React.Component {
                     */}
                     <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Components">Components</a></li>
                     <ul className="nav-subsection">
-                        <li><a href="#" className="mod-current nav-sub-link" aria-label="Colors">Colors</a></li>
-
+                        <li><AnchorLink href="#buttons-section" className={`nav-sub-link ${this.state.currentSection ? 'mod-current' : ''}`} aria-label="Buttons" onClick={this.sectionClickHandler} data-id="buttons">Buttons</AnchorLink></li>
+                        <li><AnchorLink href="#colors-section" className={`nav-sub-link ${this.state.currentSection ? 'mod-current' : ''}`} aria-label="Colors" onClick={this.sectionClickHandler} data-id="colors">Colors</AnchorLink></li>
+                        <li><AnchorLink href="#cards-section" className={`nav-sub-link ${this.state.currentSection ? 'mod-current' : ''}`} aria-label="Cards" onClick={this.sectionClickHandler} data-id="cards">Cards</AnchorLink></li>
+                        <li><AnchorLink href="#elevations-section" className={`nav-sub-link ${this.state.currentSection ? 'mod-current' : ''}`} aria-label="Elevations" onClick={this.sectionClickHandler} data-id="elevations">Elevations</AnchorLink></li>
                         {/*
                         <li><a href="#" className="nav-sub-link" aria-label="Specs">Accordion</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Styles">Breadcrumbs</a></li>

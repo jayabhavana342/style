@@ -12,7 +12,7 @@ class Contents extends React.Component {
     }
     render() {
         return (
-            <div className="sg-section sg-buttons">
+            <div className="sg-section sg-buttons" id="buttons-section">
                 <h1>Buttons</h1>
                 <p>
                     Use the mixin to create individual buttons. There are button styles that are already created, please use where appropriate.

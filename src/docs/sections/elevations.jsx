@@ -5,7 +5,7 @@ import InlineCode from '../components/inline_code.jsx'
 class Contents extends React.Component {
     render() {
         return (
-            <div className="sg-section sg-elevations">
+            <div className="sg-section sg-elevations" id="elevations-section">
                 <hr className="widerule" />
                 <h1>Elevations</h1>
                 <p>
@@ -18,7 +18,7 @@ class Contents extends React.Component {
 
                 <div className="sub-section">
                     <h3>Level 1</h3>
-                    <div class="ttam-card ttam-elevation-1">level 1 elevation</div>
+                    <div className="ttam-card ttam-elevation-1">level 1 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="ttam-card ttam-elevation-1">level 1 elevation</div>`
@@ -26,7 +26,7 @@ class Contents extends React.Component {
                     </BlockCode>
 
                     <h3>Level 2</h3>
-                    <div class="ttam-card ttam-elevation-2">level 2 elevation</div>
+                    <div className="ttam-card ttam-elevation-2">level 2 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="ttam-card ttam-elevation-2">level 2 elevation</div>`
@@ -34,7 +34,7 @@ class Contents extends React.Component {
                     </BlockCode>
 
                     <h3>Level 3</h3>
-                    <div class="ttam-card ttam-elevation-3">level 3 elevation</div>
+                    <div className="ttam-card ttam-elevation-3">level 3 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="ttam-card ttam-elevation-3">level 3 elevation</div>`
@@ -42,7 +42,7 @@ class Contents extends React.Component {
                     </BlockCode>
 
                     <h3>Level 4</h3>
-                    <div class="ttam-card ttam-elevation-4">level 4 elevation</div>
+                    <div className="ttam-card ttam-elevation-4">level 4 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="ttam-card ttam-elevation-4">level 4 elevation</div>`
@@ -50,7 +50,7 @@ class Contents extends React.Component {
                     </BlockCode>
 
                     <h3>Level 5</h3>
-                    <div class="ttam-card ttam-elevation-5">level 5 elevation</div>
+                    <div className="ttam-card ttam-elevation-5">level 5 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="ttam-card ttam-elevation-5">level 5 elevation</div>`
