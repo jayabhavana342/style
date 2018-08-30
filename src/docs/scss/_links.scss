@@ -1,0 +1,41 @@
+a,
+.a-link {
+    transition: color 0.1s linear;
+    color: $base-link;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+
+    &:hover {
+        color: $hover-link;
+        text-decoration: underline;
+    }
+
+    &:active,
+    &:focus {
+        color: $hover-link;
+        outline: none;
+    }
+
+    // Adds External Link Icon for non-23andme links
+    &[href*='//']:not([href*='.23andme.']):not([href*='.23andMe.']):not([href*='.23andmeforums.']):after {
+        // do not add more :not() selectors here -- it will break things due the specificity being way too high.
+        @include ttam-triangle(5px 5px, $base-link transparent, up-right);
+        border-top-color: inherit;
+        content: '';
+        display: inline-block;
+        vertical-align: text-top;
+        @media print {
+            background-image: none;
+        }
+    }
+    // Removes External Link Icon for certain classes
+    &.no-external-icon,
+    &.ttam-card,
+    &.ttam-button,
+    &.button {
+        &:after {
+            content: none !important;
+        }
+    }
+}

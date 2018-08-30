@@ -1,0 +1,8 @@
+//generate elevation classes
+@import 'mixins/elevations-mixins';
+
+@each $label, $values in $elevations-config {
+    .ttam-elevation-#{$label} {
+        @include ttam-elevation($label);
+    }
+}

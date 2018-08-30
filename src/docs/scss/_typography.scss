@@ -1,0 +1,27 @@
+button {
+    font-weight: 500;
+}
+
+strong {
+    font-weight: 500;
+}
+
+h1 {
+    @include type-title;
+}
+
+h2 {
+    @include type-subtitle;
+}
+
+h3 {
+    @include type-sectitle;
+}
+
+p {
+    @include type-body;
+}
+
+.caption-text {
+    @include type-caption;
+}
