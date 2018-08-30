@@ -4,6 +4,8 @@ import Colors from '../sections/colors.jsx'
 import Cards from '../sections/cards.jsx'
 import Elevations from '../sections/elevations.jsx'
 
+let lastScrollY = 0;
+let ticking = false;
 
 class Contents extends React.Component {
     render() {

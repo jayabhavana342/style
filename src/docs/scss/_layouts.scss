@@ -35,6 +35,10 @@ hr {
     background-color: $gray3;
 }
 
+.parent {
+    overflow: auto;
+}
+
 .block-code,
 .inline-code {
     border: 1px solid $gray3;
