@@ -5,7 +5,7 @@ import InlineCode from '../components/inline_code.jsx'
 class Contents extends React.Component {
     render() {
         return (
-            <div className="sg-section sg-colors" id="colors-section">
+            <div className="sg-section sg-colors" id="colors-section"  ref={this.props.innerRef}>
                 <hr className="widerule" />
                 <h1 className="mod-updated">Colors</h1>
                 <p>
