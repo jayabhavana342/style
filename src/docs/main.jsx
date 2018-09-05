@@ -7,9 +7,11 @@ export class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            navShowing: false
+            navShowing: false,
+            currentSection: null
         }
         this.navClickHandler = this.navClickHandler.bind(this)
+        this.setCurrentSection = this.setCurrentSection.bind(this)
     }
 
     navClickHandler() {
@@ -20,14 +22,24 @@ export class Main extends React.Component {
         })
     }
 
+    setCurrentSection = (section) => {
+        this.setState({
+            currentSection: section
+        })
+    }
+
     render() {
         const showingClass = this.state.navShowing ? 'mod-showing' : '';
         return (
             <div className="parent" ref={this.nav}>
                 <div className={`nav-overlay ${showingClass}`} onClick={this.navClickHandler}></div>
                 <Header navShowing={this.state.navShowing} navClickHandler={this.navClickHandler} />
-                <Nav navShowing={this.state.navShowing} navClickHandler={this.navClickHandler} showingClass={showingClass} />
-                <Contents/>
+                <Nav navShowing={this.state.navShowing}
+                    navClickHandler={this.navClickHandler}
+                    showingClass={showingClass}
+                    setSection={this.setCurrentSection}
+                    currentSection={this.state.currentSection} />
+                <Contents setSection={this.setCurrentSection} />
             </div>
         )
     }

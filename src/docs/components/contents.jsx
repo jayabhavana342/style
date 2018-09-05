@@ -6,25 +6,19 @@ import Elevations from '../sections/elevations.jsx'
 import Waypoint from 'react-waypoint'
 
 class Contents extends React.Component {
-    _handleWaypointEnter = (section) => {
-        console.log(section);
-        this.setState({
-            sectionInView: section
-        })
-    }
     render() {
         return (
             <section className="contents-wrapper">
-                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('buttons')}}>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('buttons')}}>
                     <Buttons />
                 </Waypoint>
-                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('colors')}}>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('colors')}}>
                     <Colors />
                 </Waypoint>
-                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('cards')}}>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('cards')}}>
                     <Cards />
                 </Waypoint>
-                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('elevations')}}>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('elevations')}}>
                     <Elevations />
                 </Waypoint>
             </section>

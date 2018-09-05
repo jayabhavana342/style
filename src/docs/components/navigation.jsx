@@ -5,17 +5,13 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 class Nav extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            currentSection: null,
-        }
         this.sectionClickHandler = this.sectionClickHandler.bind(this)
     }
 
     sectionClickHandler = (e) => {
         const current = e.target.attributes['section-id'].value;
-        this.setState({
-            currentSection: current
-        })
+        this.props.setSection(current)
+        this.props.navClickHandler()
     }
 
     componentDidMount() {
@@ -39,10 +35,10 @@ class Nav extends React.Component {
                     */}
                     <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Components">Components</a></li>
                     <ul className="nav-subsection">
-                        <li><AnchorLink href="#buttons-section" className={`nav-sub-link ${(this.state.currentSection === 'buttons') ? 'mod-current' : ''}`} aria-label="Buttons" onClick={this.sectionClickHandler} section-id="buttons">Buttons</AnchorLink></li>
-                        <li><AnchorLink href="#colors-section" className={`nav-sub-link ${(this.state.currentSection === 'colors') ? 'mod-current' : ''}`} aria-label="Colors" onClick={this.sectionClickHandler} section-id="colors">Colors</AnchorLink></li>
-                        <li><AnchorLink href="#cards-section" className={`nav-sub-link ${(this.state.currentSection === 'cards') ? 'mod-current' : ''}`} aria-label="Cards" onClick={this.sectionClickHandler} section-id="cards">Cards</AnchorLink></li>
-                        <li><AnchorLink href="#elevations-section" className={`nav-sub-link ${(this.state.currentSection === 'elevations') ? 'mod-current' : ''}`} aria-label="Elevations" onClick={this.sectionClickHandler} section-id="elevations">Elevations</AnchorLink></li>
+                        <li><AnchorLink href="#buttons-section" className={`nav-sub-link ${(this.props.currentSection === 'buttons') ? 'mod-current' : ''}`} aria-label="Buttons" onClick={this.sectionClickHandler} section-id="buttons">Buttons</AnchorLink></li>
+                        <li><AnchorLink href="#colors-section" className={`nav-sub-link ${(this.props.currentSection === 'colors') ? 'mod-current' : ''}`} aria-label="Colors" onClick={this.sectionClickHandler} section-id="colors">Colors</AnchorLink></li>
+                        <li><AnchorLink href="#cards-section" className={`nav-sub-link ${(this.props.currentSection === 'cards') ? 'mod-current' : ''}`} aria-label="Cards" onClick={this.sectionClickHandler} section-id="cards">Cards</AnchorLink></li>
+                        <li><AnchorLink href="#elevations-section" className={`nav-sub-link ${(this.props.currentSection === 'elevations') ? 'mod-current' : ''}`} aria-label="Elevations" onClick={this.sectionClickHandler} section-id="elevations">Elevations</AnchorLink></li>
                         {/*
                         <li><a href="#" className="nav-sub-link" aria-label="Specs">Accordion</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Styles">Breadcrumbs</a></li>
