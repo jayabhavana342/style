@@ -11,6 +11,9 @@ class Contents extends React.Component {
     _handleWaypointEnter = (event) => {
         console.log('enter');
         console.log(event);
+        this.setState({
+            sectionInView: 'buttons'
+        })
     }
     _handleWaypointLeave = (event) => {
         console.log('leave');
