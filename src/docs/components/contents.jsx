@@ -5,29 +5,28 @@ import Cards from '../sections/cards.jsx'
 import Elevations from '../sections/elevations.jsx'
 import Waypoint from 'react-waypoint'
 
-
-
 class Contents extends React.Component {
-    _handleWaypointEnter = (event) => {
-        console.log('enter');
-        console.log(event);
+    _handleWaypointEnter = (section) => {
+        console.log(section);
         this.setState({
-            sectionInView: 'buttons'
+            sectionInView: section
         })
-    }
-    _handleWaypointLeave = (event) => {
-        console.log('leave');
-        console.log(event);
     }
     render() {
         return (
             <section className="contents-wrapper">
-                <Waypoint section="buttons" scrollableAncestor={window} onEnter={this._handleWaypointEnter} onLeave={this._handleWaypointLeave}>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('buttons')}}>
                     <Buttons />
                 </Waypoint>
-                <Colors />
-                <Cards />
-                <Elevations />
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('colors')}}>
+                    <Colors />
+                </Waypoint>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('cards')}}>
+                    <Cards />
+                </Waypoint>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this._handleWaypointEnter('elevations')}}>
+                    <Elevations />
+                </Waypoint>
             </section>
         );
     }

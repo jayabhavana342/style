@@ -3,9 +3,6 @@ import Header from './components/header.jsx'
 import Nav from './components/navigation.jsx'
 import Contents from './components/contents.jsx'
 
-// let lastScrollY = 0;
-// let ticking = false;
-
 export class Main extends React.Component {
     constructor(props) {
         super(props)
