@@ -187,7 +187,8 @@
     }
 }
 
-.sg-buttons {
+.sg-buttons,
+.sg-loading {
     &-sidebyside {
         display: flex;
         border-radius: 5px;
@@ -209,18 +210,21 @@
         @include media($tablet-plus) {
             margin-bottom: 15px;
             align-items: center;
-            .button-side {
+            .left-side {
                 min-width: 200px;
+                max-width: 200px;
             }
             &.mod-dark-example {
                 padding: 20px 10px;
-                .button-side {
+                .left-side {
                     min-width: 190px;
+                    max-width: 190px;
                 }
             }
         }
-
     }
+}
+.sg-buttons {
     .another-example-button {
         @include ttam-button(green, medium, outlined);
     }

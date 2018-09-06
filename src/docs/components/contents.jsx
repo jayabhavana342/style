@@ -3,6 +3,7 @@ import Buttons from '../sections/buttons.jsx'
 import Colors from '../sections/colors.jsx'
 import Cards from '../sections/cards.jsx'
 import Elevations from '../sections/elevations.jsx'
+import Loading from '../sections/loading.jsx'
 import Waypoint from 'react-waypoint'
 
 class Contents extends React.Component {
@@ -20,6 +21,9 @@ class Contents extends React.Component {
                 </Waypoint>
                 <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('elevations')}}>
                     <Elevations />
+                </Waypoint>
+                <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('elevations')}}>
+                    <Loading />
                 </Waypoint>
             </section>
         );

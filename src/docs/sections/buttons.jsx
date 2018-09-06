@@ -3,7 +3,7 @@ import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 import $ from 'jquery'
 
-class Contents extends React.Component {
+class Buttons extends React.Component {
     exampleAlert1() {
         alert('This is a button!');
     }
@@ -84,33 +84,33 @@ class Contents extends React.Component {
                 <h3>Button color meanings</h3>
                 <div className="code-example">
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="blue-primary">Blue Primary</button></div>
-                        <div className="button-definition">Blue buttons are primary actions within the product. These actions drive the experience forward.</div>
+                        <div className="left-side"><button className="blue-primary">Blue Primary</button></div>
+                        <div>Blue buttons are primary actions within the product. These actions drive the experience forward.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="pink-primary">Pink Primary</button></div>
-                        <div className="button-definition">Pink buttons are used to indicate a “sale” action like “add to cart” or “upgrade.”</div>
+                        <div className="left-side"><button className="pink-primary">Pink Primary</button></div>
+                        <div>Pink buttons are used to indicate a “sale” action like “add to cart” or “upgrade.”</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="green-primary">Green Primary</button></div>
-                        <div className="button-definition">Green is used to filter results or indicate notifications.</div>
+                        <div className="left-side"><button className="green-primary">Green Primary</button></div>
+                        <div>Green is used to filter results or indicate notifications.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="red-primary">Red Primary</button></div>
-                        <div className="button-definition">Red is used only for negative or critical actions like “Delete” or “No” which are permanent decisions.</div>
+                        <div className="left-side"><button className="red-primary">Red Primary</button></div>
+                        <div>Red is used only for negative or critical actions like “Delete” or “No” which are permanent decisions.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="gray-primary">Gray Primary</button></div>
-                        <div className="button-definition">Light Gray buttons are for actions like “Back” or “Print” which do not drive the experience forward.</div>
+                        <div className="left-side"><button className="gray-primary">Gray Primary</button></div>
+                        <div>Light Gray buttons are for actions like “Back” or “Print” which do not drive the experience forward.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside mod-dark-example">
-                        <div className="button-side"><button className="white-primary">White Primary</button></div>
-                        <div className="button-definition">White buttons are used on dark backgrounds to create sufficient contrast but lack specific meaning.</div>
+                        <div className="left-side"><button className="white-primary">White Primary</button></div>
+                        <div>White buttons are used on dark backgrounds to create sufficient contrast but lack specific meaning.</div>
                     </div>
                 </div>
 
@@ -228,4 +228,4 @@ class Contents extends React.Component {
     }
 }
 
-export default Contents
+export default Buttons

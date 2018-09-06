@@ -2,7 +2,7 @@ import React from 'react'
 import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 
-class Contents extends React.Component {
+class Elevations extends React.Component {
     render() {
         return (
             <div className="sg-section sg-elevations" id="elevations-section" ref={this.props.innerRef}>
@@ -63,4 +63,4 @@ class Contents extends React.Component {
     }
 }
 
-export default Contents
+export default Elevations

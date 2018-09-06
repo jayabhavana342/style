@@ -39,6 +39,7 @@ class Nav extends React.Component {
                         <li><AnchorLink href="#colors-section" className={`nav-sub-link ${(this.props.currentSection === 'colors') ? 'mod-current' : ''}`} aria-label="Colors" onClick={this.sectionClickHandler} section-id="colors">Colors</AnchorLink></li>
                         <li><AnchorLink href="#cards-section" className={`nav-sub-link ${(this.props.currentSection === 'cards') ? 'mod-current' : ''}`} aria-label="Cards" onClick={this.sectionClickHandler} section-id="cards">Cards</AnchorLink></li>
                         <li><AnchorLink href="#elevations-section" className={`nav-sub-link ${(this.props.currentSection === 'elevations') ? 'mod-current' : ''}`} aria-label="Elevations" onClick={this.sectionClickHandler} section-id="elevations">Elevations</AnchorLink></li>
+                        <li><AnchorLink href="#loading-section" className={`nav-sub-link ${(this.props.currentSection === 'loading') ? 'mod-current' : ''}`} aria-label="Loading" onClick={this.sectionClickHandler} section-id="loading">Loading</AnchorLink></li>
                         {/*
                         <li><a href="#" className="nav-sub-link" aria-label="Specs">Accordion</a></li>
                         <li><a href="#" className="nav-sub-link" aria-label="Styles">Breadcrumbs</a></li>
