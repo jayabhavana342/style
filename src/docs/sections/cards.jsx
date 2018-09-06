@@ -23,7 +23,7 @@ class Contents extends React.Component {
     }
     render() {
         return (
-            <div className="sg-section sg-cards">
+            <div className="sg-section sg-cards" id="cards-section" ref={this.props.innerRef}>
                 <hr className="widerule" />
                 <h1>Cards</h1>
                 <p>

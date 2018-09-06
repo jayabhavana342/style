@@ -35,6 +35,10 @@ hr {
     background-color: $gray3;
 }
 
+.parent {
+    overflow: auto;
+}
+
 .block-code,
 .inline-code {
     border: 1px solid $gray3;
@@ -172,6 +176,7 @@ hr {
         visibility: hidden;
         position: relative;
         color: $gray8;
+        text-decoration: none;
     }
     li {
         list-style: none;
@@ -428,7 +433,6 @@ hr {
     }
     .contents-wrapper {
         position: relative;
-        left: 30px; // Offset for navbar on left
         max-width: 780px;
         margin: 0 auto;
     }
