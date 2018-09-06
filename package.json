@@ -6,6 +6,7 @@
   "scripts": {
     "start": "concurrently \"npm run lib:watch\" \"npm run docs:watch\"",
     "lib": "babel src/lib -d lib --copy-files",
+    "docs": "babel src/docs -d docs --copy-files",
     "lib:watch": "babel src/lib --watch --out-dir lib --copy-files --source-maps inline",
     "docs": "webpack --mode production",
     "docs:watch": "webpack-dev-server --mode development -d",
