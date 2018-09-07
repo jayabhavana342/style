@@ -1,0 +1,27 @@
+{
+  "name": "styledot23",
+  "version": "0.1.1",
+  "description": "23andMe styleguide library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/23andMe/style.git"
+  },
+  "keywords": [
+    "23andMe",
+    "style",
+    "styleguide"
+  ],
+  "devDependencies": {
+    "react": "^16.3.2"
+  },
+  "author": "Hrag Chanchanian on behalf of 23andMe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/23andMe/style/issues"
+  },
+  "homepage": "https://github.com/23andMe/style#readme"
+}
