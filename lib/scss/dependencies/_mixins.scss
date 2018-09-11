@@ -1,6 +1,6 @@
 // mixins
 
-@mixin media($device) {
+@mixin viewport($device) {
     @if $device == mobile {
         @media screen and (max-width: $mobile-max - 1) {
             @content;
@@ -37,10 +37,10 @@
     @extends %font-family;
     color: $gray8;
     font-weight: 500;
-    @include media($mobile) {
+    @include viewport($mobile) {
         font-size: 26px;
     }
-    @include media($tablet-plus) {
+    @include viewport($tablet-plus) {
         font-size: 32px;
     }
 }

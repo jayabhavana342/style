@@ -300,7 +300,7 @@ hr {
     }
 }
 
-@include media($mobile-tablet) {
+@include viewport($mobile-tablet) {
     .code-example {
         margin: 5vw 0 2.5vw;
     }
@@ -389,7 +389,7 @@ hr {
     }
 }
 
-@include media($mobile) {
+@include viewport($mobile) {
     .nav {
         width: 77vw;
         &-header {
@@ -398,7 +398,7 @@ hr {
     }
 }
 
-@include media($tablet) {
+@include viewport($tablet) {
     .nav {
         width: 256px;
         &-header {
@@ -407,7 +407,7 @@ hr {
     }
 }
 
-@include media($desktop) {
+@include viewport($desktop) {
     body {
         overflow-x: hidden;
     }

@@ -1,0 +1,16 @@
+// _vars.scss
+
+// For identifying breakpoints
+$mobile: mobile;                // only mobile sizes
+$tablet: tablet;                // only tablet sizes
+$tablet-plus: tablet-plus;      // all sizes beyond tablet min
+$desktop: desktop;              // desktop sizes only
+$mobile-tablet: mobile-tablet;  // all sizes up to tablet max
+
+// Actua breakpoints
+$mobile-max: 768px;
+$tablet-max: 1024px;
+
+// Miosc
+$transition-timing: .5s;
+$transition-function: cubic-bezier(0.305, 0.940, 0.480, 0.995);

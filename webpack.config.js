@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: [
     path.join(__dirname, 'src/docs'),
-    path.join(__dirname, 'src/lib')
+    path.join(__dirname, 'src/lib'),
   ],
   output: {
     path: path.join(__dirname, 'docs'),
@@ -20,9 +20,15 @@ module.exports = {
       {
         test: /\.(scss|css)$/,
         use: [
-          'style-loader',
-          { loader: 'css-loader', options: { url: false } },
-          'sass-loader'
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader', options: { url: false }
+          },
+          {
+            loader: 'sass-loader'
+          }
         ]
       }
     ]
