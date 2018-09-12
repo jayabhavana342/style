@@ -1,93 +1,93 @@
 // mixins
 
-@mixin media($device) {
+@mixin viewport($device) {
     @if $device == mobile {
-        @media screen and (max-width: $mobile-max - 1) {
+        @media screen and (max-width: $sd-mobile-max - 1) {
             @content;
         }
     }
     @else if $device == tablet {
-        @media screen and (min-width: $mobile-max) and (max-width: $tablet-max) {
+        @media screen and (min-width: $sd-mobile-max) and (max-width: $sd-tablet-max) {
             @content;
         }
     }
     @else if $device == desktop {
-        @media screen and (min-width: $tablet-max + 1) {
+        @media screen and (min-width: $sd-tablet-max + 1) {
             @content
         }
     }
     @else if $device == tablet-plus {
-        @media screen and (min-width: $mobile-max) {
+        @media screen and (min-width: $sd-mobile-max) {
             @content;
         }
     }
     @else if $device == mobile-tablet {
-        @media screen and (max-width: $tablet-max) {
+        @media screen and (max-width: $sd-tablet-max) {
             @content;
         }
     }
 }
 
 // Type
-%font-family {
+%sd-font-family {
     font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-@mixin type-title {
-    @extends %font-family;
+@mixin sd-type-title {
+    @extends %sd-font-family;
     color: $gray8;
     font-weight: 500;
-    @include media($mobile) {
+    @include viewport($sd-mobile) {
         font-size: 26px;
     }
-    @include media($tablet-plus) {
+    @include viewport($sd-tablet-plus) {
         font-size: 32px;
     }
 }
 
-@mixin type-subtitle {
-    @extends %font-family;
+@mixin sd-type-subtitle {
+    @extends %sd-font-family;
     font-size: 24px;
     font-weight: 500;
     color: $gray8;
 }
 
-@mixin type-sectitle {
-    @extends %font-family;
+@mixin sd-type-sectitle {
+    @extends %sd-font-family;
     font-size: 20px;
     font-weight: 500;
     color: $gray8;
 }
 
-@mixin type-body {
-    @extends %font-family;
+@mixin sd-type-body {
+    @extends %sd-font-family;
     color: $gray7;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.4em;
 }
 
-@mixin type-caption {
-    @extends %font-family;
+@mixin sd-type-caption {
+    @extends %sd-font-family;
     font-weight: 400;
     font-size: 14px;
     color: $gray8;
 }
 
-@mixin type-nav {
-    @extends %font-family;
+@mixin sd-type-nav {
+    @extends %sd-font-family;
     font-weight: 500;
     font-size: 16px;
 }
 
-@mixin type-nav-sub {
-    @include type-nav;
+@mixin sd-type-nav-sub {
+    @include sd-type-nav;
     font-size: 14px;
     font-weight: 400;
 }
 
-@mixin type-current {
-    @extends %font-family;
+@mixin sd-type-current {
+    @extends %sd-font-family;
     color: $gray7;
     font-weight: 500;
     font-size: 16px;

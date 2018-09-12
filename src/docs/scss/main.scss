@@ -5,15 +5,15 @@
 @import 'normalize_ext';
 
 // Legacy Dependencies
-@import 'legacy_dependencies';
+@import '../../lib/scss/dependencies/legacy_dependencies';
+@import '../../lib/scss/dependencies/vars';
+@import '../../lib/scss/dependencies/mixins';
 
 // Design System
 @import '../../lib/scss/main';
 
-// Vars and mixins
-@import 'vars';
+// Styling
 @import 'links';
-@import 'mixins';
 @import 'fonts';
 @import 'typography';
 
