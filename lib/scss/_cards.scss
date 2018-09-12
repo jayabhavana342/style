@@ -7,7 +7,7 @@
     $action-icon-gutter-mobile: 16px;
     $action-icon-gutter-desktop: 24px;
 
-    $corner: $base-border-radius;
+    $corner: $sd-base-border-radius;
 
     background: white;
     padding: $padding-mobile; //mobile padding for all cards
@@ -17,7 +17,7 @@
 
     transition: 0.3s all ease-in-out;
 
-    @include viewport($desktop) {
+    @include viewport($sd-desktop) {
         width: auto;
         border-radius: $corner;
     }
@@ -27,14 +27,14 @@
 
         border-radius: $corner;
 
-        @include viewport($mobile) {
+        @include viewport($sd-mobile) {
             margin: auto $card-gutter;
             width: calc(100% - #{ 2 * $card-gutter });
         }
     }
 
     &.mod-card-1 {
-        @include viewport($desktop) {
+        @include viewport($sd-desktop) {
             padding: $padding-level-1;
         }
 
@@ -43,7 +43,7 @@
             top: ($action-icon-gutter-mobile - $padding-level-1);
             right: ($action-icon-gutter-mobile - $padding-level-1);
 
-            @include viewport($desktop) {
+            @include viewport($sd-desktop) {
                 top: ($action-icon-gutter-desktop - $padding-level-1);
                 right: ($action-icon-gutter-desktop - $padding-level-1);
             }
@@ -51,7 +51,7 @@
     }
 
     &.mod-card-2 {
-        @include viewport($desktop) {
+        @include viewport($sd-desktop) {
             padding: $padding-level-2;
         }
 
@@ -60,7 +60,7 @@
             top: ($action-icon-gutter-mobile - $padding-level-2);
             right: ($action-icon-gutter-mobile - $padding-level-2);
 
-            @include viewport($desktop) {
+            @include viewport($sd-desktop) {
                 top: ($action-icon-gutter-desktop - $padding-level-2);
                 right: ($action-icon-gutter-desktop - $padding-level-2);
             }
@@ -68,7 +68,7 @@
     }
 
     &.mod-card-3 {
-        @include viewport($desktop) {
+        @include viewport($sd-desktop) {
             padding: $padding-level-3;
         }
 
@@ -77,7 +77,7 @@
             top: ($action-icon-gutter-mobile - $padding-level-3);
             right: ($action-icon-gutter-mobile - $padding-level-3);
 
-            @include viewport($desktop) {
+            @include viewport($sd-desktop) {
                 top: ($action-icon-gutter-desktop - $padding-level-3);
                 right: ($action-icon-gutter-desktop - $padding-level-3);
             }
@@ -112,7 +112,7 @@
         top: $action-icon-gutter-mobile;
         right: $action-icon-gutter-mobile;
 
-        @include viewport($desktop) {
+        @include viewport($sd-desktop) {
             top: $action-icon-gutter-desktop;
             right: $action-icon-gutter-desktop;
         }
@@ -136,10 +136,10 @@
 a.ttam-card {
     display: block;
     color: $base-font-color;
-    font-weight: $font-weight-regular;
+    font-weight: $sd-font-weight-regular;
 
 
-    @include viewport($desktop) {
+    @include viewport($sd-desktop) {
 
         @for $i from 1 to 5 {
             &.ttam-elevation-#{$i} {

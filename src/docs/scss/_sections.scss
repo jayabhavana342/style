@@ -1,6 +1,6 @@
 // Doc specific styles
 
-@include viewport($mobile) {
+@include viewport($sd-mobile) {
     .sg-colors .colors > div {
         width: 33.333%;
         font-size: 14px;
@@ -40,12 +40,12 @@
             line-height: 24px;
             height: 130px;
             .def {
-                @include type-body;
+                @include sd-type-body;
                 color: $white;
                 padding-left: 0;
             }
         }
-        @include viewport($mobile) {
+        @include viewport($sd-mobile) {
             > div {
                 width: 30vw;
                 height: 30vw;
@@ -195,7 +195,7 @@
             background-color: $gray8;
             color: $white;
         }
-        @include viewport($mobile) {
+        @include viewport($sd-mobile) {
             margin-bottom: 6vw;
             align-items: top;
             .button-side {
@@ -206,7 +206,7 @@
                 padding: 5vw 2vw;
             }
         }
-        @include viewport($tablet-plus) {
+        @include viewport($sd-tablet-plus) {
             margin-bottom: 15px;
             align-items: center;
             .button-side {
