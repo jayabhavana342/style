@@ -2,10 +2,22 @@ import React from 'react'
 import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 import $ from 'jquery'
-import '../../lib/js/loading.js'
+import { Stop, Button, Box, Pill, Skeleton } from '../../lib/loading.js'
 
+$(function() {
+    console.log($('.example-button1'));
+    Button($('.example-button1'));
+})
 
 class Loading extends React.Component {
+    // constructor() {
+    //     super();
+    //     console.log(SD.loading);
+    //     // SD.loading.button($('.example-button1'));
+    // }
+    // componentDidMount() {
+    //     console.log($);
+    // }
     render() {
         return (
             <div className="sg-section sg-loading" id="loading-section" ref={this.props.innerRef}>
@@ -41,7 +53,7 @@ class Loading extends React.Component {
                         <p>Stop a specific animation on a page</p>
                         <BlockCode language='js'>
                             {
-`TTAM.loading.stop($('#element'), () => {
+`SD.loading.stop($('#element'), () => {
     // do something (like load in content)
     document.getElementById('blah');
 });`
@@ -52,7 +64,7 @@ class Loading extends React.Component {
                         </p>
                         <BlockCode language='js'>
                             {
-`TTAM.loading.stop($('.elements'));`
+`SD.loading.stop($('.elements'));`
                             }
                         </BlockCode>
                     </div>
@@ -64,39 +76,40 @@ class Loading extends React.Component {
                     <h3>Arguments</h3>
                     <div className="code-example">
                         <div className="sg-loading-sidebyside">
-                            <div class="left-side">
+                            <div className="left-side">
                                 Loading animation, same text
                             </div>
                             <div>
-                                <InlineCode>TTAM.loading.button($('.button1'));</InlineCode>
-
+                                <InlineCode>SD.loading.button($('.button1'));</InlineCode>
+                                <button className="ttam-button loading-example-button example-button1">
+                                    Click me!
+                                </button>
                             </div>
                         </div>
                         <div className="sg-loading-sidebyside">
-                            <div class="left-side">
+                            <div className="left-side">
                                 Loading animation, new text
                             </div>
                             <div>
-                                <InlineCode>TTAM.loading.button($('.button2'), 'Loading');</InlineCode>
+                                <InlineCode>SD.loading.button($('.button2'), 'Loading');</InlineCode>
 
                             </div>
                         </div>
                         <div className="sg-loading-sidebyside">
-                            <div class="left-side">
+                            <div className="left-side">
                                 Loading animation, new text, different style
                             </div>
                             <div>
-                                <InlineCode>TTAM.loading.button($('.button3'), 'Loading', 'white');</InlineCode>
+                                <InlineCode>SD.loading.button($('.button3'), 'Loading', 'white');</InlineCode>
 
                             </div>
                         </div>
                         <div className="sg-loading-sidebyside">
-                            <div class="left-side">
+                            <div className="left-side">
                                 Loading animation, same text, different style
                             </div>
                             <div>
-                                <InlineCode>TTAM.loading.button($('.button4'), null, 'gray');</InlineCode>
-
+                                <InlineCode>SD.loading.button($('.button4'), null, 'gray');</InlineCode>
                             </div>
                         </div>
                     </div>
