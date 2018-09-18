@@ -5,9 +5,11 @@ import $ from 'jquery'
 import { Stop, Button, Box, Pill, Skeleton } from '../../lib/loading.js'
 
 $(function() {
-    console.log($('.example-button1'));
     Button($('.example-button1'));
-})
+    Button($('.example-button2'), 'Loading');
+    Button($('.example-button3'), 'Loading', 'white');
+    Button($('.example-button4'), null, 'gray');
+});
 
 class Loading extends React.Component {
     // constructor() {
@@ -77,44 +79,61 @@ class Loading extends React.Component {
                     <div className="code-example">
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                Loading animation, same text
-                            </div>
-                            <div>
-                                <InlineCode>SD.loading.button($('.button1'));</InlineCode>
                                 <button className="ttam-button loading-example-button example-button1">
                                     Click me!
                                 </button>
                             </div>
+                            <div>
+                                <div className="sg-loading-sidebyside-buttonarea">
+                                    Loading animation, same text
+                                </div>
+                                <InlineCode>SD.loading.button($('.button1'));</InlineCode>
+                            </div>
                         </div>
+
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                Loading animation, new text
+                                <button className="ttam-button loading-example-button example-button2">
+                                    Click me!
+                                </button>
                             </div>
                             <div>
+                                <div className="sg-loading-sidebyside-buttonarea">
+                                    Loading animation, new text
+                                </div>
                                 <InlineCode>SD.loading.button($('.button2'), 'Loading');</InlineCode>
-
                             </div>
                         </div>
+
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                Loading animation, new text, different style
+                                <button className="ttam-button loading-example-button example-button3">
+                                    Click me!
+                                </button>
                             </div>
                             <div>
+                                <div className="sg-loading-sidebyside-buttonarea">
+                                    Loading animation, new text, different style
+                                </div>
                                 <InlineCode>SD.loading.button($('.button3'), 'Loading', 'white');</InlineCode>
-
                             </div>
                         </div>
+
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                Loading animation, same text, different style
+                                <button className="ttam-button loading-example-button example-button4">
+                                    Click me!
+                                </button>
                             </div>
                             <div>
+                                <div className="sg-loading-sidebyside-buttonarea">
+                                    Loading animation, same text, different style
+                                </div>
                                 <InlineCode>SD.loading.button($('.button4'), null, 'gray');</InlineCode>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         );
     }

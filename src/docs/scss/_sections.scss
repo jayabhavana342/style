@@ -190,26 +190,26 @@
 .sg-buttons,
 .sg-loading {
     &-sidebyside {
-        display: flex;
         border-radius: 5px;
+        align-items: center;
         &.mod-dark-example {
             background-color: $gray8;
             color: $white;
         }
         @include viewport($sd-mobile) {
             margin-bottom: 6vw;
-            align-items: top;
-            .button-side {
+            .left-side {
                 flex-shrink: 0;
-                width: 50%;
+                width: 100%;
+                margin-bottom: 3vw;
             }
             &.mod-dark-example {
                 padding: 5vw 2vw;
             }
         }
         @include viewport($sd-tablet-plus) {
+            display: flex;
             margin-bottom: 15px;
-            align-items: center;
             .left-side {
                 min-width: 200px;
                 max-width: 200px;
@@ -267,5 +267,24 @@
 .sg-elevations {
     .block-code {
         margin-top: 36px;
+    }
+}
+
+.sg-loading {
+    @include viewport($sd-mobile-tablet) {
+        &-sidebyside {
+            margin-bottom: 4vw;
+        }
+        .sg-loading-sidebyside-buttonarea {
+            margin-top: 2vw;
+        }
+    }
+    @include viewport($sd-desktop) {
+        &-sidebyside {
+            margin-bottom: 35px;
+        }
+        .sg-loading-sidebyside-buttonarea {
+            margin-bottom: 10px;
+        }
     }
 }

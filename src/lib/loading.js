@@ -28,7 +28,10 @@ function loadingButton($el, text, style) {
     $el.each(function () {
         const $theButton = $(this);
         $theButton.click(() => {
-            $theButton.addClass('ttam-loadingstate');
+            const display = $theButton.css('display');
+            if ((display === 'inline-block') || (display === 'inline-flex')) {
+                $theButton.addClass('mod-loading-button-inline');
+            }
             if (style) {
                 $theButton.addClass(`mod-loading-${style}`);
             }
@@ -39,6 +42,7 @@ function loadingButton($el, text, style) {
                 const loadingContents = escape('<div class="ttam-button-loading-wrapper"><div class="ttam-button-loading"></div></div>');
                 $theButton.prepend(loadingContents);
             }
+            $theButton.addClass('ttam-loadingstate');
         });
     });
     return true;

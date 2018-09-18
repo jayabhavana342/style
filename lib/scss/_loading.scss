@@ -1,0 +1,389 @@
+// Loading
+
+// Related variables
+$sd-loading-partial-opacity: .666;
+$sd-loading-button-trans: .25s;
+
+// Related mixins
+@mixin sd-loading-posmove($move-gap) {
+    transform: translateX($move-gap * 2);
+}
+@mixin sd-loading-negmove($move-gap) {
+    transform: translateX(-$move-gap * 2);
+}
+
+@mixin sd-loading-dotsize($dot-size) {
+    height: $dot-size * 6;
+    width: $dot-size * 6;
+    &::before,
+    &::after {
+        border-radius: $dot-size * 2;
+        height: $dot-size;
+        width: $dot-size;
+    }
+}
+
+/* Keyframes
+================================
+*/
+@mixin sd-loading-dotmovers($movedist, $name) {
+    // Back and forth for dot 1
+    @keyframes dot1-#{$name} {
+        0% {
+            @include sd-loading-negmove($movedist);
+        }
+        30% {
+            opacity: $sd-loading-partial-opacity;
+            z-index: 0;
+        }
+        50% {
+            @include sd-loading-posmove($movedist);
+            opacity: 1;
+        }
+        70% {
+            opacity: $sd-loading-partial-opacity;
+            z-index: 1;
+        }
+        100% {
+            @include sd-loading-negmove($movedist);
+        }
+    }
+
+    // Back and forth for dot 2
+    @keyframes dot2-#{$name} {
+        0% {
+            @include sd-loading-posmove($movedist);
+        }
+        30% {
+            opacity: $sd-loading-partial-opacity;
+            z-index: 1;
+        }
+        50% {
+            @include sd-loading-negmove($movedist);
+            opacity: 1;
+        }
+        70% {
+            opacity: $sd-loading-partial-opacity;
+            z-index: 0;
+        }
+        100% {
+            @include sd-loading-posmove($movedist);
+        }
+    }
+
+    // Back and forth for dot 1 white
+    // This does not have the opacity change in the middle
+    @keyframes dot1-#{$name}-white {
+        0% {
+            @include sd-loading-negmove($movedist);
+        }
+        50% {
+            @include sd-loading-posmove($movedist);
+        }
+        100% {
+            @include sd-loading-negmove($movedist);
+        }
+    }
+
+    // Back and forth for dot 2 white
+    // This does not have the opacity change in the middle
+    @keyframes dot2-#{$name}-white {
+        0% {
+            @include sd-loading-posmove($movedist);
+        }
+        50% {
+            @include sd-loading-negmove($movedist);
+        }
+        100% {
+            @include sd-loading-posmove($movedist);
+        }
+    }
+
+    // Back and forth for dot 1 gray
+    // This does not have the opacity change in the middle
+    @keyframes dot1-#{$name}-gray {
+        0% {
+            @include sd-loading-negmove($movedist);
+        }
+        50% {
+            @include sd-loading-posmove($movedist);
+        }
+        100% {
+            @include sd-loading-negmove($movedist);
+        }
+    }
+
+    // Back and forth for dot 2 gray
+    // This does not have the opacity change in the middle
+    @keyframes dot2-#{$name}-gray {
+        0% {
+            @include sd-loading-posmove($movedist);
+        }
+        50% {
+            @include sd-loading-negmove($movedist);
+        }
+        100% {
+            @include sd-loading-posmove($movedist);
+        }
+    }
+}
+
+// Rotate the parent
+@keyframes sd-loading-rotate360 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sd-loading-animateUpBox {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sd-loading-animateUpSkeleton {
+    from {
+        background-position: center 15px;
+    }
+    to {
+        background-position: center 0;
+    }
+}
+
+@keyframes shimmerSkeleton {
+    from {
+        left: -20%;
+    }
+    to {
+        left: 120%;
+    }
+}
+
+@keyframes sd-loading-buttonDotsMovement {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+    to {
+        opacity: 1;
+        width: 36px;
+    }
+}
+
+@keyframes sd-loading-boxBgFadeIn {
+    from {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    to {
+        background-color: rgba(255, 255, 255, 1);
+    }
+}
+
+// Styling
+%sd-loading-dots {
+    position: relative;
+    display: inline-block;
+    animation: sd-loading-rotate360 2.5s linear infinite;
+    transform-origin: 50% 50%;
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        display: block;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.695, 0.000, 0.305, 1.000);
+    }
+    &::before {
+        background-color: $lime;
+    }
+    &::after {
+        background-color: $pink;
+    }
+}
+
+.ttam-loadingstate {
+    div.ttam-box-loading,
+    div.ttam-pill-loading,
+    div.ttam-button-loading {
+        @extend %sd-loading-dots;
+        @include sd-loading-dotsize(6px);
+        @include sd-loading-dotmovers(6px, 'small');
+        display: inline-block;
+        &::before,
+        &::after {
+            margin-top: -3px;
+            margin-left: -3px;
+        }
+        &::before {
+            animation-name: dot1-small;
+        }
+        &::after {
+            animation-name: dot2-small;
+        }
+    }
+
+    &.mod-loading-white {
+        div.ttam-button-loading,
+        div.ttam-box-loading,
+        div.ttam-pill-loading {
+            &::before {
+                animation-name: dot1-small-white;
+            }
+            &::after {
+                animation-name: dot2-small-white;
+            }
+            &::before,
+            &::after {
+                background-color: $white;
+            }
+        }
+    }
+
+    &.mod-loading-gray {
+        div.ttam-button-loading,
+        div.ttam-box-loading,
+        div.ttam-pill-loading {
+            &::before,
+            &::after {
+                background-color: $gray6;
+            }
+        }
+    }
+}
+
+.ttam-button-loading-wrapper {
+    animation: sd-loading-buttonDotsMovement $sd-loading-button-trans ease-out;
+    overflow: hidden;
+}
+.ttam-loading-button.ttam-loadingstate {
+    display: flex;
+    padding-left: 10px;
+    transition-duration: $sd-loading-button-trans;
+    &.mod-loading-button-inline {
+        display: inline-flex;
+    }
+    .ttam-button-loading {
+        margin-top: 5px;
+        margin-right: 3px;
+        overflow: hidden;
+    }
+}
+.ttam-loading-box.ttam-loadingstate {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 5;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $white;
+        animation: sd-loading-boxBgFadeIn 250ms ease-out;
+    }
+    .ttam-box-loading {
+        width: 36px;
+        margin-right: 5px;
+        overflow: hidden;
+    }
+    .ttam-loading-box-wrapper {
+        position: absolute;
+        z-index: 6;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: sd-loading-animateUpBox 500ms ease-out;
+        &.mod-box-top {
+            top: 40px;
+            bottom: auto;
+        }
+    }
+}
+
+.ttam-loading-pill.ttam-loadingstate {
+    position: relative;
+    .ttam-loading-pill-wrapper {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 37px;
+        border-radius: 100px;
+        font-size: 14px;
+        animation: sd-loading-animateUpBox 500ms ease-out;
+    }
+    .ttam-loading-pill-shape {
+        @include ttam-elevation(2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        padding: 4px 25px 4px 10px;
+        border-radius: 100px;
+        background-color: $white;
+    }
+    .ttam-pill-loading {
+        width: 36px;
+        margin-right: 5px;
+        overflow: hidden;
+    }
+}
+
+.ttam-loading-skeleton.ttam-loadingstate {
+    position: relative;
+    .ttam-loading-skeleton-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 5;
+            background: $white url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="480" height="260"><path fill="none" d="M0 0h480v260H0z"/><path fill="#F7F9FA" d="M33 34h287v24H33zM33 77h351v18H33zM33 106h351v18H33zM33 135h351v12H33zM33 159h351v12H33z"/><circle fill="#F7F9FA" cx="424" cy="46" r="25"/></svg>');
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            animation: sd-loading-animateUpSkeleton 500ms;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 6;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            animation: shimmerSkeleton 2s infinite;
+            animation-delay: 500ms;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.5) 8%,
+                rgba(255,255,255,0) 16%
+            );
+        }
+    }
+}
