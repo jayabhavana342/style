@@ -30,6 +30,7 @@ a,
         }
     }
     // Removes External Link Icon for certain classes
+    &[href='#'],
     &.no-external-icon,
     &.ttam-card,
     &.ttam-button,

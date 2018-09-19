@@ -272,13 +272,13 @@ class Loading extends React.Component {
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
                                 <p>
-                                    Loading animation, with text, for all instances of a class
+                                    Loading animation, with text, for all instances of a class (this example works on the sections below this one)
                                 </p>
                             </div>
                             <div className="right-side">
                                 <BlockCode language='js'>
                                     {
-`Box($('.loading-example-all'), 'Loading')`
+`Box($('.loading-example-box'), 'Loading')`
                                     }
                                 </BlockCode>
                                 <div className="example-controls">

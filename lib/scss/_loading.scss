@@ -212,10 +212,11 @@ $sd-loading-button-trans: .25s;
     }
 }
 
-.ttam-loadingstate {
-    div.ttam-box-loading,
-    div.ttam-pill-loading,
-    div.ttam-button-loading {
+.ttam-loadingstate, // Deprecate this
+.sd-loadingstate {
+    div.sd-box-loading,
+    div.sd-pill-loading,
+    div.sd-button-loading {
         @extend %sd-loading-dots;
         @include sd-loading-dotsize(6px);
         @include sd-loading-dotmovers(6px, 'small');
@@ -234,9 +235,9 @@ $sd-loading-button-trans: .25s;
     }
 
     &.mod-loading-white {
-        div.ttam-button-loading,
-        div.ttam-box-loading,
-        div.ttam-pill-loading {
+        div.sd-button-loading,
+        div.sd-box-loading,
+        div.sd-pill-loading {
             &::before {
                 animation-name: dot1-small-white;
             }
@@ -251,9 +252,9 @@ $sd-loading-button-trans: .25s;
     }
 
     &.mod-loading-gray {
-        div.ttam-button-loading,
-        div.ttam-box-loading,
-        div.ttam-pill-loading {
+        div.sd-button-loading,
+        div.sd-box-loading,
+        div.sd-pill-loading {
             &::before,
             &::after {
                 background-color: $gray6;
@@ -262,24 +263,26 @@ $sd-loading-button-trans: .25s;
     }
 }
 
-.ttam-button-loading-wrapper {
+.sd-button-loading-wrapper {
     animation: sd-loading-buttonDotsMovement $sd-loading-button-trans ease-out;
     overflow: hidden;
 }
-.ttam-loading-button.ttam-loadingstate {
+.ttam-loading-button.ttam-loadingstate, // Deprecate this
+.sd-loading-button.sd-loadingstate {
     display: flex;
     padding-left: 10px;
     transition-duration: $sd-loading-button-trans;
     &.mod-loading-button-inline {
         display: inline-flex;
     }
-    .ttam-button-loading {
+    .sd-button-loading {
         margin-top: 5px;
         margin-right: 3px;
         overflow: hidden;
     }
 }
-.ttam-loading-box.ttam-loadingstate {
+.ttam-loading-box.ttam-loadingstate, // Deprecate this
+.sd-loading-box.sd-loadingstate {
     position: relative;
     &::before {
         content: "";
@@ -292,12 +295,12 @@ $sd-loading-button-trans: .25s;
         background-color: $white;
         animation: sd-loading-boxBgFadeIn 250ms ease-out;
     }
-    .ttam-box-loading {
+    .sd-box-loading {
         width: 36px;
         margin-right: 5px;
         overflow: hidden;
     }
-    .ttam-loading-box-wrapper {
+    .sd-loading-box-wrapper {
         position: absolute;
         z-index: 6;
         top: 0;
@@ -315,9 +318,10 @@ $sd-loading-button-trans: .25s;
     }
 }
 
-.ttam-loading-pill.ttam-loadingstate {
+.ttam-loading-pill.ttam-loadingstate, // Deprecate this
+.sd-loading-pill.sd-loadingstate {
     position: relative;
-    .ttam-loading-pill-wrapper {
+    .sd-loading-pill-wrapper {
         position: absolute;
         top: 60px;
         left: 0;
@@ -330,7 +334,7 @@ $sd-loading-button-trans: .25s;
         font-size: 14px;
         animation: sd-loading-animateUpBox 500ms ease-out;
     }
-    .ttam-loading-pill-shape {
+    .sd-loading-pill-shape {
         @include sd-elevation(2);
         display: flex;
         align-items: center;
@@ -340,16 +344,17 @@ $sd-loading-button-trans: .25s;
         border-radius: 100px;
         background-color: $white;
     }
-    .ttam-pill-loading {
+    .sd-pill-loading {
         width: 36px;
         margin-right: 5px;
         overflow: hidden;
     }
 }
 
-.ttam-loading-skeleton.ttam-loadingstate {
+.ttam-loading-skeleton.ttam-loadingstate, // Deprecate this
+.sd-loading-skeleton.sd-loadingstate {
     position: relative;
-    .ttam-loading-skeleton-wrapper {
+    .sd-loading-skeleton-wrapper {
         position: absolute;
         top: 0;
         left: 0;
