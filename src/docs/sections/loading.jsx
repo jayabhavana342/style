@@ -2,114 +2,106 @@ import React from 'react'
 import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 import $ from 'jquery'
-import { Stop, Button, Box, Pill, Skeleton } from '../../lib/loading.js'
+import { stop, button, box, pill, skeleton } from '../../lib/loading.js'
 
 $(function() {
-    // Buttonm
-    Button($('.example-button1'));
-    Button($('.example-button2'), 'Loading');
-    Button($('.example-button3'), 'Loading', 'white');
-    Button($('.example-button4'), null, 'gray');
+    // Button
+    button($('.example-button1'));
+    button($('.example-button2'), 'Loading');
+    button($('.example-button3'), 'Loading', 'white');
+    button($('.example-button4'), null, 'gray');
 
-    // Box
+    // box
     $('.testcard-all-run').click((e) => {
         e.preventDefault();
-        Box($('.loading-example-box'), 'Loading');
+        box($('.loading-example-box'), 'Loading');
     })
     $('.testcard-all-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-box'));
+        stop($('.loading-example-box'));
     })
 
     $('.testcard1-run').click((e) => {
         e.preventDefault();
-        Box($('.loading-example-box1'), 'Loading');
+        box($('.loading-example-box1'), 'Loading');
     })
     $('.testcard1-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-box1'));
+        stop($('.loading-example-box1'));
     })
 
     $('.testcard2-run').click((e) => {
         e.preventDefault();
-        Box($('.loading-example-box2'), 'Loading');
+        box($('.loading-example-box2'), 'Loading');
     })
     $('.testcard2-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-box2'), () => {
+        stop($('.loading-example-box2'), () => {
             $('.loading-example-box2').html('Updated content!');
         });
     })
     $('.testcard2-reset').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-box2'));
+        stop($('.loading-example-box2'));
         $('.loading-example-box2').html('Some content');
     })
 
     $('.testcard3-run').click((e) => {
         e.preventDefault();
-        Box($('.loading-example-box3'), null, 'gray');
+        box($('.loading-example-box3'), null, 'gray');
     })
     $('.testcard3-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-box3'));
+        stop($('.loading-example-box3'));
     })
 
     $('.testcard4-run').click((e) => {
         e.preventDefault();
-        Box($('.loading-example-box4'), 'Loading', null, 'top');
+        box($('.loading-example-box4'), 'Loading', null, 'top');
     })
     $('.testcard4-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-box4'));
+        stop($('.loading-example-box4'));
     })
 
     // Pill
     $('.testpill1-run').click((e) => {
         e.preventDefault();
-        Pill($('.loading-example-pill1'), 'Loading');
+        pill($('.loading-example-pill1'), 'Loading');
     })
     $('.testpill1-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-pill1'), () => {
+        stop($('.loading-example-pill1'), () => {
             $('.loading-example-pill1').html('Updated content!');
         })
     })
     $('.testpill1-reset').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-pill1'));
+        stop($('.loading-example-pill1'));
         $('.loading-example-pill1').html('Some content');
     })
 
     $('.testpill2-run').click((e) => {
         e.preventDefault();
-        Pill($('.loading-example-pill2'), 'Loading', 'gray');
+        pill($('.loading-example-pill2'), 'Loading', 'gray');
     })
     $('.testpill2-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-pill2'));
+        stop($('.loading-example-pill2'));
     })
 
     // Skeleton
     $('.testskeleton1-run').click((e) => {
         e.preventDefault();
-        Skeleton($('.loading-example-skeleton1'));
+        skeleton($('.loading-example-skeleton1'));
     })
     $('.testskeleton1-stop').click((e) => {
         e.preventDefault();
-        Stop($('.loading-example-skeleton1'));
+        stop($('.loading-example-skeleton1'));
     })
 });
 
 class Loading extends React.Component {
-    // constructor() {
-    //     super();
-    //     console.log(SD.loading);
-    //     // SD.loading.button($('.example-button1'));
-    // }
-    // componentDidMount() {
-    //     console.log($);
-    // }
     render() {
         return (
             <div className="sg-section sg-loading" id="loading-section" ref={this.props.innerRef}>
@@ -119,11 +111,11 @@ class Loading extends React.Component {
                     Use the loading functionality to make a loading animation and text appear somewhere on the screen. There are a few types of loading functionalities:
                 </p>
                 <ul>
-                    <li><strong>Stop</strong> - stops loading</li>
-                    <li><strong>Button</strong> - inside of a button</li>
-                    <li><strong>Box</strong> - inside of a constricted box (like a card)</li>
-                    <li><strong>Pill</strong> - inside of a large area (like a whole page)</li>
-                    <li><strong>Skeleton</strong> - shows content is coming for cards (mostly)</li>
+                    <li><strong>stop</strong> - stops loading</li>
+                    <li><strong>button</strong> - inside of a button</li>
+                    <li><strong>box</strong> - inside of a constricted box (like a card)</li>
+                    <li><strong>pill</strong> - inside of a large area (like a whole page)</li>
+                    <li><strong>skeleton</strong> - shows content is coming for cards (mostly)</li>
                 </ul>
                 <h3>General usage</h3>
                 <p>
@@ -136,7 +128,7 @@ class Loading extends React.Component {
                     </p>
                     <BlockCode language="js">
                         {
-`import { Stop, Button, Box, Pill, Skeleton } from 'styledot'`
+`import { stop, button, box, pill, skeleton } from 'styledot'`
                         }
                     </BlockCode>
                 </div>
@@ -153,16 +145,16 @@ class Loading extends React.Component {
                     </ul>
                     <h3>Example</h3>
                     <div className="code-example">
-                        <p>Import 'Stop' from the StyleDot component</p>
+                        <p>Import 'stop' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { Stop } from 'styledot'`
+`import { stop } from 'styledot'`
                             }
                         </BlockCode>
                         <p>Stop a specific animation on a page</p>
                         <BlockCode language='js'>
                             {
-`Stop($('#element'), () => {
+`stop($('#element'), () => {
     // do something (like load in content)
     document.getElementById('blah');
 });`
@@ -173,7 +165,7 @@ class Loading extends React.Component {
                         </p>
                         <BlockCode language='js'>
                             {
-`Stop($('.elements'));`
+`stop($('.elements'));`
                             }
                         </BlockCode>
                     </div>
@@ -189,10 +181,10 @@ class Loading extends React.Component {
                         <li><strong>style</strong> (optional): null, 'white', 'gray'</li>
                     </ul>
                     <div className="code-example">
-                        <p>Import 'Button' from the StyleDot component</p>
+                        <p>Import 'button' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { Button } from 'styledot'`
+`import { button } from 'styledot'`
                             }
                         </BlockCode>
                         <div className="sg-loading-sidebyside">
@@ -205,7 +197,7 @@ class Loading extends React.Component {
                                 <div className="sg-loading-sidebyside-buttonarea">
                                     Loading animation, same text
                                 </div>
-                                <InlineCode>Button($('.button1'));</InlineCode>
+                                <InlineCode>button($('.button1'));</InlineCode>
                             </div>
                         </div>
 
@@ -233,7 +225,7 @@ class Loading extends React.Component {
                                 <div className="sg-loading-sidebyside-buttonarea">
                                     Loading animation, new text, different style
                                 </div>
-                                <InlineCode>Button($('.button3'), 'Loading', 'white');</InlineCode>
+                                <InlineCode>button($('.button3'), 'Loading', 'white');</InlineCode>
                             </div>
                         </div>
 
@@ -247,7 +239,7 @@ class Loading extends React.Component {
                                 <div className="sg-loading-sidebyside-buttonarea">
                                     Loading animation, same text, different style
                                 </div>
-                                <InlineCode>Button($('.button4'), null, 'gray');</InlineCode>
+                                <InlineCode>button($('.button4'), null, 'gray');</InlineCode>
                             </div>
                         </div>
                     </div>
@@ -263,10 +255,10 @@ class Loading extends React.Component {
                         <li><strong>position</strong> (optional): null, 'top'</li>
                     </ul>
                     <div className="code-example">
-                        <p>Import 'Box' from the StyleDot component</p>
+                        <p>Import 'box' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { Box } from 'styledot'`
+`import { box } from 'styledot'`
                             }
                         </BlockCode>
                         <div className="sg-loading-sidebyside">
@@ -278,7 +270,7 @@ class Loading extends React.Component {
                             <div className="right-side">
                                 <BlockCode language='js'>
                                     {
-`Box($('.loading-example-box'), 'Loading')`
+`box($('.loading-example-box'), 'Loading')`
                                     }
                                 </BlockCode>
                                 <div className="example-controls">
@@ -296,7 +288,7 @@ class Loading extends React.Component {
                             <div className="right-side">
                                 <BlockCode language='js'>
                                     {
-`Box($('.loading-example-box1'), 'Loading')`
+`box($('.loading-example-box1'), 'Loading')`
                                     }
                                 </BlockCode>
                                 <div className="sg-loading-box-testcard loading-example-box loading-example-box1 sd-card sd-elevation-1">
@@ -317,9 +309,9 @@ class Loading extends React.Component {
                             <div className="right-side">
                                 <BlockCode language='js'>
                                  {
-`Box($('.loading-example-box2'), 'Loading') // Run
+`box($('.loading-example-box2'), 'Loading') // Run
 
-Stop($('.loading-example-box2'), () => { // Stop
+stop($('.loading-example-box2'), () => { // Stop
     $('.loading-example-box2').html('Updated content!')
 });`
                                  }
@@ -342,7 +334,7 @@ Stop($('.loading-example-box2'), () => { // Stop
                             <div className="right-side">
                                 <BlockCode language='js'>
                                     {
-`Box($('.loading-example-box3'), null, 'gray')`
+`box($('.loading-example-box3'), null, 'gray')`
                                     }
                                 </BlockCode>
                                 <div className="sg-loading-box-testcard loading-example-box loading-example-box3 sd-card sd-elevation-1">
@@ -363,7 +355,7 @@ Stop($('.loading-example-box2'), () => { // Stop
                             <div className="right-side">
                                 <BlockCode language='js'>
                                     {
-`Box($('.loading-example-box4'), 'Loading', null, 'top')`
+`box($('.loading-example-box4'), 'Loading', null, 'top')`
                                     }
                                 </BlockCode>
                                 <div className="sg-loading-box-testcard loading-example-box loading-example-box4 sd-card sd-elevation-1">
@@ -386,19 +378,19 @@ Stop($('.loading-example-box2'), () => { // Stop
                         <li><strong>style</strong> (optional): null, 'white', 'gray'</li>
                     </ul>
                     <div className="code-example">
-                        <p>Import 'Pill' from the StyleDot component</p>
+                        <p>Import 'pill' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { Pill } from 'styledot'`
+`import { pill } from 'styledot'`
                             }
                         </BlockCode>
 
                         <h3>Pill loading animation, with text, and callback</h3>
                         <BlockCode language='js'>
                             {
-`Pill($('.loading-example-pill1'), 'Loading');
+`pill($('.loading-example-pill1'), 'Loading');
 
-Stop($('.loading-example-pill1'), () => {
+stop($('.loading-example-pill1'), () => {
     $('.loading-example-pill1').html('Updated content!');
 });`
                             }
@@ -413,7 +405,7 @@ Stop($('.loading-example-pill1'), () => {
                         <h3>Pill loading animation, with text, and style change</h3>
                         <BlockCode language='js'>
                             {
-`Pill($('.loading-example-pill2'), 'Loading', 'gray');`
+`pill($('.loading-example-pill2'), 'Loading', 'gray');`
                             }
                         </BlockCode>
                         <div className="loading-example-pill2 loading-example-pill">
@@ -425,16 +417,22 @@ Stop($('.loading-example-pill1'), () => {
                     </div>
 
                     <hr />
-                    <h2>Skeleton loading animation</h2>
+                    <h2>skeleton loading animation</h2>
                     <p>Add a skeleton placeholder to a card</p>
                     <h3>Arguments</h3>
                     <ul>
                         <li><strong>$el</strong> (required): jQuery object (button element)</li>
                     </ul>
                     <div className="code-example">
+                        <p>Import 'pill' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`Skeleton($('.loading-example-skeleton'));`
+`import { skeleton } from 'styledot'`
+                            }
+                        </BlockCode>
+                        <BlockCode language='js'>
+                            {
+`skeleton($('.loading-example-skeleton'));`
                             }
                         </BlockCode>
                         <div className="example-controls">

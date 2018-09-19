@@ -102,10 +102,10 @@ function loadingSkeleton($el) {
     return true;
 }
 
-module.exports = {
-    Stop: loadingStop,
-    Button: loadingButton,
-    Box: loadingBox,
-    Pill: loadingPill,
-    Skeleton: loadingSkeleton
-};
+export {
+    loadingStop as stop,
+    loadingButton as button,
+    loadingBox as box,
+    loadingPill as pill,
+    loadingSkeleton as skeleton
+}
