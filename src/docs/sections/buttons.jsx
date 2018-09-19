@@ -20,7 +20,7 @@ class Buttons extends React.Component {
                 <hr />
 
                 <h3>Mixin usage</h3>
-                <p><InlineCode>@include ttam-button(color, size, type);</InlineCode></p>
+                <p><InlineCode>@include sd-button(color, size, type);</InlineCode></p>
                 <p><strong>Options</strong></p>
                 <ul>
                     <li><strong>Color:</strong> <em>blue (default), green, pink, red, gray, white, disabled. You can add additional colors in the mixin if needed.</em></li>
@@ -28,27 +28,27 @@ class Buttons extends React.Component {
                     <li><strong>Type:</strong> <em>solid (default), outlined</em></li>
                 </ul>
                 <div className="code-example">
-                    <button className="ttam-button">Button</button>&nbsp;
+                    <button className="sd-button">Button</button>&nbsp;
                     <button className="example-button">Example button</button>&nbsp;
                     <button className="another-example-button">Another button</button>&nbsp;
 
                     <BlockCode language='scss'>
                         {
-`.ttam-button {
-    @include ttam-button();
+`.sd-button {
+    @include sd-button();
 }
 .example-button {
-    @include ttam-button(pink, large, solid);
+    @include sd-button(pink, large, solid);
 }
 .another-example-button {
-    @include ttam-button(green, medium, outlined);
+    @include sd-button(green, medium, outlined);
 }`
                         }
                     </BlockCode>
 
                     <BlockCode language='html'>
                         {
-`<button class="ttam-button">Button</button>
+`<button class="sd-button">Button</button>
 <button class="example-button">Example button</button>
 <button class="another-example-button">Another button</button>`
                         }
@@ -130,14 +130,14 @@ class Buttons extends React.Component {
                 <p>
                     The blue primary button is the most used button style and we should not recreate it with a mixin every time it is needed.
                 </p>
-                <p>Use <InlineCode>ttam-button</InlineCode> class to create the blue primary button.</p>
+                <p>Use <InlineCode>sd-button</InlineCode> class to create the blue primary button.</p>
                 <div className="code-example">
-                    <button className="ttam-button">Primary button</button>
-                    <a className="ttam-button">Primary button</a>
+                    <button className="sd-button">Primary button</button>
+                    <a className="sd-button">Primary button</a>
                     <BlockCode language='html'>
                         {
-`<button class="ttam-button">Primary button</button>
-<a class="ttam-button" href="...">Primary button</a>`
+`<button class="sd-button">Primary button</button>
+<a class="sd-button" href="...">Primary button</a>`
                         }
                     </BlockCode>
                 </div>
@@ -148,14 +148,14 @@ class Buttons extends React.Component {
                 </p>
                 <div className="code-example">
                     <p>This is a wide button. It will expand horizontally to fill the width of its parent container.</p>
-                    <button className="ttam-button mod-wide">Wide button</button>
+                    <button className="sd-button mod-wide">Wide button</button>
                     <br /><br />
                     <p>This is a button, that is wide for mobile devices (screen sizes &lt; 768px wide).</p>
-                    <button className="ttam-button mod-wide-mobile">Wide for mobile button</button>
+                    <button className="sd-button mod-wide-mobile">Wide for mobile button</button>
                     <BlockCode language='html'>
                         {
-`<button class="ttam-button mod-wide">Wide button</button>
-<button class="ttam-button mod-wide-mobile">Wide for mobile button</button>`
+`<button class="sd-button mod-wide">Wide button</button>
+<button class="sd-button mod-wide-mobile">Wide for mobile button</button>`
                         }
                     </BlockCode>
                 </div>
@@ -185,7 +185,7 @@ class Buttons extends React.Component {
                 <div className="code-example">
                     <BlockCode language='html'>
                         {
-`<a class="ttam-button" href="...">This button uses an anchor element</a>`
+`<a class="sd-button" href="...">This button uses an anchor element</a>`
                         }
                     </BlockCode>
                 </div>

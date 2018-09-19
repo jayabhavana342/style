@@ -34,7 +34,7 @@ $elevations-config: (
 //Elevation Mixin
 //Parameters: an integer representing an elevation level (currently 1-5)
 //Outputs: a box shadow corresponding to the specified level
-@mixin ttam-elevation($level) {
+@mixin sd-elevation($level) {
 
     $styles-for-level: map-get($elevations-config, $level);
 

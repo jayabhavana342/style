@@ -331,7 +331,7 @@ $sd-loading-button-trans: .25s;
         animation: sd-loading-animateUpBox 500ms ease-out;
     }
     .ttam-loading-pill-shape {
-        @include ttam-elevation(2);
+        @include sd-elevation(2);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -355,6 +355,7 @@ $sd-loading-button-trans: .25s;
         left: 0;
         height: 100%;
         width: 100%;
+        overflow: hidden;
         &::before {
             content: "";
             position: absolute;

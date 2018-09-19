@@ -1,8 +1,50 @@
 //generate elevation classes
-@import 'mixins/elevations-mixins';
+
+$elevations-config: (
+    1: (
+        x: 0px,
+        y: 2px,
+        blur: 5px,
+        opacity: 0.1
+    ),
+    2: (
+        x: 0px,
+        y: 5px,
+        blur: 10px,
+        opacity: 0.15
+    ),
+    3: (
+        x: 0px,
+        y: 10px,
+        blur: 20px,
+        opacity: 0.15
+    ),
+    4: (
+        x: 0px,
+        y: 20px,
+        blur: 30px,
+        opacity: 0.15
+    ),
+    5: (
+        x: 0px,
+        y: 20px,
+        blur: 30px,
+        opacity: 0.3
+    )
+);
+
+//Elevation Mixin
+//Parameters: an integer representing an elevation level (currently 1-5)
+//Outputs: a box shadow corresponding to the specified level
+@mixin sd-elevation($level) {
+
+    $styles-for-level: map-get($elevations-config, $level);
+
+    box-shadow: map-get($styles-for-level, x) map-get($styles-for-level, y) map-get($styles-for-level, blur) 0 rgba(0, 0, 0, map-get($styles-for-level, opacity));
+}
 
 @each $label, $values in $elevations-config {
-    .ttam-elevation-#{$label} {
-        @include ttam-elevation($label);
+    .sd-elevation-#{$label} {
+        @include sd-elevation($label);
     }
 }

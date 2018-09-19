@@ -10,16 +10,6 @@ $sd-card-corner: $sd-base-border-radius;
 
 .ttam-card, // Eventually deprecate this
 .sd-card {
-    $sd-card-padding-mobile: 24px;
-    $sd-card-padding-level-1: 24px;
-    $sd-card-padding-level-2: 32px;
-    $sd-card-padding-level-3: 40px;
-
-    $sd-card-action-icon-gutter-mobile: 16px;
-    $sd-card-action-icon-gutter-desktop: 24px;
-
-    $sd-card-corner: $sd-base-border-radius;
-
     background: white;
     padding: $sd-card-padding-mobile; //mobile padding for all cards
     position: relative;
@@ -144,28 +134,22 @@ $sd-card-corner: $sd-base-border-radius;
     }
 }
 
-a.ttam-card {
+a.ttam-card, // deprecate this
+a.sd-card {
     display: block;
     color: $base-font-color;
     font-weight: $sd-font-weight-regular;
-
-
     @include viewport($sd-desktop) {
-
         @for $i from 1 to 5 {
-            &.ttam-elevation-#{$i} {
+            &.sd-elevation-#{$i} {
                 &:hover {
-                    @include ttam-elevation($i + 1);
+                    @include sd-elevation($i + 1);
                 }
             }
         }
-
-
         &:hover {
             text-decoration: none;
-
             color: unset;
-
         }
     }
 }

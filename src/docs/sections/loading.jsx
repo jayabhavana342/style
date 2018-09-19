@@ -5,10 +5,100 @@ import $ from 'jquery'
 import { Stop, Button, Box, Pill, Skeleton } from '../../lib/loading.js'
 
 $(function() {
+    // Buttonm
     Button($('.example-button1'));
     Button($('.example-button2'), 'Loading');
     Button($('.example-button3'), 'Loading', 'white');
     Button($('.example-button4'), null, 'gray');
+
+    // Box
+    $('.testcard-all-run').click((e) => {
+        e.preventDefault();
+        Box($('.loading-example-box'), 'Loading');
+    })
+    $('.testcard-all-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-box'));
+    })
+
+    $('.testcard1-run').click((e) => {
+        e.preventDefault();
+        Box($('.loading-example-box1'), 'Loading');
+    })
+    $('.testcard1-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-box1'));
+    })
+
+    $('.testcard2-run').click((e) => {
+        e.preventDefault();
+        Box($('.loading-example-box2'), 'Loading');
+    })
+    $('.testcard2-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-box2'), () => {
+            $('.loading-example-box2').html('Updated content!');
+        });
+    })
+    $('.testcard2-reset').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-box2'));
+        $('.loading-example-box2').html('Some content');
+    })
+
+    $('.testcard3-run').click((e) => {
+        e.preventDefault();
+        Box($('.loading-example-box3'), null, 'gray');
+    })
+    $('.testcard3-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-box3'));
+    })
+
+    $('.testcard4-run').click((e) => {
+        e.preventDefault();
+        Box($('.loading-example-box4'), 'Loading', null, 'top');
+    })
+    $('.testcard4-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-box4'));
+    })
+
+    // Pill
+    $('.testpill1-run').click((e) => {
+        e.preventDefault();
+        Pill($('.loading-example-pill1'), 'Loading');
+    })
+    $('.testpill1-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-pill1'), () => {
+            $('.loading-example-pill1').html('Updated content!');
+        })
+    })
+    $('.testpill1-reset').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-pill1'));
+        $('.loading-example-pill1').html('Some content');
+    })
+
+    $('.testpill2-run').click((e) => {
+        e.preventDefault();
+        Pill($('.loading-example-pill2'), 'Loading', 'gray');
+    })
+    $('.testpill2-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-pill2'));
+    })
+
+    // Skeleton
+    $('.testskeleton1-run').click((e) => {
+        e.preventDefault();
+        Skeleton($('.loading-example-skeleton1'));
+    })
+    $('.testskeleton1-stop').click((e) => {
+        e.preventDefault();
+        Stop($('.loading-example-skeleton1'));
+    })
 });
 
 class Loading extends React.Component {
@@ -39,6 +129,17 @@ class Loading extends React.Component {
                 <p>
                     Since loading is an event-based component, this entire component relies on JS to handle the event work.
                 </p>
+
+                <div className="code-example">
+                    <p>
+                        Import the loading component using your favorite method, ES6 would look like:
+                    </p>
+                    <BlockCode language="js">
+                        {
+`import { Stop, Button, Box, Pill, Skeleton } from 'styledot'`
+                        }
+                    </BlockCode>
+                </div>
                 <hr />
 
                 <div className="sub-section">
@@ -52,10 +153,16 @@ class Loading extends React.Component {
                     </ul>
                     <h3>Example</h3>
                     <div className="code-example">
+                        <p>Import 'Stop' from the StyleDot component</p>
+                        <BlockCode language='js'>
+                            {
+`import { Stop } from 'styledot'`
+                            }
+                        </BlockCode>
                         <p>Stop a specific animation on a page</p>
                         <BlockCode language='js'>
                             {
-`SD.loading.stop($('#element'), () => {
+`Stop($('#element'), () => {
     // do something (like load in content)
     document.getElementById('blah');
 });`
@@ -66,7 +173,7 @@ class Loading extends React.Component {
                         </p>
                         <BlockCode language='js'>
                             {
-`SD.loading.stop($('.elements'));`
+`Stop($('.elements'));`
                             }
                         </BlockCode>
                     </div>
@@ -76,7 +183,18 @@ class Loading extends React.Component {
                     <p>Add a loading animation to a button</p>
                     <p><strong>NOTE</strong>: When using the text argument, the entire contents of the button gets replaced and there is no mechanism to revert back to the contents from before</p>
                     <h3>Arguments</h3>
+                    <ul>
+                        <li><strong>$el</strong> (required): jQuery object (button element)</li>
+                        <li><strong>text</strong> (optional): null, string</li>
+                        <li><strong>style</strong> (optional): null, 'white', 'gray'</li>
+                    </ul>
                     <div className="code-example">
+                        <p>Import 'Button' from the StyleDot component</p>
+                        <BlockCode language='js'>
+                            {
+`import { Button } from 'styledot'`
+                            }
+                        </BlockCode>
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
                                 <button className="ttam-button loading-example-button example-button1">
@@ -87,7 +205,7 @@ class Loading extends React.Component {
                                 <div className="sg-loading-sidebyside-buttonarea">
                                     Loading animation, same text
                                 </div>
-                                <InlineCode>SD.loading.button($('.button1'));</InlineCode>
+                                <InlineCode>Button($('.button1'));</InlineCode>
                             </div>
                         </div>
 
@@ -101,7 +219,7 @@ class Loading extends React.Component {
                                 <div className="sg-loading-sidebyside-buttonarea">
                                     Loading animation, new text
                                 </div>
-                                <InlineCode>SD.loading.button($('.button2'), 'Loading');</InlineCode>
+                                <InlineCode>Button($('.button2'), 'Loading');</InlineCode>
                             </div>
                         </div>
 
@@ -115,7 +233,7 @@ class Loading extends React.Component {
                                 <div className="sg-loading-sidebyside-buttonarea">
                                     Loading animation, new text, different style
                                 </div>
-                                <InlineCode>SD.loading.button($('.button3'), 'Loading', 'white');</InlineCode>
+                                <InlineCode>Button($('.button3'), 'Loading', 'white');</InlineCode>
                             </div>
                         </div>
 
@@ -129,8 +247,201 @@ class Loading extends React.Component {
                                 <div className="sg-loading-sidebyside-buttonarea">
                                     Loading animation, same text, different style
                                 </div>
-                                <InlineCode>SD.loading.button($('.button4'), null, 'gray');</InlineCode>
+                                <InlineCode>Button($('.button4'), null, 'gray');</InlineCode>
                             </div>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <h2>Box loading animation</h2>
+                    <p>Add a loading animation and text to a "box" type area</p>
+                    <h3>Arguments</h3>
+                    <ul>
+                        <li><strong>$el</strong> (required): jQuery object (button element)</li>
+                        <li><strong>text</strong> (optional): null, string</li>
+                        <li><strong>style</strong> (optional): null, 'white', 'gray'</li>
+                        <li><strong>position</strong> (optional): null, 'top'</li>
+                    </ul>
+                    <div className="code-example">
+                        <p>Import 'Box' from the StyleDot component</p>
+                        <BlockCode language='js'>
+                            {
+`import { Box } from 'styledot'`
+                            }
+                        </BlockCode>
+                        <div className="sg-loading-sidebyside">
+                            <div className="left-side">
+                                <p>
+                                    Loading animation, with text, for all instances of a class
+                                </p>
+                            </div>
+                            <div className="right-side">
+                                <BlockCode language='js'>
+                                    {
+`Box($('.loading-example-all'), 'Loading')`
+                                    }
+                                </BlockCode>
+                                <div className="example-controls">
+                                    <a href="#" className="testcard-all-run">run</a> | <a href="#" className="testcard-all-stop">reset</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="sg-loading-sidebyside">
+                            <div className="left-side">
+                                <p>
+                                    Loading animation, with text
+                                </p>
+                            </div>
+                            <div className="right-side">
+                                <BlockCode language='js'>
+                                    {
+`Box($('.loading-example-box1'), 'Loading')`
+                                    }
+                                </BlockCode>
+                                <div className="sg-loading-box-testcard loading-example-box loading-example-box1 sd-card sd-elevation-1">
+                                    Some content
+                                </div>
+                                <div className="example-controls">
+                                    <a href="#" className="testcard1-run">run</a> | <a href="#" className="testcard1-stop">stop</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="sg-loading-sidebyside">
+                            <div className="left-side">
+                                <p>
+                                    Loading animation, without text, with callback
+                                </p>
+                            </div>
+                            <div className="right-side">
+                                <BlockCode language='js'>
+                                 {
+`Box($('.loading-example-box2'), 'Loading') // Run
+
+Stop($('.loading-example-box2'), () => { // Stop
+    $('.loading-example-box2').html('Updated content!')
+});`
+                                 }
+                                </BlockCode>
+                                <div className="sg-loading-box-testcard loading-example-box loading-example-box2 sd-card sd-elevation-1">
+                                    Some content
+                                </div>
+                                <div className="example-controls">
+                                    <a href="#" className="testcard2-run">run</a> | <a href="#" className="testcard2-stop">stop</a> | <a href="#" className="testcard2-reset">reset</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="sg-loading-sidebyside">
+                            <div className="left-side">
+                                <p>
+                                    Loading animation, without text, different style
+                                </p>
+                            </div>
+                            <div className="right-side">
+                                <BlockCode language='js'>
+                                    {
+`Box($('.loading-example-box3'), null, 'gray')`
+                                    }
+                                </BlockCode>
+                                <div className="sg-loading-box-testcard loading-example-box loading-example-box3 sd-card sd-elevation-1">
+                                    Some content
+                                </div>
+                                <div className="example-controls">
+                                    <a href="#" className="testcard3-run">run</a> | <a href="#" className="testcard3-stop">stop</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="sg-loading-sidebyside">
+                            <div className="left-side">
+                                <p>
+                                    Loading animation, with text, no style, top position
+                                </p>
+                            </div>
+                            <div className="right-side">
+                                <BlockCode language='js'>
+                                    {
+`Box($('.loading-example-box4'), 'Loading', null, 'top')`
+                                    }
+                                </BlockCode>
+                                <div className="sg-loading-box-testcard loading-example-box loading-example-box4 sd-card sd-elevation-1">
+                                    Some content
+                                </div>
+                                <div className="example-controls">
+                                    <a href="#" className="testcard4-run">run</a> | <a href="#" className="testcard4-stop">stop</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <h2>Pill loading animation</h2>
+                    <p>Add a loading animation, wrapped in a pill-shaped, with custom text</p>
+                    <h3>Arguments</h3>
+                    <ul>
+                        <li><strong>$el</strong> (required): jQuery object (button element)</li>
+                        <li><strong>text</strong> (optional): null, string</li>
+                        <li><strong>style</strong> (optional): null, 'white', 'gray'</li>
+                    </ul>
+                    <div className="code-example">
+                        <p>Import 'Pill' from the StyleDot component</p>
+                        <BlockCode language='js'>
+                            {
+`import { Pill } from 'styledot'`
+                            }
+                        </BlockCode>
+
+                        <h3>Pill loading animation, with text, and callback</h3>
+                        <BlockCode language='js'>
+                            {
+`Pill($('.loading-example-pill1'), 'Loading');
+
+Stop($('.loading-example-pill1'), () => {
+    $('.loading-example-pill1').html('Updated content!');
+});`
+                            }
+                        </BlockCode>
+                        <div className="loading-example-pill1 loading-example-pill">
+                            Some content
+                        </div>
+                        <div className="example-controls">
+                            <a href="#" className="testpill1-run">run</a> | <a href="#" className="testpill1-stop">stop</a> | <a href="#" className="testpill1-reset">reset</a>
+                        </div>
+
+                        <h3>Pill loading animation, with text, and style change</h3>
+                        <BlockCode language='js'>
+                            {
+`Pill($('.loading-example-pill2'), 'Loading', 'gray');`
+                            }
+                        </BlockCode>
+                        <div className="loading-example-pill2 loading-example-pill">
+                            Some content
+                        </div>
+                        <div className="example-controls">
+                            <a href="#" className="testpill2-run">run</a> | <a href="#" className="testpill2-stop">stop</a>
+                        </div>
+                    </div>
+
+                    <hr />
+                    <h2>Skeleton loading animation</h2>
+                    <p>Add a skeleton placeholder to a card</p>
+                    <h3>Arguments</h3>
+                    <ul>
+                        <li><strong>$el</strong> (required): jQuery object (button element)</li>
+                    </ul>
+                    <div className="code-example">
+                        <BlockCode language='js'>
+                            {
+`Skeleton($('.loading-example-skeleton'));`
+                            }
+                        </BlockCode>
+                        <div className="example-controls">
+                            <a href="#" className="testskeleton1-run">run</a> | <a href="#" className="testskeleton1-stop">stop</a>
+                        </div>
+                        <div className="loading-example-skeleton loading-example-skeleton1">
+                            Some content
                         </div>
                     </div>
                 </div>
