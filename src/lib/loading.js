@@ -102,7 +102,7 @@ function skeleton($el) {
     return true;
 }
 
-export {
+export default {
     stop,
     button,
     box,
