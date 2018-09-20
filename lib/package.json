@@ -1,6 +1,6 @@
 {
   "name": "styledot",
-  "version": "0.1.512",
+  "version": "0.1.514",
   "description": "23andMe styleguide library",
   "main": "index.js",
   "scripts": {

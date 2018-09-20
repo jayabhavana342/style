@@ -5,7 +5,7 @@ function escape(unsafeText) {
     return safeText;
 }
 
-function loadingStop($element, callback) {
+function stop($element, callback) {
     const selectors = '.sd-loading-box-wrapper, .sd-loading-pill-wrapper, .sd-button-loading-wrapper, .sd-loading-skeleton-wrapper';
     const timing = 150;
 
@@ -19,7 +19,7 @@ function loadingStop($element, callback) {
     });
 }
 
-function loadingButton($el, text, style) {
+function button($el, text, style) {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -48,7 +48,7 @@ function loadingButton($el, text, style) {
     return true;
 }
 
-function loadingBox($el, text, style, position) {
+function box($el, text, style, position) {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -68,7 +68,7 @@ function loadingBox($el, text, style, position) {
     return true;
 }
 
-function loadingPill($el, text, style) {
+function pill($el, text, style) {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -89,7 +89,7 @@ function loadingPill($el, text, style) {
     return true;
 }
 
-function loadingSkeleton($el) {
+function skeleton($el) {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -103,9 +103,9 @@ function loadingSkeleton($el) {
 }
 
 export {
-    loadingStop as stop,
-    loadingButton as button,
-    loadingBox as box,
-    loadingPill as pill,
-    loadingSkeleton as skeleton
+    stop,
+    button,
+    box,
+    pill,
+    skeleton
 }
