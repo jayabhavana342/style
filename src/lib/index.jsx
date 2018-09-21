@@ -1,4 +1,4 @@
 import cards from './cards'
-import loading from './loading'
+import { stop, button, box, pill, skeleton } from './loading'
 
-export default { foo: 'bar' };
+export { stop, button, box, pill, skeleton, cards };

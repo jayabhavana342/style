@@ -2,7 +2,7 @@ import React from 'react'
 import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 import $ from 'jquery'
-import { stop, button, box, pill, skeleton } from '../../lib/loading.js'
+import { stop, button, box, pill, skeleton } from '../../lib'
 
 $(function() {
     // Button
@@ -124,7 +124,7 @@ class Loading extends React.Component {
 
                 <div className="code-example">
                     <p>
-                        Import the loading component using your favorite method, ES6 would look like:
+                        Import specific loading components using your favorite method, ES6 would look like for all options:
                     </p>
                     <BlockCode language="js">
                         {
@@ -320,7 +320,7 @@ stop($('.loading-example-box2'), () => { // Stop
                                     Some content
                                 </div>
                                 <div className="example-controls">
-                                    <a href="#" className="testcard2-run">run</a> | <a href="#" className="testcard2-stop">stop</a> | <a href="#" className="testcard2-reset">reset</a>
+                                    <a href="#" className="testcard2-run">run</a> | <a href="#" className="testcard2-stop">stop w/ callback</a> | <a href="#" className="testcard2-reset">reset</a>
                                 </div>
                             </div>
                         </div>
@@ -399,7 +399,7 @@ stop($('.loading-example-pill1'), () => {
                             Some content
                         </div>
                         <div className="example-controls">
-                            <a href="#" className="testpill1-run">run</a> | <a href="#" className="testpill1-stop">stop</a> | <a href="#" className="testpill1-reset">reset</a>
+                            <a href="#" className="testpill1-run">run</a> | <a href="#" className="testpill1-stop">stop w/ callback</a> | <a href="#" className="testpill1-reset">reset</a>
                         </div>
 
                         <h3>Pill loading animation, with text, and style change</h3>

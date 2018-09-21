@@ -5,7 +5,7 @@ function escape(unsafeText) {
     return safeText;
 }
 
-function stop($element, callback) {
+const stop = ($element, callback) => {
     const selectors = '.sd-loading-box-wrapper, .sd-loading-pill-wrapper, .sd-button-loading-wrapper, .sd-loading-skeleton-wrapper';
     const timing = 150;
 
@@ -19,7 +19,7 @@ function stop($element, callback) {
     });
 }
 
-function button($el, text, style) {
+const button = ($el, text, style) => {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -48,7 +48,7 @@ function button($el, text, style) {
     return true;
 }
 
-function box($el, text, style, position) {
+const box = ($el, text, style, position) => {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -68,7 +68,7 @@ function box($el, text, style, position) {
     return true;
 }
 
-function pill($el, text, style) {
+const pill = ($el, text, style) => {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -89,7 +89,7 @@ function pill($el, text, style) {
     return true;
 }
 
-function skeleton($el) {
+const skeleton = ($el) => {
     if (!$el) {
         throw new Error('no element passed in');
     }
@@ -102,7 +102,7 @@ function skeleton($el) {
     return true;
 }
 
-export default {
+export {
     stop,
     button,
     box,
