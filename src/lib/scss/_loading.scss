@@ -178,15 +178,6 @@ $sd-loading-button-trans: .25s;
     }
 }
 
-@keyframes sd-loading-boxBgFadeIn {
-    from {
-        background-color: rgba(255, 255, 255, 0);
-    }
-    to {
-        background-color: rgba(255, 255, 255, 1);
-    }
-}
-
 // Styling
 %sd-loading-dots {
     position: relative;
@@ -292,8 +283,6 @@ $sd-loading-button-trans: .25s;
         left: 0;
         height: 100%;
         width: 100%;
-        background-color: $white;
-        animation: sd-loading-boxBgFadeIn 250ms ease-out;
     }
     .sd-box-loading {
         width: 36px;
