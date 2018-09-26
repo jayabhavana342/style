@@ -189,7 +189,7 @@ class Loading extends React.Component {
                         </BlockCode>
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                <button className="ttam-button loading-example-button example-button1">
+                                <button className="sd-button loading-example-button example-button1">
                                     Click me!
                                 </button>
                             </div>
@@ -203,7 +203,7 @@ class Loading extends React.Component {
 
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                <button className="ttam-button loading-example-button example-button2">
+                                <button className="sd-button loading-example-button example-button2">
                                     Click me!
                                 </button>
                             </div>
@@ -217,7 +217,7 @@ class Loading extends React.Component {
 
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                <button className="ttam-button loading-example-button example-button3">
+                                <button className="sd-button loading-example-button example-button3">
                                     Click me!
                                 </button>
                             </div>
@@ -231,7 +231,7 @@ class Loading extends React.Component {
 
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                <button className="ttam-button loading-example-button example-button4">
+                                <button className="sd-button loading-example-button example-button4">
                                     Click me!
                                 </button>
                             </div>

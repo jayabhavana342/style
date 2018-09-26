@@ -300,7 +300,7 @@ hr {
     }
 }
 
-@include viewport($sd-mobile-tablet) {
+@include sd-viewport($sd-mobile-tablet) {
     .code-example {
         margin: 5vw 0 2.5vw;
     }
@@ -389,7 +389,7 @@ hr {
     }
 }
 
-@include viewport($sd-mobile) {
+@include sd-viewport($sd-mobile) {
     .nav {
         width: 77vw;
         &-header {
@@ -398,7 +398,7 @@ hr {
     }
 }
 
-@include viewport($sd-tablet) {
+@include sd-viewport($sd-tablet) {
     .nav {
         width: 256px;
         &-header {
@@ -407,7 +407,7 @@ hr {
     }
 }
 
-@include viewport($sd-desktop) {
+@include sd-viewport($sd-desktop) {
     body {
         overflow-x: hidden;
     }

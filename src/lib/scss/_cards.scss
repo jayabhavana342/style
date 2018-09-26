@@ -18,7 +18,7 @@ $sd-card-corner: $sd-base-border-radius;
 
     transition: 0.3s all ease-in-out;
 
-    @include viewport($sd-desktop) {
+    @include sd-viewport($sd-desktop) {
         width: auto;
         border-radius: $sd-card-corner;
     }
@@ -28,14 +28,14 @@ $sd-card-corner: $sd-base-border-radius;
 
         border-radius: $sd-card-corner;
 
-        @include viewport($sd-mobile) {
+        @include sd-viewport($sd-mobile) {
             margin: auto $card-gutter;
             width: calc(100% - #{ 2 * $card-gutter });
         }
     }
 
     &.mod-card-1 {
-        @include viewport($sd-desktop) {
+        @include sd-viewport($sd-desktop) {
             padding: $sd-card-padding-level-1;
         }
 
@@ -44,7 +44,7 @@ $sd-card-corner: $sd-base-border-radius;
             top: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-1);
             right: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-1);
 
-            @include viewport($sd-desktop) {
+            @include sd-viewport($sd-desktop) {
                 top: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-1);
                 right: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-1);
             }
@@ -52,7 +52,7 @@ $sd-card-corner: $sd-base-border-radius;
     }
 
     &.mod-card-2 {
-        @include viewport($sd-desktop) {
+        @include sd-viewport($sd-desktop) {
             padding: $sd-card-padding-level-2;
         }
 
@@ -61,7 +61,7 @@ $sd-card-corner: $sd-base-border-radius;
             top: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-2);
             right: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-2);
 
-            @include viewport($sd-desktop) {
+            @include sd-viewport($sd-desktop) {
                 top: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-2);
                 right: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-2);
             }
@@ -69,7 +69,7 @@ $sd-card-corner: $sd-base-border-radius;
     }
 
     &.mod-card-3 {
-        @include viewport($sd-desktop) {
+        @include sd-viewport($sd-desktop) {
             padding: $sd-card-padding-level-3;
         }
 
@@ -78,7 +78,7 @@ $sd-card-corner: $sd-base-border-radius;
             top: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-3);
             right: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-3);
 
-            @include viewport($sd-desktop) {
+            @include sd-viewport($sd-desktop) {
                 top: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-3);
                 right: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-3);
             }
@@ -113,7 +113,7 @@ $sd-card-corner: $sd-base-border-radius;
         top: $sd-card-action-icon-gutter-mobile;
         right: $sd-card-action-icon-gutter-mobile;
 
-        @include viewport($sd-desktop) {
+        @include sd-viewport($sd-desktop) {
             top: $sd-card-action-icon-gutter-desktop;
             right: $sd-card-action-icon-gutter-desktop;
         }
@@ -139,7 +139,7 @@ a.sd-card {
     display: block;
     color: $base-font-color;
     font-weight: $sd-font-weight-regular;
-    @include viewport($sd-desktop) {
+    @include sd-viewport($sd-desktop) {
         @for $i from 1 to 5 {
             &.sd-elevation-#{$i} {
                 &:hover {

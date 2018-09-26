@@ -1,6 +1,6 @@
 // Doc specific styles
 
-@include viewport($sd-mobile) {
+@include sd-viewport($sd-mobile) {
     .sg-colors .colors > div {
         width: 33.333%;
         font-size: 14px;
@@ -45,7 +45,7 @@
                 padding-left: 0;
             }
         }
-        @include viewport($sd-mobile) {
+        @include sd-viewport($sd-mobile) {
             > div {
                 width: 30vw;
                 height: 30vw;
@@ -195,7 +195,7 @@
             background-color: $gray8;
             color: $white;
         }
-        @include viewport($sd-mobile) {
+        @include sd-viewport($sd-mobile) {
             margin-bottom: 6vw;
             .left-side {
                 flex-shrink: 0;
@@ -206,7 +206,7 @@
                 padding: 5vw 2vw;
             }
         }
-        @include viewport($sd-tablet-plus) {
+        @include sd-viewport($sd-tablet-plus) {
             display: flex;
             align-items: flex-start;
             margin-bottom: 15px;
@@ -276,7 +276,7 @@
 }
 
 .sg-loading {
-    @include viewport($sd-mobile-tablet) {
+    @include sd-viewport($sd-mobile-tablet) {
         &-sidebyside {
             margin-bottom: 4vw;
         }
@@ -284,7 +284,7 @@
             margin-top: 2vw;
         }
     }
-    @include viewport($sd-desktop) {
+    @include sd-viewport($sd-desktop) {
         &-sidebyside {
             margin-bottom: 35px;
         }

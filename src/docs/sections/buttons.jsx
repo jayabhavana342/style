@@ -125,7 +125,6 @@ class Buttons extends React.Component {
                 </div>
 
                 <h2 className="subsection-title">Button styles</h2>
-                <p>File location: <InlineCode>you/assets/scss/components/_ttam-buttons.scss</InlineCode></p>
                 <h3>Reusable classes</h3>
                 <p>
                     The blue primary button is the most used button style and we should not recreate it with a mixin every time it is needed.

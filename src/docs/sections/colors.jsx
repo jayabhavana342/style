@@ -104,7 +104,7 @@ class Colors extends React.Component {
                     &nbsp;<a href="https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/" target="_blank" rel="noopener noreferrer">
                     More on color contrast</a>. <a href="http://contrast-grid.eightshapes.com/" target="_blank" rel="noopener noreferrer">A useful contrast tool</a>.
                 </p>
-                <div className="sub-section ttam-colors-section">
+                <div className="sub-section">
                     <div className="colors">
                         <div className="accessible-blue">
                             $accessible-blue <span className="def">#1976D2</span>
@@ -116,7 +116,7 @@ class Colors extends React.Component {
                 </div>
 
                 <h2 className="subsection-title">Grays</h2>
-                <div className="sub-section ttam-colors-section">
+                <div className="sub-section">
                     <div className="colors">
                         <div className="white">
                             $white <span className="def">#FFF</span>
