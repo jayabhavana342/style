@@ -254,10 +254,12 @@ $sd-loading-button-trans: .25s;
     }
 }
 
+.ttam-button-loading-wrapper, // Deprecate this
 .sd-button-loading-wrapper {
     animation: sd-loading-buttonDotsMovement $sd-loading-button-trans ease-out;
     overflow: hidden;
 }
+
 .ttam-loading-button.ttam-loadingstate, // Deprecate this
 .sd-loading-button.sd-loadingstate {
     display: flex;
@@ -272,6 +274,7 @@ $sd-loading-button-trans: .25s;
         overflow: hidden;
     }
 }
+
 .ttam-loading-box.ttam-loadingstate, // Deprecate this
 .sd-loading-box.sd-loadingstate {
     position: relative;

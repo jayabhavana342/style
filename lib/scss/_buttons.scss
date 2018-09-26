@@ -43,7 +43,7 @@ $sd-button-min-width-small: 72px;
 
 // Colors:
 // These are the currently available button colors with corresponding hover color. Add a color if needed.
-$sd-button-colors: (
+$button-colors-source: (
     blue: (
         default: $accessible-blue,
         hover: $dark-periwinkle,
@@ -73,8 +73,10 @@ $sd-button-colors: (
         hover: $gray2,
     ),
 );
+$sd-button-colors: $button-colors-source;
+$ttam-button-colors: $button-colors-source; // Deprecate this
 
-@mixin sd-button($color-name: blue, $size: large, $type: solid) {
+@mixin sd-button-source($color-name: blue, $size: large, $type: solid) {  // Remove this once 'ttam' namespace is deprecated
     $sd-button-base-color: map-get(map-get($sd-button-colors, $color-name), default);
     $sd-button-hover-color: map-get(map-get($sd-button-colors, $color-name), hover);
 
@@ -199,6 +201,14 @@ $sd-button-colors: (
             width: 100%;
         }
     }
+}
+
+@mixin sd-button($color-name: blue, $size: large, $type: solid) {
+    @include sd-button-source($color-name, $size, $type);
+}
+
+@mixin ttam-button($color-name: blue, $size: large, $type: solid) { // Deprecate this
+    @include sd-button-source($color-name, $size, $type);
 }
 
 .ttam-button, // Deprecate this
