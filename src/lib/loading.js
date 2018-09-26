@@ -48,17 +48,16 @@ const button = ($el, text, style) => {
     return true;
 }
 
-const box = ($el, text, style, position) => {
+const box = ($el, text, style) => {
     if (!$el) {
         throw new Error('no element passed in');
     }
     text = text || '';
-    position = position ? `mod-box-${position}` : '';
 
     $el.each(function () {
         $(this).addClass('sd-loading-box sd-loadingstate');
         if ($(this).find('.sd-loading-box-wrapper').length === 0) {
-            const loadingContents = escape(`<div class="sd-loading-box-wrapper ${position}"><div class="sd-box-loading"></div><span>${text}</span></div>`);
+            const loadingContents = escape(`<div class="sd-loading-box-wrapper"><div class="sd-box-loading"></div><span>${text}</span></div>`);
             if (style) {
                 $(this).addClass(`mod-loading-${style}`);
             }

@@ -300,6 +300,7 @@ $sd-loading-button-trans: .25s;
         align-items: center;
         justify-content: center;
         animation: sd-loading-animateUpBox 500ms ease-out;
+        background-color: rgba(255, 255, 255, .9);
         &.mod-box-top {
             top: 40px;
             bottom: auto;

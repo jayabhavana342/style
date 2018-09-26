@@ -128,7 +128,7 @@ class Loading extends React.Component {
                     </p>
                     <BlockCode language="js">
                         {
-`import { stop, button, box, pill, skeleton } from 'styledot'`
+`import { stop, button, box, pill, skeleton } from 'styledot/loading'`
                         }
                     </BlockCode>
                 </div>
@@ -148,7 +148,7 @@ class Loading extends React.Component {
                         <p>Import 'stop' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { stop } from 'styledot'`
+`import { stop } from 'styledot/loading'`
                             }
                         </BlockCode>
                         <p>Stop a specific animation on a page</p>
@@ -184,7 +184,7 @@ class Loading extends React.Component {
                         <p>Import 'button' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { button } from 'styledot'`
+`import { button } from 'styledot/loading'`
                             }
                         </BlockCode>
                         <div className="sg-loading-sidebyside">
@@ -252,13 +252,12 @@ class Loading extends React.Component {
                         <li><strong>$el</strong> (required): jQuery object (button element)</li>
                         <li><strong>text</strong> (optional): null, string</li>
                         <li><strong>style</strong> (optional): null, 'white', 'gray'</li>
-                        <li><strong>position</strong> (optional): null, 'top'</li>
                     </ul>
                     <div className="code-example">
                         <p>Import 'box' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { box } from 'styledot'`
+`import { box } from 'styledot/loading'`
                             }
                         </BlockCode>
                         <div className="sg-loading-sidebyside">
@@ -345,27 +344,6 @@ stop($('.loading-example-box2'), () => { // Stop
                                 </div>
                             </div>
                         </div>
-
-                        <div className="sg-loading-sidebyside">
-                            <div className="left-side">
-                                <p>
-                                    Loading animation, with text, no style, top position
-                                </p>
-                            </div>
-                            <div className="right-side">
-                                <BlockCode language='js'>
-                                    {
-`box($('.loading-example-box4'), 'Loading', null, 'top')`
-                                    }
-                                </BlockCode>
-                                <div className="sg-loading-box-testcard loading-example-box loading-example-box4 sd-card sd-elevation-1">
-                                    Some content
-                                </div>
-                                <div className="example-controls">
-                                    <a href="#" className="testcard4-run">run</a> | <a href="#" className="testcard4-stop">stop</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <hr />
@@ -381,7 +359,7 @@ stop($('.loading-example-box2'), () => { // Stop
                         <p>Import 'pill' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { pill } from 'styledot'`
+`import { pill } from 'styledot/loading'`
                             }
                         </BlockCode>
 
@@ -427,7 +405,7 @@ stop($('.loading-example-pill1'), () => {
                         <p>Import 'pill' from the StyleDot component</p>
                         <BlockCode language='js'>
                             {
-`import { skeleton } from 'styledot'`
+`import { skeleton } from 'styledot/loading'`
                             }
                         </BlockCode>
                         <BlockCode language='js'>
