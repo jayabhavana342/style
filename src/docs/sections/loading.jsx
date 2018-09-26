@@ -2,7 +2,7 @@ import React from 'react'
 import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 import $ from 'jquery'
-import { stop, button, box, pill, skeleton } from '../../lib'
+import { stop, button, box, pill, skeleton } from '../../lib/loading'
 
 $(function() {
     // Button
