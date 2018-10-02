@@ -1,8 +1,8 @@
-import React from 'react'
-import BlockCode from '../components/block_code.jsx'
-import InlineCode from '../components/inline_code.jsx'
-import $ from 'jquery'
-import { stop, button, box, pill, skeleton } from '../../lib/loading'
+import React from 'react';
+import BlockCode from '../components/block_code.jsx';
+import InlineCode from '../components/inline_code.jsx';
+import $ from 'jquery';
+import { stop, button, box, pill, skeleton } from '../../lib/loading';
 
 $(function() {
     // Button
@@ -15,90 +15,90 @@ $(function() {
     $('.testcard-all-run').click((e) => {
         e.preventDefault();
         box($('.loading-example-box'), 'Loading');
-    })
+    });
     $('.testcard-all-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-box'));
-    })
+    });
 
     $('.testcard1-run').click((e) => {
         e.preventDefault();
         box($('.loading-example-box1'), 'Loading');
-    })
+    });
     $('.testcard1-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-box1'));
-    })
+    });
 
     $('.testcard2-run').click((e) => {
         e.preventDefault();
         box($('.loading-example-box2'), 'Loading');
-    })
+    });
     $('.testcard2-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-box2'), () => {
             $('.loading-example-box2').html('Updated content!');
         });
-    })
+    });
     $('.testcard2-reset').click((e) => {
         e.preventDefault();
         stop($('.loading-example-box2'));
         $('.loading-example-box2').html('Some content');
-    })
+    });
 
     $('.testcard3-run').click((e) => {
         e.preventDefault();
         box($('.loading-example-box3'), null, 'gray');
-    })
+    });
     $('.testcard3-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-box3'));
-    })
+    });
 
     $('.testcard4-run').click((e) => {
         e.preventDefault();
         box($('.loading-example-box4'), 'Loading', null, 'top');
-    })
+    });
     $('.testcard4-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-box4'));
-    })
+    });
 
     // Pill
     $('.testpill1-run').click((e) => {
         e.preventDefault();
         pill($('.loading-example-pill1'), 'Loading');
-    })
+    });
     $('.testpill1-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-pill1'), () => {
             $('.loading-example-pill1').html('Updated content!');
-        })
-    })
+        });
+    });
     $('.testpill1-reset').click((e) => {
         e.preventDefault();
         stop($('.loading-example-pill1'));
         $('.loading-example-pill1').html('Some content');
-    })
+    });
 
     $('.testpill2-run').click((e) => {
         e.preventDefault();
         pill($('.loading-example-pill2'), 'Loading', 'gray');
-    })
+    });
     $('.testpill2-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-pill2'));
-    })
+    });
 
     // Skeleton
     $('.testskeleton1-run').click((e) => {
         e.preventDefault();
         skeleton($('.loading-example-skeleton1'));
-    })
+    });
     $('.testskeleton1-stop').click((e) => {
         e.preventDefault();
         stop($('.loading-example-skeleton1'));
-    })
+    });
 });
 
 class Loading extends React.Component {
@@ -189,7 +189,7 @@ class Loading extends React.Component {
                         </BlockCode>
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                <button className="sd-button loading-example-button example-button1">
+                                <button className="sd-button loading-example-button example-button1" id="test-loading1">
                                     Click me!
                                 </button>
                             </div>
@@ -203,7 +203,7 @@ class Loading extends React.Component {
 
                         <div className="sg-loading-sidebyside">
                             <div className="left-side">
-                                <button className="sd-button loading-example-button example-button2">
+                                <button className="sd-button loading-example-button example-button2" id="test-loading2">
                                     Click me!
                                 </button>
                             </div>

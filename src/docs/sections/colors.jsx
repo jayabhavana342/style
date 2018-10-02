@@ -100,7 +100,7 @@ class Colors extends React.Component {
                 <h2 className="subsection-title">Accessible colors</h2>
                 <p>
                     For accessibility purposes, these colors are intended to be used with white overlaying text, or
-                    olored text on top of <InlineCode>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
+                    olored text on top of <InlineCode test_class='test-inline-code'>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
                     &nbsp;<a href="https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/" target="_blank" rel="noopener noreferrer">
                     More on color contrast</a>. <a href="http://contrast-grid.eightshapes.com/" target="_blank" rel="noopener noreferrer">A useful contrast tool</a>.
                 </p>
@@ -157,7 +157,7 @@ class Colors extends React.Component {
                     <div className="color-square-example">
                         TEXT
                     </div>
-                    <BlockCode language='scss' test_class='test-comp-colors-code'>
+                    <BlockCode language='scss' test_class='test-block-code'>
                         {
 `.example {
     background-color: $pink;

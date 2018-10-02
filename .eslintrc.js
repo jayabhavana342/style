@@ -23,7 +23,7 @@ module.exports = {
     "rules": {
         "indent": [
             "error",
-            2
+            4
         ],
         "linebreak-style": [
             "error",
@@ -31,9 +31,14 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "single"
+            "single",
+            "backtick"
         ],
         "semi": [
+            "error",
+            "always"
+        ],
+        "eqeqeq": [
             "error",
             "always"
         ]

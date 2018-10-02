@@ -33,7 +33,7 @@ class Cards extends React.Component {
 
                 <h3 className="subsection-title mod-shorttop">Example: Card 1 (24px padding on desktop and mobile)</h3>
                 <div className="code-example">
-                    <div className="sd-card mod-card-1 sd-elevation-2">
+                    <div className="sd-card mod-card-1 sd-elevation-2" id="test-card1">
                         <h5>Card 1</h5>
                         <h6>24px padding on desktop, 24px padding on mobile</h6>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec neque elementum, hendrerit dolor molestie, viverra erat. Fusce euismod velit quis nibh ornare, id luctus libero posuere. </p>
@@ -90,8 +90,8 @@ class Cards extends React.Component {
                     <InlineCode>js-sd-card-dismiss</InlineCode> class.
                 </p>
                 <div className="code-example">
-                    <div className="sd-card mod-card-2 sd-elevation-3">
-                        <button type="button" className="sd-unbutton dismiss-button js-sd-card-dismiss">
+                    <div className="sd-card mod-card-2 sd-elevation-3" id="test-card3">
+                        <button type="button" className="sd-unbutton dismiss-button js-sd-card-dismiss" id="test-card2">
                             <img src='img/close.svg' alt='Close Menu Icon' alt="Close" />
                         </button>
                         <div className="content">
