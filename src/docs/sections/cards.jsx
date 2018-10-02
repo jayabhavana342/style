@@ -2,7 +2,7 @@ import React from 'react'
 import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 import $ from 'jquery'
-import '../../lib/js/ttam_card.js'
+import '../../lib/cards.js'
 
 function cardsFunc() {
     $('#custom-card-dismiss').on('ttamCard.dismissed', () => {
@@ -91,7 +91,7 @@ class Contents extends React.Component {
                 </p>
                 <div className="code-example">
                     <div className="ttam-card mod-card-2 ttam-elevation-3">
-                        <button type="button" className="unbutton dismiss-button js-ttam-card-dismiss">
+                        <button type="button" className="sd-unbutton dismiss-button js-ttam-card-dismiss">
                             <img src='img/close.svg' alt='Close Menu Icon' alt="Close" />
                         </button>
                         <div className="content">
@@ -105,7 +105,7 @@ class Contents extends React.Component {
                     <BlockCode language='html'>
                         {
 `<div class="ttam-card mod-card-2 ttam-elevation-3">
-    <button type="button" class="unbutton dismiss-button js-ttam-card-dismiss">
+    <button type="button" class="sd-unbutton dismiss-button js-ttam-card-dismiss">
         <img class="dismiss-icon" src="/static/img/components/dismiss_icon.svg" alt="Close" />
     </button>
    ...
@@ -120,7 +120,7 @@ class Contents extends React.Component {
                 </p>
                 <div className="code-example">
                     <div className="ttam-card mod-card-2 ttam-elevation-3" id="custom-card-dismiss">
-                        <button type="button" className="unbutton dismiss-button js-ttam-card-dismiss">
+                        <button type="button" className="sd-unbutton dismiss-button js-ttam-card-dismiss">
                             <img src='img/close.svg' alt='Close Menu Icon' alt="Close" />
                         </button>
                         <div className="content">
@@ -134,7 +134,7 @@ class Contents extends React.Component {
                     <BlockCode language='html'>
                         {
 `<div class="ttam-card mod-card-2 ttam-elevation-3" id="custom-card-dismiss">
-    <button type="button" class="unbutton dismiss-button js-ttam-card-dismiss">
+    <button type="button" class="sd-unbutton dismiss-button js-ttam-card-dismiss">
         <img class="dismiss-icon" src="/static/img/components/dismiss_icon.svg" alt="Close" />
     </button>
     ...

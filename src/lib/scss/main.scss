@@ -1,11 +1,11 @@
 // Design Systems Main
 
 // Legacy Dependencies
-@import '../../docs/scss/legacy_dependencies';
+@import 'dependencies/legacy_dependencies';
 
 // Component SCSS
 // Load order matters
-@import 'ds_colors';
-@import 'ds_buttons';
-@import 'ds_elevations';
-@import 'ds_cards';
+@import 'colors';
+@import 'buttons';
+@import 'elevations';
+@import 'cards';

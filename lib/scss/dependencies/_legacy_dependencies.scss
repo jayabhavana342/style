@@ -1,0 +1,260 @@
+// body.styleguide.components
+
+// Colors
+@import '../colors';
+@import 'vars';
+@import 'mixins';
+
+// Typography
+$sd-avenir-next: "Avenir Next", Helvetica, Roboto, Arial, sans-serif;
+$sd-avenir-condensed: "Avenir Next Condensed", Helvetica, Roboto, Arial, sans-serif;
+$sd-base-font-family: $sd-avenir-next;
+$sd-header-font-family: $sd-base-font-family;
+
+// Font Sizes
+// body
+$sd-base-font-size: 100%;
+
+// headings
+$sd-jumbo-text:        rem(32);
+$sd-x-large-text:      rem(28);
+$sd-large-text:        rem(24);
+$sd-med-large-text:    rem(20);
+$sd-medium-text:       rem(18);
+$sd-base-text:         rem(16);
+$sd-small-text:        rem(15);
+$sd-x-small-text:      rem(14);
+$sd-tiny-text:         rem(13);
+$sd-mini-text:         rem(12);
+
+// mobile
+$sd-jumbo-text-mobile: rem(26);
+$sd-large-text-mobile: rem(22);
+
+// Font Weights
+$sd-font-weight-regular: 400;
+$sd-font-weight-medium: 500;
+$sd-font-weight-demi: 700;
+$sd-font-weight-heavy-bold: 800;
+
+// Line height
+$sd-base-line-height: 1.5;
+$sd-header-line-height: 1.25;
+
+// Spacing
+$sd-base-spacing: 30px;
+$sd-small-spacing: $sd-base-spacing / 2;
+$sd-mobile-gutter: 6.26%;
+$sd-mobile-card-gutter: 2%;
+$sd-mobile-card-padding: $sd-mobile-gutter - $sd-mobile-card-gutter;
+$sd-utility-bar-padding: 18px;
+
+// Returns the percentage an element needs to reset its parent's percentage
+// based padding
+// Takes in a percentage
+@function sd-reset-padding($percent) {
+    @return (((2 * $percent) / (100 - (2 * $percent))) / 2) * 100%;
+}
+
+$sd-mobile-gutter-reset: sd-reset-padding($sd-mobile-gutter);
+$sd-mobile-card-padding-reset: sd-reset-padding($sd-mobile-card-padding);
+
+// Other Sizes
+$sd-base-border-radius: 3px;
+$sd-button-border-radius: 100px;
+$sd-base-z-index: 0;
+$sd-select-box-height: 41px;
+$sd-tap-target: 44px;
+
+
+%sd-non-button {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    height: auto;
+    line-height: normal;
+    min-width: 0;
+    padding: 0;
+    text-align: left;
+    vertical-align: baseline;
+    white-space: normal;
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+.sd-unbutton {
+    @extend %sd-non-button;
+    color: inherit;
+    font-weight: $sd-font-weight-regular;
+}
+
+.button {
+    cursor: pointer;
+}
+
+// design_system/_borrowed.scss
+// This stuff comes from Bourbon
+$sd-em-base: 16px !default;
+
+// @mixin ttam-placeholder {
+//   $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
+//   @each $placeholder in $placeholders {
+//     &:#{$placeholder}-placeholder {
+//       @content;
+//     }
+//   }
+// }
+
+@function assign-inputs($inputs, $pseudo: null) {
+  $list: ();
+
+  @each $input in $inputs {
+    $input: unquote($input);
+    $input: if($pseudo, $input + ":" + $pseudo, $input);
+    $list: append($list, $input, comma);
+  }
+
+  @return $list;
+}
+
+
+
+$sd-prefix-for-webkit:    true !default;
+$sd-prefix-for-mozilla:   true !default;
+$sd-prefix-for-microsoft: true !default;
+$sd-prefix-for-opera:     true !default;
+$sd-prefix-for-spec:      true !default;
+
+@mixin disable-prefix-for-all() {
+  $sd-prefix-for-webkit:    false !global;
+  $sd-prefix-for-mozilla:   false !global;
+  $sd-prefix-for-microsoft: false !global;
+  $sd-prefix-for-opera:     false !global;
+  $sd-prefix-for-spec:      false !global;
+}
+
+@mixin sd-prefixer($sd-property, $sd-value, $sd-prefixes) {
+  @each $prefix in $sd-prefixes {
+    @if $prefix == webkit {
+      @if $sd-prefix-for-webkit {
+        -webkit-#{$sd-property}: $sd-value;
+      }
+    } @else if $prefix == moz {
+      @if $sd-prefix-for-mozilla {
+        -moz-#{$sd-property}: $sd-value;
+      }
+    } @else if $prefix == ms {
+      @if $sd-prefix-for-microsoft {
+        -ms-#{$sd-property}: $sd-value;
+      }
+    } @else if $prefix == o {
+      @if $sd-prefix-for-opera {
+        -o-#{$sd-property}: $sd-value;
+      }
+    } @else if $prefix == spec {
+      @if $sd-prefix-for-spec {
+        #{$sd-property}: $sd-value;
+      }
+    } @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
+  }
+}
+
+@mixin ttam-appearance($value) {
+  @include sd-prefixer(appearance, $value, webkit moz ms o spec);
+}
+
+a,
+.a-link {
+    &[href*='//'] {
+        &.no-external-icon,
+        &.ttam-button,
+        &.button {
+            &:after {
+                content: none !important;
+            }
+        }
+    }
+}
+
+@function rem($sd-pxval) {
+  @if not unitless($sd-pxval) {
+    $sd-pxval: strip-units($sd-pxval);
+  }
+
+  $sd-base: $sd-em-base;
+  @if not unitless($sd-base) {
+    $sd-base: strip-units($sd-base);
+  }
+  @return ($sd-pxval / $sd-base) * 1rem;
+}
+
+@function strip-units($value) {
+  @return ($value / ($value * 0 + 1));
+}
+
+@mixin ttam-triangle($size, $color, $direction) {
+  $width: nth($size, 1);
+  $height: nth($size, length($size));
+  $sd-foreground-color: nth($color, 1);
+  $sd-background-color: if(length($color) == 2, nth($color, 2), transparent);
+  height: 0;
+  width: 0;
+
+  @if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left) {
+    $width: $width / 2;
+    $height: if(length($size) > 1, $height, $height/2);
+
+    @if $direction == up {
+      border-bottom: $height solid $sd-foreground-color;
+      border-left: $width solid $sd-background-color;
+      border-right: $width solid $sd-background-color;
+    } @else if $direction == right {
+      border-bottom: $width solid $sd-background-color;
+      border-left: $height solid $sd-foreground-color;
+      border-top: $width solid $sd-background-color;
+    } @else if $direction == down {
+      border-left: $width solid $sd-background-color;
+      border-right: $width solid $sd-background-color;
+      border-top: $height solid $sd-foreground-color;
+    } @else if $direction == left {
+      border-bottom: $width solid $sd-background-color;
+      border-right: $height solid $sd-foreground-color;
+      border-top: $width solid $sd-background-color;
+    }
+  } @else if ($direction == up-right) or ($direction == up-left) {
+    border-top: $height solid $sd-foreground-color;
+
+    @if $direction == up-right {
+      border-left:  $width solid $sd-background-color;
+    } @else if $direction == up-left {
+      border-right: $width solid $sd-background-color;
+    }
+  } @else if ($direction == down-right) or ($direction == down-left) {
+    border-bottom: $height solid $sd-foreground-color;
+
+    @if $direction == down-right {
+      border-left:  $width solid $sd-background-color;
+    } @else if $direction == down-left {
+      border-right: $width solid $sd-background-color;
+    }
+  } @else if ($direction == inset-up) {
+    border-color: $sd-background-color $sd-background-color $sd-foreground-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction == inset-down) {
+    border-color: $sd-foreground-color $sd-background-color $sd-background-color;
+    border-style: solid;
+    border-width: $height $width;
+  } @else if ($direction == inset-right) {
+    border-color: $sd-background-color $sd-background-color $sd-background-color $sd-foreground-color;
+    border-style: solid;
+    border-width: $width $height;
+  } @else if ($direction == inset-left) {
+    border-color: $sd-background-color $sd-foreground-color $sd-background-color $sd-background-color;
+    border-style: solid;
+    border-width: $width $height;
+  }
+}

@@ -60,10 +60,10 @@ class Contents extends React.Component {
                 <h3>Button sizes</h3>
                 <p>Large and medium sizes</p>
                 <p>
-                    For large buttons, height is 48px, font size is <InlineCode>$base-text</InlineCode> (16px), left and right padding is 24px with a minimum width of 120px.
+                    For large buttons, height is 48px, font size is <InlineCode>$sd-base-text</InlineCode> (16px), left and right padding is 24px with a minimum width of 120px.
                 </p>
                 <p>
-                    For medium buttons, height is 36px, font size is <InlineCode>$x-small-text</InlineCode> (14px), left and right padding is 18px with a minimum width of 72px.
+                    For medium buttons, height is 36px, font size is <InlineCode>$sd-x-small-text</InlineCode> (14px), left and right padding is 18px with a minimum width of 72px.
                 </p>
                 <div className="code-example">
                     <button className="blue-primary">Large Primary</button>&nbsp;
@@ -117,7 +117,7 @@ class Contents extends React.Component {
                 <h3>Limited use</h3>
                 <p>These buttons are used in Research Discoveries and for FAQs in Ancestry and Health reports.</p>
                 <p>
-                    For small buttons, height is 24px, font size is <InlineCode>$x-small-text</InlineCode> (14px), left and right padding is 18px with a minimum width of 72px.
+                    For small buttons, height is 24px, font size is <InlineCode>$sd-x-small-text</InlineCode> (14px), left and right padding is 18px with a minimum width of 72px.
                 </p>
                 <div className="code-example">
                     <button className="small-yes">Yes</button>
@@ -210,16 +210,16 @@ class Contents extends React.Component {
                 <h3 className="subsection-title">Buttons with no style</h3>
                 <p>
                     Sometimes we need the button to be stripped of all styling:&nbsp;
-                    <button className="unbutton" onClick={this.exampleAlert2}>This is a button</button>
+                    <button className="sd-unbutton" onClick={this.exampleAlert2}>This is a button</button>
                 </p>
                 <p>
                     <strong>Example use case:</strong> The gear icon in Your Connections to the right side of each connection.
-                    <br />Use class: <InlineCode>unbutton</InlineCode>
+                    <br />Use class: <InlineCode>sd-unbutton</InlineCode>
                 </p>
                 <div className="code-example">
                     <BlockCode language='html'>
                         {
-`<button class="unbutton">This is a button</button>`
+`<button class="sd-unbutton">This is a button</button>`
                         }
                     </BlockCode>
                 </div>

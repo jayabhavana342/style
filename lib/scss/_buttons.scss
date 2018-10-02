@@ -10,7 +10,7 @@
 }
 
 // strip button styles
-%non-button {
+%sd-non-button {
     background-color: transparent;
     border: 0;
     border-radius: 0;
@@ -27,16 +27,16 @@
 }
 
 // for button with button styles removed
-.unbutton {
-    @extend %non-button;
+.sd-unbutton {
+    @extend %sd-non-button;
     color: inherit;
-    font-weight: $font-weight-regular;
+    font-weight: $sd-font-weight-regular;
 }
 
 // for button with anchor/link style
 .button-anchor {
-    @extend %non-button;
+    @extend %sd-non-button;
     @extend .a-link;
     display: inline;
-    font-weight: $font-weight-medium;
+    font-weight: $sd-font-weight-medium;
 }

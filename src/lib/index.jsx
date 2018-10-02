@@ -1,5 +1,10 @@
-import Link from './Link';
+import './cards'
+import './loading'
+
+exports.printMsg = function() {
+    console.log("This is a message from the demo package");
+}
 
 window.TTAM_UI = {
-  Link
+
 };

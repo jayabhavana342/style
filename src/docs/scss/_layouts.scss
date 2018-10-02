@@ -162,7 +162,7 @@ hr {
         99% { visibility: visible }
         100% { visibility: hidden }
     }
-    @include type-nav;
+    @include sd-type-nav;
     position: fixed;
     z-index: 2;
     top: 0;
@@ -170,7 +170,7 @@ hr {
     box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
     background-color: $white;
     overflow: auto;
-    transition: transform $transition-timing;
+    transition: transform $sd-transition-timing;
 
     a {
         visibility: hidden;
@@ -185,7 +185,7 @@ hr {
     &.mod-showing {
         a {
             visibility: visible;
-            animation: hideLinks $transition-timing;
+            animation: hideLinks $sd-transition-timing;
         }
     }
     &-overlay {
@@ -198,7 +198,7 @@ hr {
         background-color: rgba(255, 255, 255, .7);
         &.mod-showing {
             display: block;
-            animation: showOverlay $transition-timing;
+            animation: showOverlay $sd-transition-timing;
             animation-fill-mode: forwards;
         }
     }
@@ -207,7 +207,7 @@ hr {
         height: 40px;
     }
     &-link {
-        @include type-nav;
+        @include sd-type-nav;
         display: block;
         padding-top: 10px;
     }
@@ -247,7 +247,7 @@ hr {
         }
     }
     &-subsection {
-        @include type-nav-sub;
+        @include sd-type-nav-sub;
         padding-left: 0;
         margin-bottom: 7px;
         > li {
@@ -264,7 +264,7 @@ hr {
             height: 24px;
             width: 24px;
             background: url('../img/arrow.svg') no-repeat;
-            transition-duration: $transition-timing;
+            transition-duration: $sd-transition-timing;
         }
         &.mod-expanded {
             &::after {
@@ -294,13 +294,13 @@ hr {
         }
     }
     &-footer {
-        @include type-nav-sub;
+        @include sd-type-nav-sub;
         margin: 30px 0 20px;
         color: $gray7;
     }
 }
 
-@include media($mobile-tablet) {
+@include viewport($sd-mobile-tablet) {
     .code-example {
         margin: 5vw 0 2.5vw;
     }
@@ -324,8 +324,8 @@ hr {
         &-wrapper {
             position: relative;
             left: 0;
-            transition-duration: $transition-timing;
-            transition-timing-function: $transition-function;
+            transition-duration: $sd-transition-timing;
+            transition-timing-function: $sd-transition-function;
             &.mod-moved {
                 opacity: .2;
             }
@@ -389,7 +389,7 @@ hr {
     }
 }
 
-@include media($mobile) {
+@include viewport($sd-mobile) {
     .nav {
         width: 77vw;
         &-header {
@@ -398,7 +398,7 @@ hr {
     }
 }
 
-@include media($tablet) {
+@include viewport($sd-tablet) {
     .nav {
         width: 256px;
         &-header {
@@ -407,7 +407,7 @@ hr {
     }
 }
 
-@include media($desktop) {
+@include viewport($sd-desktop) {
     body {
         overflow-x: hidden;
     }

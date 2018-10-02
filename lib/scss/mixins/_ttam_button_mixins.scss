@@ -80,15 +80,15 @@ $ttam-button-colors: (
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     border: 0;
-    border-radius: $button-border-radius;
+    border-radius: $sd-button-border-radius;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-family: $base-font-family;
-    font-size: $base-text;
-    font-weight: $font-weight-demi;
+    font-family: $sd-base-font-family;
+    font-size: $sd-base-text;
+    font-weight: $sd-font-weight-demi;
     line-height: normal;
     text-decoration: none;
     user-select: none;
@@ -103,13 +103,13 @@ $ttam-button-colors: (
     // Button size
     @if $size == small {
         // small
-        font-size: $x-small-text;
+        font-size: $sd-x-small-text;
         height: $button-height-small;
         min-width: $button-min-width-small;
         padding: 0 12px;
     } @else if $size == medium {
         // medium
-        font-size: $x-small-text;
+        font-size: $sd-x-small-text;
         height: $button-height-medium;
         min-width: $button-min-width-small;
         padding: 0 18px;
@@ -192,7 +192,7 @@ $ttam-button-colors: (
     }
 
     &.mod-wide-mobile {
-        @include media($mobile) {
+        @include viewport($sd-mobile) {
             display: flex;
             width: 100%;
         }

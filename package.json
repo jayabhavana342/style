@@ -6,17 +6,16 @@
   "scripts": {
     "start": "concurrently \"npm run lib:watch\" \"npm run docs:watch\"",
     "lib": "babel src/lib -d lib --copy-files",
-    "docs": "babel src/docs -d docs --copy-files",
-    "lib:watch": "babel src/lib --watch --out-dir lib --copy-files --source-maps inline",
     "docs": "webpack --mode production",
+    "lib:watch": "babel src/lib --watch --out-dir lib --copy-files --source-maps inline",
     "docs:watch": "webpack-dev-server --mode development -d",
     "test": "jest --testPathIgnorePatterns src --silent"
   },
   "keywords": [],
   "license": "MIT",
   "peerDependencies": {
-    "react": "^15.3.0 || ^16.2.0",
-    "react-dom": "^15.3.0 || ^16.2.0"
+    "react": "^16.3.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-rc.1",
@@ -52,7 +51,9 @@
     "style-loader": "^0.22.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.3"
+    "webpack-dev-server": "^3.1.3",
+    "react-scroll": "^1.7.10",
+    "react-syntax-highlighter": "^8.0.1"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "./setupTests.js"
@@ -60,9 +61,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/23andMe/Style.git"
-  },
-  "dependencies": {
-    "react-scroll": "^1.7.10",
-    "react-syntax-highlighter": "^8.0.1"
   }
 }
