@@ -121,12 +121,8 @@ hr {
     &-wrapper {
         width: 100%;
         a {
-            color: $accessible-blue;
             text-decoration: none;
             &:active,
-            &:visited {
-                color: $accessible-blue;
-            }
             &:hover {
                 text-decoration: underline;
             }
@@ -141,7 +137,17 @@ hr {
                 vertical-align: text-top;
             }
         }
+        a:not(.sd-button) {
+            color: $accessible-blue;
+            &:visited {
+                color: $accessible-blue;
+            }
+        }
     }
+}
+
+.section-wrapper {
+    overflow: visible;
 }
 
 .sg-section {
@@ -272,6 +278,7 @@ hr {
             }
         }
     }
+    &-link.mod-current,
     &-sub-link.mod-current {
         position: relative;
         color: $accessible-blue;
@@ -365,9 +372,6 @@ hr {
             padding-left: 10px;
         }
     }
-    .nav-header {
-        box-shadow: 0 1px 0 rgba(0, 0, 0, .15);
-    }
     .nav {
         transform: translateX(-105%);
         &.mod-showing {
@@ -379,6 +383,7 @@ hr {
         }
         &-header {
             position: fixed;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, .15);
         }
         &-footer {
             margin-left: 30px;
