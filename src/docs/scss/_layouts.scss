@@ -3,6 +3,7 @@ body {
     width: 100%;
     background-color: $gray1;
     font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
 }
 
 h1 {
@@ -28,6 +29,14 @@ h1 {
     }
 }
 
+p.mod-headroom {
+    margin-bottom: 0;
+}
+ul,
+ol {
+    font-size: 1rem;
+    padding-left: 0;
+}
 hr {
     height: 1px;
     border: none;
@@ -45,7 +54,7 @@ hr {
     pre {
         margin: 0;
         background-color: $white;
-        font-size: 1.3em;
+        font-size: 1.1rem;
     }
 }
 .block-code {
@@ -74,6 +83,12 @@ hr {
         border-radius: 0 3px 3px;
     }
 }
+
+.example-box,
+.example-controls {
+    font-size: 16px;
+}
+
 .inline-code {
     position: relative;
     display: inline-block;
@@ -326,6 +341,9 @@ hr {
             margin-bottom: 2vw;
         }
     }
+    p.mod-headroom {
+        margin-top: 10vw;
+    }
     .header {
         height: 50px;
         padding: 0;
@@ -430,9 +448,6 @@ hr {
         position: relative;
         margin-top: 100px;
         padding-top: 35px;
-        &:first-of-type {
-            margin-top: 35px;
-        }
     }
     .code-example {
         margin: 25px 0 10px;
@@ -454,6 +469,9 @@ hr {
         &:hover {
             color: $gray8;
         }
+    }
+    p.mod-headroom {
+        margin-top: 30px;
     }
     .header {
         position: fixed;

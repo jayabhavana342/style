@@ -1,5 +1,6 @@
 import React from 'react';
 import Buttons from '../sections/buttons.jsx';
+import Breadcrumbs from '../sections/breadcrumbs.jsx';
 import Colors from '../sections/colors.jsx';
 import Cards from '../sections/cards.jsx';
 import Elevations from '../sections/elevations.jsx';
@@ -17,6 +18,9 @@ class Contents extends React.Component {
                     </Waypoint>
                 </div>
                 <div className="section-wrapper">
+                    <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('breadcrumbs')}}>
+                        <Breadcrumbs />
+                    </Waypoint>
                     <Waypoint scrollableAncestor={window} onEnter={()=> {this.props.setSection('buttons')}}>
                         <Buttons />
                     </Waypoint>

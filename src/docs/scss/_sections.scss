@@ -10,6 +10,14 @@
     }
 }
 
+.sg-breadcrumbs {
+    .sd-breadcrumb-link {
+        &::after {
+            content: none !important;
+        }
+    }
+}
+
 .sg-colors {
     .color-square-example {
         display: flex;

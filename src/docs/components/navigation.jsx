@@ -36,6 +36,7 @@ class Nav extends React.Component {
                     <li><AnchorLink href="#getting-started-section" className="nav-link" role="link" aria-label="Getting Started" onClick={this.sectionClickHandler} section-id="getting-started">Getting Started</AnchorLink></li>
                     <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Components" section-id="components">Components</a></li>
                     <ul className="nav-subsection">
+                        <li><AnchorLink href="#breadcrumbs-section" className={`nav-sub-link ${(this.props.currentSection === 'breadcrumbs') ? 'mod-current' : ''}`} aria-label="Breadcrumbs" onClick={this.sectionClickHandler} section-id="breadcrumbs">Breadcrumbs</AnchorLink></li>
                         <li><AnchorLink href="#buttons-section" className={`nav-sub-link ${(this.props.currentSection === 'buttons') ? 'mod-current' : ''}`} aria-label="Buttons" onClick={this.sectionClickHandler} section-id="buttons">Buttons</AnchorLink></li>
                         <li><AnchorLink href="#colors-section" className={`nav-sub-link ${(this.props.currentSection === 'colors') ? 'mod-current' : ''}`} aria-label="Colors" onClick={this.sectionClickHandler} section-id="colors">Colors</AnchorLink></li>
                         <li><AnchorLink href="#cards-section" className={`nav-sub-link ${(this.props.currentSection === 'cards') ? 'mod-current' : ''}`} aria-label="Cards" onClick={this.sectionClickHandler} section-id="cards">Cards</AnchorLink></li>
