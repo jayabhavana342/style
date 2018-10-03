@@ -13,10 +13,10 @@
 .sg-colors {
     .color-square-example {
         display: flex;
-        align-items: center;
-        justify-content: center;
         height: 130px;
         width: 130px;
+        align-items: center;
+        justify-content: center;
         background-color: $pink;
         color: $white;
         &:hover {
@@ -29,16 +29,16 @@
         margin-bottom: 30px;
         font-weight: 500;
         > div {
-            color: $white;
             padding: 20px 15px;
             display: flex;
+            height: 130px;
+            width: 130px;
             flex-direction: column;
             justify-content: center;
             text-align: center;
             font-size: 16px;
-            width: 130px;
             line-height: 24px;
-            height: 130px;
+            color: $white;
             .def {
                 @include sd-type-body;
                 color: $white;
@@ -198,9 +198,9 @@
         @include sd-viewport($sd-mobile) {
             margin-bottom: 6vw;
             .left-side {
-                flex-shrink: 0;
                 width: 100%;
                 margin-bottom: 3vw;
+                flex-shrink: 0;
             }
             &.mod-dark-example {
                 padding: 5vw 2vw;
@@ -292,16 +292,16 @@
             margin-bottom: 10px;
         }
         .sg-loading-box-testcard {
-            margin-top: 10px;
             height: 150px;
             width: 100%;
+            margin-top: 10px;
         }
         .loading-example-pill,
         .loading-example-skeleton {
             width: 100%;
             height: 330px;
-            background-color: $gray2;
             padding: 10px;
+            background-color: $gray2;
         }
         .loading-example-skeleton {
             margin: 10px 0 20px;

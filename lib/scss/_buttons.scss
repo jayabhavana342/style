@@ -81,12 +81,12 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
     $sd-button-hover-color: map-get(map-get($sd-button-colors, $color-name), hover);
 
     @include ttam-appearance(none);
+    display: inline-flex;
+    border: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    border: 0;
     border-radius: $sd-button-border-radius;
     cursor: pointer;
-    display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
@@ -100,28 +100,30 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
     white-space: nowrap;
 
     // Remove external link icon from button
-    &:after {
+    &::after {
         @extend .no-external-icon;
     }
 
     // Button size
     @if $size == small {
         // small
-        font-size: $sd-x-small-text;
+        padding: 0 12px;
         height: $sd-button-height-small;
         min-width: $sd-button-min-width-small;
-        padding: 0 12px;
-    } @else if $size == medium {
-        // medium
         font-size: $sd-x-small-text;
+    }
+    @else if $size == medium {
+        // medium
         height: $sd-button-height-medium;
-        min-width: $sd-button-min-width-small;
         padding: 0 18px;
-    } @else {
+        min-width: $sd-button-min-width-small;
+        font-size: $sd-x-small-text;
+    }
+    @else {
         // large
         height: $sd-button-height-large;
-        min-width: $sd-button-min-width-large;
         padding: 0 24px;
+        min-width: $sd-button-min-width-large;
     }
 
     // Button type
@@ -152,7 +154,8 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
                 box-shadow: inset 0 0 0 2px $sd-button-hover-color;
             }
         }
-    } @else {
+    }
+    @else {
         // solid
         background-color: $sd-button-base-color;
         color: $white;
@@ -168,13 +171,15 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
             &:focus {
                 color: $gray8;
             }
-        } @else if $color-name == white {
+        }
+        @else if $color-name == white {
             color: $accessible-blue;
             &:hover,
             &:focus {
                 color: $dark-periwinkle;
             }
-        } @else if $color-name == disabled {
+        }
+        @else if $color-name == disabled {
             color: $gray5;
             cursor: not-allowed;
             &:hover,
@@ -223,13 +228,13 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
 
 // strip button styles
 %sd-non-button {
-    background-color: transparent;
     border: 0;
-    border-radius: 0;
-    height: auto;
-    line-height: normal;
-    min-width: 0;
     padding: 0;
+    height: auto;
+    min-width: 0;
+    line-height: normal;
+    border-radius: 0;
+    background-color: transparent;
     text-align: left;
     vertical-align: baseline;
     white-space: normal;

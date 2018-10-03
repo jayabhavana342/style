@@ -17,9 +17,9 @@ $sd-loading-button-trans: .25s;
     width: $dot-size * 6;
     &::before,
     &::after {
-        border-radius: $dot-size * 2;
         height: $dot-size;
         width: $dot-size;
+        border-radius: $dot-size * 2;
     }
 }
 
@@ -33,16 +33,16 @@ $sd-loading-button-trans: .25s;
             @include sd-loading-negmove($movedist);
         }
         30% {
-            opacity: $sd-loading-partial-opacity;
             z-index: 0;
+            opacity: $sd-loading-partial-opacity;
         }
         50% {
             @include sd-loading-posmove($movedist);
             opacity: 1;
         }
         70% {
-            opacity: $sd-loading-partial-opacity;
             z-index: 1;
+            opacity: $sd-loading-partial-opacity;
         }
         100% {
             @include sd-loading-negmove($movedist);
@@ -55,16 +55,16 @@ $sd-loading-button-trans: .25s;
             @include sd-loading-posmove($movedist);
         }
         30% {
-            opacity: $sd-loading-partial-opacity;
             z-index: 1;
+            opacity: $sd-loading-partial-opacity;
         }
         50% {
             @include sd-loading-negmove($movedist);
             opacity: 1;
         }
         70% {
-            opacity: $sd-loading-partial-opacity;
             z-index: 0;
+            opacity: $sd-loading-partial-opacity;
         }
         100% {
             @include sd-loading-posmove($movedist);
@@ -169,12 +169,12 @@ $sd-loading-button-trans: .25s;
 
 @keyframes sd-loading-buttonDotsMovement {
     from {
-        opacity: 0;
         width: 0;
+        opacity: 0;
     }
     to {
-        opacity: 1;
         width: 36px;
+        opacity: 1;
     }
 }
 
@@ -189,8 +189,8 @@ $sd-loading-button-trans: .25s;
         position: absolute;
         top: 50%;
         left: 50%;
-        content: "";
         display: block;
+        content: "";
         animation-duration: 1s;
         animation-iteration-count: infinite;
         animation-timing-function: cubic-bezier(0.695, 0.000, 0.305, 1.000);
@@ -276,13 +276,13 @@ $sd-loading-button-trans: .25s;
 .sd-loading-box.sd-loadingstate {
     position: relative;
     &::before {
-        content: "";
         position: absolute;
         z-index: 5;
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
+        content: "";
     }
     .sd-box-loading {
         width: 36px;
@@ -316,10 +316,10 @@ $sd-loading-button-trans: .25s;
         top: 60px;
         left: 0;
         display: flex;
-        align-items: center;
-        justify-content: center;
         width: 100%;
         height: 37px;
+        justify-content: center;
+        align-items: center;
         border-radius: 100px;
         font-size: 14px;
         animation: sd-loading-animateUpBox 500ms ease-out;
@@ -327,10 +327,10 @@ $sd-loading-button-trans: .25s;
     .sd-loading-pill-shape {
         @include sd-elevation(2);
         display: flex;
-        align-items: center;
-        justify-content: center;
         width: auto;
         padding: 4px 25px 4px 10px;
+        justify-content: center;
+        align-items: center;
         border-radius: 100px;
         background-color: $white;
     }
@@ -352,26 +352,26 @@ $sd-loading-button-trans: .25s;
         width: 100%;
         overflow: hidden;
         &::before {
-            content: "";
             position: absolute;
             top: 0;
             left: 0;
+            z-index: 5;
             height: 100%;
             width: 100%;
-            z-index: 5;
+            content: "";
             background: $white url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="480" height="260"><path fill="none" d="M0 0h480v260H0z"/><path fill="#F7F9FA" d="M33 34h287v24H33zM33 77h351v18H33zM33 106h351v18H33zM33 135h351v12H33zM33 159h351v12H33z"/><circle fill="#F7F9FA" cx="424" cy="46" r="25"/></svg>');
             background-repeat: no-repeat;
             background-size: 100% auto;
             animation: sd-loading-animateUpSkeleton 500ms;
         }
         &::after {
-            content: "";
             position: absolute;
             z-index: 6;
             left: 0;
             top: 0;
             height: 100%;
             width: 100%;
+            content: "";
             animation: shimmerSkeleton 2s infinite;
             animation-delay: 500ms;
             background: linear-gradient(
