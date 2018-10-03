@@ -12,9 +12,9 @@ $sd-card-corner: $sd-base-border-radius;
 
 .ttam-card, // Eventually deprecate this
 .sd-card {
-    background: white;
-    padding: $sd-card-padding-mobile; //mobile padding for all cards
     position: relative;
+    padding: $sd-card-padding-mobile; //mobile padding for all cards
+    background: white;
     transform: scaleY(1);
     transform-origin: top;
 

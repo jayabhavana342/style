@@ -33,7 +33,8 @@ class Nav extends React.Component {
                     <li><a href="#" className="nav-link" role="link" aria-label="Getting Started">Getting Started</a></li>
                     <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Style">Style</a></li>
                     */}
-                    <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Components">Components</a></li>
+                    <li><AnchorLink href="#getting-started-section" className="nav-link" role="link" aria-label="Getting Started" onClick={this.sectionClickHandler} section-id="getting-started">Getting Started</AnchorLink></li>
+                    <li><a href="#" className="nav-link nav-link-exp" role="link" aria-label="Components" section-id="components">Components</a></li>
                     <ul className="nav-subsection">
                         <li><AnchorLink href="#buttons-section" className={`nav-sub-link ${(this.props.currentSection === 'buttons') ? 'mod-current' : ''}`} aria-label="Buttons" onClick={this.sectionClickHandler} section-id="buttons">Buttons</AnchorLink></li>
                         <li><AnchorLink href="#colors-section" className={`nav-sub-link ${(this.props.currentSection === 'colors') ? 'mod-current' : ''}`} aria-label="Colors" onClick={this.sectionClickHandler} section-id="colors">Colors</AnchorLink></li>

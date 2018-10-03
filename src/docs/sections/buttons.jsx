@@ -13,6 +13,7 @@ class Buttons extends React.Component {
     render() {
         return (
             <div className="sg-section sg-buttons" id="buttons-section" ref={this.props.innerRef}>
+                <hr className="widerule" />
                 <h1>Buttons</h1>
                 <p>
                     Use the mixin to create individual buttons. There are button styles that are already created, please use where appropriate.
@@ -132,7 +133,7 @@ class Buttons extends React.Component {
                 <p>Use <InlineCode>sd-button</InlineCode> class to create the blue primary button.</p>
                 <div className="code-example">
                     <button className="sd-button">Primary button</button>
-                    <a className="sd-button">Primary button</a>
+                    <a href="#" className="sd-button">Primary button</a>
                     <BlockCode language='html'>
                         {
 `<button class="sd-button">Primary button</button>

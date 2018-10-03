@@ -83,6 +83,9 @@ class Cards extends React.Component {
                 </div>
 
                 <h2 className="subsection-title">Cards with Close (Dismiss) Icons</h2>
+                <p>In order for this functionality to work, you must first import the component</p>
+                <InlineCode>import 'styledot/cards'</InlineCode>
+                <br /><br />
                 <hr />
                 <p>The close (x) icon will be in the top right.</p>
                 <p>

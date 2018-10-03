@@ -1,8 +1,8 @@
 body {
-    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 100%;
     width: 100%;
     background-color: $gray1;
+    font-family: 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -12,13 +12,13 @@ h1 {
         position: absolute;
         top: 50%;
         right: 0;
-        transform: translateY(-50%);
-        content: "updated";
+        width: 70px;
+        height: 16px;
         box-sizing: border-box;
         padding-top: 3px;
-        height: 16px;
-        width: 70px;
         background-color: $yellow;
+        transform: translateY(-50%);
+        content: "updated";
         border-radius: 2px;
         font-size: 10px;
         font-weight: 500;
@@ -29,9 +29,9 @@ h1 {
 }
 
 hr {
-    margin-bottom: 20px;
-    border: none;
     height: 1px;
+    border: none;
+    margin-bottom: 20px;
     background-color: $gray3;
 }
 
@@ -43,15 +43,16 @@ hr {
 .inline-code {
     border: 1px solid $gray3;
     pre {
-        background-color: $white;
         margin: 0;
+        background-color: $white;
+        font-size: 1.3em;
     }
 }
 .block-code {
     position: relative;
-    background-color: $white;
-    border-radius: 0 3px 3px 3px;
     margin: 48px 0 30px;
+    background-color: $white;
+    border-radius: 0 3px 3px;
     &-tab {
         $tab-height: 17px;
         position: absolute;
@@ -70,7 +71,7 @@ hr {
     }
     pre {
         padding: 15px !important; // Necessary to overwrite HighlightJS styling
-        border-radius: 0 3px 3px 3px;
+        border-radius: 0 3px 3px;
     }
 }
 .inline-code {
@@ -121,27 +122,33 @@ hr {
     &-wrapper {
         width: 100%;
         a {
-            color: $accessible-blue;
             text-decoration: none;
             &:active,
-            &:visited {
-                color: $accessible-blue;
-            }
             &:hover {
                 text-decoration: underline;
             }
             &::after {
+                display: inline-block;
                 height: 0;
                 width: 0;
                 border-top: 5px solid #1976D2;
                 border-left: 5px solid transparent;
                 border-top-color: inherit;
                 content: '';
-                display: inline-block;
                 vertical-align: text-top;
             }
         }
+        a:not(.sd-button) {
+            color: $accessible-blue;
+            &:visited {
+                color: $accessible-blue;
+            }
+        }
     }
+}
+
+.section-wrapper {
+    overflow: visible;
 }
 
 .sg-section {
@@ -173,8 +180,8 @@ hr {
     transition: transform $sd-transition-timing;
 
     a {
-        visibility: hidden;
         position: relative;
+        visibility: hidden;
         color: $gray8;
         text-decoration: none;
     }
@@ -189,12 +196,12 @@ hr {
         }
     }
     &-overlay {
-        display: none;
         position: fixed;
         z-index: 2;
-        opacity: 0;
+        display: none;
         height: 100%;
         width: 100%;
+        opacity: 0;
         background-color: rgba(255, 255, 255, .7);
         &.mod-showing {
             display: block;
@@ -213,14 +220,14 @@ hr {
     }
     &-sub-link {
         display: block;
-        padding-top: 13px;
         width: 100%;
+        padding-top: 13px;
     }
     &-header {
         z-index: 1;
         display: flex;
-        align-items: center;
         height: 50px;
+        align-items: center;
         background-color: $white;
         h3 {
             font-size: 18px;
@@ -260,9 +267,9 @@ hr {
             position: absolute;
             right: 24px;
             top: 8px;
-            content: "";
             height: 24px;
             width: 24px;
+            content: "";
             background: url('../img/arrow.svg') no-repeat;
             transition-duration: $sd-transition-timing;
         }
@@ -272,17 +279,18 @@ hr {
             }
         }
     }
+    &-link.mod-current,
     &-sub-link.mod-current {
         position: relative;
         color: $accessible-blue;
         font-weight: 500;
         &::before {
-            content: "";
             position: absolute;
             top: 0;
             left: 0;
             height: 100%;
             width: 2px;
+            content: "";
             background-color: $accessible-blue;
         }
     }
@@ -347,8 +355,8 @@ hr {
             height: 50px;
             width: 60px;
             padding: 0;
-            opacity: 1;
             border: none;
+            opacity: 1;
             background-color: transparent;
             > img {
                 position: relative;
@@ -365,9 +373,6 @@ hr {
             padding-left: 10px;
         }
     }
-    .nav-header {
-        box-shadow: 0 1px 0 rgba(0, 0, 0, .15);
-    }
     .nav {
         transform: translateX(-105%);
         &.mod-showing {
@@ -379,6 +384,7 @@ hr {
         }
         &-header {
             position: fixed;
+            box-shadow: 0 1px 0 rgba(0, 0, 0, .15);
         }
         &-footer {
             margin-left: 30px;
@@ -433,8 +439,8 @@ hr {
     }
     .contents-wrapper {
         position: relative;
-        max-width: 780px;
         margin: 0 auto;
+        max-width: 780px;
     }
     ul {
         line-height: 1.4;
@@ -451,32 +457,32 @@ hr {
     }
     .header {
         position: fixed;
-        display: block;
         left: 0;
         top: 0;
+        z-index: 3;
+        display: block;
         height: 100%;
         width: 64px;
         border-right: 1px solid $gray3;
-        z-index: 3;
         &-wrapper {
             display: flex;
             flex-direction: column;
-            margin: 0 auto;
-            padding-top: 20px;
             height: 100%;
             width: 100%;
+            margin: 0 auto;
+            padding-top: 20px;
         }
         &-mark {
             height: 30px;
         }
         &-burg,
         &-close {
-            order: 2;
             height: 50px;
             width: 64px;
             padding: 0;
             margin: 12px auto 0;
             border: none;
+            order: 2;
             background-color: transparent;
             cursor: pointer;
         }
@@ -486,8 +492,8 @@ hr {
         margin: 0 auto;
     }
     .nav {
-        transform: translateX(-200px);
         width: 256px;
+        transform: translateX(-200px);
         a {
             height: 40px;
             padding-top: 13px;
@@ -500,8 +506,8 @@ hr {
         }
         &-header {
             position: absolute;
-            width: 256px;
             z-index: 1;
+            width: 256px;
             h3 {
                 margin: 20px 0 0 24px;
             }
@@ -511,7 +517,7 @@ hr {
         }
         &-brand,
         &-components {
-            padding: 0 0 20px 0;
+            padding: 0 0 20px;
             max-width: 55vw;
         }
         &-link {
@@ -522,8 +528,8 @@ hr {
         &-sub-link {
             display: block;
             height: 25px;
-            padding-top: 7px;
             width: 100%;
+            padding-top: 7px;
             padding-left: 24px;
         }
     }
