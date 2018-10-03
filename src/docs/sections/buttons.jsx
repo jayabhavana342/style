@@ -3,7 +3,7 @@ import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 import $ from 'jquery'
 
-class Contents extends React.Component {
+class Buttons extends React.Component {
     exampleAlert1() {
         alert('This is a button!');
     }
@@ -20,7 +20,7 @@ class Contents extends React.Component {
                 <hr />
 
                 <h3>Mixin usage</h3>
-                <p><InlineCode>@include ttam-button(color, size, type);</InlineCode></p>
+                <p><InlineCode>@include sd-button(color, size, type);</InlineCode></p>
                 <p><strong>Options</strong></p>
                 <ul>
                     <li><strong>Color:</strong> <em>blue (default), green, pink, red, gray, white, disabled. You can add additional colors in the mixin if needed.</em></li>
@@ -28,27 +28,27 @@ class Contents extends React.Component {
                     <li><strong>Type:</strong> <em>solid (default), outlined</em></li>
                 </ul>
                 <div className="code-example">
-                    <button className="ttam-button">Button</button>&nbsp;
+                    <button className="sd-button">Button</button>&nbsp;
                     <button className="example-button">Example button</button>&nbsp;
                     <button className="another-example-button">Another button</button>&nbsp;
 
                     <BlockCode language='scss'>
                         {
-`.ttam-button {
-    @include ttam-button();
+`.sd-button {
+    @include sd-button();
 }
 .example-button {
-    @include ttam-button(pink, large, solid);
+    @include sd-button(pink, large, solid);
 }
 .another-example-button {
-    @include ttam-button(green, medium, outlined);
+    @include sd-button(green, medium, outlined);
 }`
                         }
                     </BlockCode>
 
                     <BlockCode language='html'>
                         {
-`<button class="ttam-button">Button</button>
+`<button class="sd-button">Button</button>
 <button class="example-button">Example button</button>
 <button class="another-example-button">Another button</button>`
                         }
@@ -84,33 +84,33 @@ class Contents extends React.Component {
                 <h3>Button color meanings</h3>
                 <div className="code-example">
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="blue-primary">Blue Primary</button></div>
-                        <div className="button-definition">Blue buttons are primary actions within the product. These actions drive the experience forward.</div>
+                        <div className="left-side"><button className="blue-primary">Blue Primary</button></div>
+                        <div>Blue buttons are primary actions within the product. These actions drive the experience forward.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="pink-primary">Pink Primary</button></div>
-                        <div className="button-definition">Pink buttons are used to indicate a “sale” action like “add to cart” or “upgrade.”</div>
+                        <div className="left-side"><button className="pink-primary">Pink Primary</button></div>
+                        <div>Pink buttons are used to indicate a “sale” action like “add to cart” or “upgrade.”</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="green-primary">Green Primary</button></div>
-                        <div className="button-definition">Green is used to filter results or indicate notifications.</div>
+                        <div className="left-side"><button className="green-primary">Green Primary</button></div>
+                        <div>Green is used to filter results or indicate notifications.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="red-primary">Red Primary</button></div>
-                        <div className="button-definition">Red is used only for negative or critical actions like “Delete” or “No” which are permanent decisions.</div>
+                        <div className="left-side"><button className="red-primary">Red Primary</button></div>
+                        <div>Red is used only for negative or critical actions like “Delete” or “No” which are permanent decisions.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside">
-                        <div className="button-side"><button className="gray-primary">Gray Primary</button></div>
-                        <div className="button-definition">Light Gray buttons are for actions like “Back” or “Print” which do not drive the experience forward.</div>
+                        <div className="left-side"><button className="gray-primary">Gray Primary</button></div>
+                        <div>Light Gray buttons are for actions like “Back” or “Print” which do not drive the experience forward.</div>
                     </div>
 
                     <div className="sg-buttons-sidebyside mod-dark-example">
-                        <div className="button-side"><button className="white-primary">White Primary</button></div>
-                        <div className="button-definition">White buttons are used on dark backgrounds to create sufficient contrast but lack specific meaning.</div>
+                        <div className="left-side"><button className="white-primary">White Primary</button></div>
+                        <div>White buttons are used on dark backgrounds to create sufficient contrast but lack specific meaning.</div>
                     </div>
                 </div>
 
@@ -125,19 +125,18 @@ class Contents extends React.Component {
                 </div>
 
                 <h2 className="subsection-title">Button styles</h2>
-                <p>File location: <InlineCode>you/assets/scss/components/_ttam-buttons.scss</InlineCode></p>
                 <h3>Reusable classes</h3>
                 <p>
                     The blue primary button is the most used button style and we should not recreate it with a mixin every time it is needed.
                 </p>
-                <p>Use <InlineCode>ttam-button</InlineCode> class to create the blue primary button.</p>
+                <p>Use <InlineCode>sd-button</InlineCode> class to create the blue primary button.</p>
                 <div className="code-example">
-                    <button className="ttam-button">Primary button</button>
-                    <a className="ttam-button">Primary button</a>
+                    <button className="sd-button">Primary button</button>
+                    <a className="sd-button">Primary button</a>
                     <BlockCode language='html'>
                         {
-`<button class="ttam-button">Primary button</button>
-<a class="ttam-button" href="...">Primary button</a>`
+`<button class="sd-button">Primary button</button>
+<a class="sd-button" href="...">Primary button</a>`
                         }
                     </BlockCode>
                 </div>
@@ -148,14 +147,14 @@ class Contents extends React.Component {
                 </p>
                 <div className="code-example">
                     <p>This is a wide button. It will expand horizontally to fill the width of its parent container.</p>
-                    <button className="ttam-button mod-wide">Wide button</button>
+                    <button className="sd-button mod-wide">Wide button</button>
                     <br /><br />
                     <p>This is a button, that is wide for mobile devices (screen sizes &lt; 768px wide).</p>
-                    <button className="ttam-button mod-wide-mobile">Wide for mobile button</button>
+                    <button className="sd-button mod-wide-mobile">Wide for mobile button</button>
                     <BlockCode language='html'>
                         {
-`<button class="ttam-button mod-wide">Wide button</button>
-<button class="ttam-button mod-wide-mobile">Wide for mobile button</button>`
+`<button class="sd-button mod-wide">Wide button</button>
+<button class="sd-button mod-wide-mobile">Wide for mobile button</button>`
                         }
                     </BlockCode>
                 </div>
@@ -185,7 +184,7 @@ class Contents extends React.Component {
                 <div className="code-example">
                     <BlockCode language='html'>
                         {
-`<a class="ttam-button" href="...">This button uses an anchor element</a>`
+`<a class="sd-button" href="...">This button uses an anchor element</a>`
                         }
                     </BlockCode>
                 </div>
@@ -228,4 +227,4 @@ class Contents extends React.Component {
     }
 }
 
-export default Contents
+export default Buttons

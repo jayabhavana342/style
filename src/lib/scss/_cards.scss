@@ -1,85 +1,88 @@
-.ttam-card {
-    $padding-mobile: 24px;
-    $padding-level-1: 24px;
-    $padding-level-2: 32px;
-    $padding-level-3: 40px;
+@import 'elevations';
 
-    $action-icon-gutter-mobile: 16px;
-    $action-icon-gutter-desktop: 24px;
+$sd-card-padding-mobile: 24px;
+$sd-card-padding-level-1: 24px;
+$sd-card-padding-level-2: 32px;
+$sd-card-padding-level-3: 40px;
 
-    $corner: $sd-base-border-radius;
+$sd-card-action-icon-gutter-mobile: 16px;
+$sd-card-action-icon-gutter-desktop: 24px;
 
+$sd-card-corner: $sd-base-border-radius;
+
+.ttam-card, // Eventually deprecate this
+.sd-card {
     background: white;
-    padding: $padding-mobile; //mobile padding for all cards
+    padding: $sd-card-padding-mobile; //mobile padding for all cards
     position: relative;
     transform: scaleY(1);
     transform-origin: top;
 
     transition: 0.3s all ease-in-out;
 
-    @include viewport($sd-desktop) {
+    @include sd-viewport($sd-desktop) {
         width: auto;
-        border-radius: $corner;
+        border-radius: $sd-card-corner;
     }
 
     &.mod-has-gutter {
         $card-gutter: 8px;
 
-        border-radius: $corner;
+        border-radius: $sd-card-corner;
 
-        @include viewport($sd-mobile) {
+        @include sd-viewport($sd-mobile) {
             margin: auto $card-gutter;
             width: calc(100% - #{ 2 * $card-gutter });
         }
     }
 
     &.mod-card-1 {
-        @include viewport($sd-desktop) {
-            padding: $padding-level-1;
+        @include sd-viewport($sd-desktop) {
+            padding: $sd-card-padding-level-1;
         }
 
         //action icons with headers:
         .card-header button.action-icon {
-            top: ($action-icon-gutter-mobile - $padding-level-1);
-            right: ($action-icon-gutter-mobile - $padding-level-1);
+            top: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-1);
+            right: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-1);
 
-            @include viewport($sd-desktop) {
-                top: ($action-icon-gutter-desktop - $padding-level-1);
-                right: ($action-icon-gutter-desktop - $padding-level-1);
+            @include sd-viewport($sd-desktop) {
+                top: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-1);
+                right: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-1);
             }
         }
     }
 
     &.mod-card-2 {
-        @include viewport($sd-desktop) {
-            padding: $padding-level-2;
+        @include sd-viewport($sd-desktop) {
+            padding: $sd-card-padding-level-2;
         }
 
         //action icons with headers:
         .card-header button.action-icon {
-            top: ($action-icon-gutter-mobile - $padding-level-2);
-            right: ($action-icon-gutter-mobile - $padding-level-2);
+            top: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-2);
+            right: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-2);
 
-            @include viewport($sd-desktop) {
-                top: ($action-icon-gutter-desktop - $padding-level-2);
-                right: ($action-icon-gutter-desktop - $padding-level-2);
+            @include sd-viewport($sd-desktop) {
+                top: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-2);
+                right: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-2);
             }
         }
     }
 
     &.mod-card-3 {
-        @include viewport($sd-desktop) {
-            padding: $padding-level-3;
+        @include sd-viewport($sd-desktop) {
+            padding: $sd-card-padding-level-3;
         }
 
         //action icons with headers:
         .card-header .action-icon {
-            top: ($action-icon-gutter-mobile - $padding-level-3);
-            right: ($action-icon-gutter-mobile - $padding-level-3);
+            top: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-3);
+            right: ($sd-card-action-icon-gutter-mobile - $sd-card-padding-level-3);
 
-            @include viewport($sd-desktop) {
-                top: ($action-icon-gutter-desktop - $padding-level-3);
-                right: ($action-icon-gutter-desktop - $padding-level-3);
+            @include sd-viewport($sd-desktop) {
+                top: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-3);
+                right: ($sd-card-action-icon-gutter-desktop - $sd-card-padding-level-3);
             }
         }
     }
@@ -109,12 +112,12 @@
     //action icons
     > button.action-icon {
         position: absolute;
-        top: $action-icon-gutter-mobile;
-        right: $action-icon-gutter-mobile;
+        top: $sd-card-action-icon-gutter-mobile;
+        right: $sd-card-action-icon-gutter-mobile;
 
-        @include viewport($sd-desktop) {
-            top: $action-icon-gutter-desktop;
-            right: $action-icon-gutter-desktop;
+        @include sd-viewport($sd-desktop) {
+            top: $sd-card-action-icon-gutter-desktop;
+            right: $sd-card-action-icon-gutter-desktop;
         }
     }
     .card-header {
@@ -133,28 +136,22 @@
     }
 }
 
-a.ttam-card {
+a.ttam-card, // deprecate this
+a.sd-card {
     display: block;
     color: $base-font-color;
     font-weight: $sd-font-weight-regular;
-
-
-    @include viewport($sd-desktop) {
-
+    @include sd-viewport($sd-desktop) {
         @for $i from 1 to 5 {
-            &.ttam-elevation-#{$i} {
+            &.sd-elevation-#{$i} {
                 &:hover {
-                    @include ttam-elevation($i + 1);
+                    @include sd-elevation($i + 1);
                 }
             }
         }
-
-
         &:hover {
             text-decoration: none;
-
             color: unset;
-
         }
     }
 }

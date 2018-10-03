@@ -97,16 +97,7 @@ $sd-tap-target: 44px;
 // This stuff comes from Bourbon
 $sd-em-base: 16px !default;
 
-// @mixin ttam-placeholder {
-//   $placeholders: ":-webkit-input" ":-moz" "-moz" "-ms-input";
-//   @each $placeholder in $placeholders {
-//     &:#{$placeholder}-placeholder {
-//       @content;
-//     }
-//   }
-// }
-
-@function assign-inputs($inputs, $pseudo: null) {
+@function sd-assign-inputs($inputs, $pseudo: null) { // Save for when the forms component is in
   $list: ();
 
   @each $input in $inputs {

@@ -1,29 +1,27 @@
 import $ from 'jquery';
 
-class TTAMCard {
+class SDCard {
     constructor(options) {
         this.root = $(options.root);
         this.setUpDismiss();
     }
 
     setUpDismiss() {
-        this.root.find('.js-ttam-card-dismiss').click(() => {
+        this.root.find('.js-sd-card-dismiss').click(() => {
             this.root.addClass('dismissed');
 
             this.root.one('transitionend', () => {
                 this.root.addClass('hide');
 
-                this.root.trigger('ttamCard.dismissed');
+                this.root.trigger('sdCard.dismissed');
             });
         });
     }
 }
 $(function() {
-    $('.ttam-card').each((index, el) => {
-        new TTAMCard({
+    $('.sd-card').each((index, el) => {
+        new SDCard({
             root: el,
         });
     });
 })
-
-

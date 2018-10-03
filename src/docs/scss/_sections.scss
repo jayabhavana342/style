@@ -1,6 +1,6 @@
 // Doc specific styles
 
-@include viewport($sd-mobile) {
+@include sd-viewport($sd-mobile) {
     .sg-colors .colors > div {
         width: 33.333%;
         font-size: 14px;
@@ -45,7 +45,7 @@
                 padding-left: 0;
             }
         }
-        @include viewport($sd-mobile) {
+        @include sd-viewport($sd-mobile) {
             > div {
                 width: 30vw;
                 height: 30vw;
@@ -187,81 +187,133 @@
     }
 }
 
-.sg-buttons {
+.sg-buttons,
+.sg-loading {
     &-sidebyside {
-        display: flex;
         border-radius: 5px;
         &.mod-dark-example {
             background-color: $gray8;
             color: $white;
         }
-        @include viewport($sd-mobile) {
+        @include sd-viewport($sd-mobile) {
             margin-bottom: 6vw;
-            align-items: top;
-            .button-side {
+            .left-side {
                 flex-shrink: 0;
-                width: 50%;
+                width: 100%;
+                margin-bottom: 3vw;
             }
             &.mod-dark-example {
                 padding: 5vw 2vw;
             }
         }
-        @include viewport($sd-tablet-plus) {
+        @include sd-viewport($sd-tablet-plus) {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 15px;
-            align-items: center;
-            .button-side {
+            .left-side {
                 min-width: 200px;
+                max-width: 200px;
+                padding-right: 10px;
+                p {
+                    margin-top: 0;
+                }
             }
             &.mod-dark-example {
                 padding: 20px 10px;
-                .button-side {
+                .left-side {
                     min-width: 190px;
+                    max-width: 190px;
                 }
             }
         }
-
     }
+}
+
+.sg-buttons {
     .another-example-button {
-        @include ttam-button(green, medium, outlined);
+        @include sd-button(green, medium, outlined);
     }
     .blue-primary {
-        @include ttam-button();
+        @include sd-button();
     }
     .green-primary {
-        @include ttam-button(green, large, solid);
+        @include sd-button(green, large, solid);
     }
     .pink-primary,
     .example-button {
-        @include ttam-button(pink, large, solid);
+        @include sd-button(pink, large, solid);
     }
     .red-primary {
-        @include ttam-button(red, large, solid);
+        @include sd-button(red, large, solid);
     }
     .gray-primary {
-        @include ttam-button(gray, large, solid);
+        @include sd-button(gray, large, solid);
     }
     .white-primary {
-        @include ttam-button(white, large, solid);
+        @include sd-button(white, large, solid);
     }
     .disabled-primary {
-        @include ttam-button(disabled, large, solid);
+        @include sd-button(disabled, large, solid);
     }
     .blue-medium {
-        @include ttam-button(blue, medium, solid);
+        @include sd-button(blue, medium, solid);
     }
     .blue-secondary {
-        @include ttam-button(blue, large, outlined);
+        @include sd-button(blue, large, outlined);
     }
     .small-yes {
-        @include ttam-button(green, small, outlined);
+        @include sd-button(green, small, outlined);
     }
     .small-no {
-        @include ttam-button(pink, small, outlined);
+        @include sd-button(pink, small, outlined);
     }
 }
 
 .sg-elevations {
     .block-code {
         margin-top: 36px;
+    }
+}
+
+.sg-loading {
+    @include sd-viewport($sd-mobile-tablet) {
+        &-sidebyside {
+            margin-bottom: 4vw;
+        }
+        .sg-loading-sidebyside-buttonarea {
+            margin-top: 2vw;
+        }
+    }
+    @include sd-viewport($sd-desktop) {
+        &-sidebyside {
+            margin-bottom: 35px;
+        }
+        .sg-loading-sidebyside-buttonarea {
+            margin-bottom: 10px;
+        }
+        .sg-loading-box-testcard {
+            margin-top: 10px;
+            height: 150px;
+            width: 100%;
+        }
+        .loading-example-pill,
+        .loading-example-skeleton {
+            width: 100%;
+            height: 330px;
+            background-color: $gray2;
+            padding: 10px;
+        }
+        .loading-example-skeleton {
+            margin: 10px 0 20px;
+        }
+        .right-side {
+            flex-grow: 1;
+            .block-code {
+                margin: 18px 0 10px;
+            }
+        }
+        .example-controls {
+            margin-top: 10px;
+        }
     }
 }

@@ -1,12 +1,224 @@
 // Button styles
-@import 'mixins/ttam_button_mixins';
 
-.ttam-button {
-    @include ttam-button();
+
+/* ---- USAGE ----
+@include sd-button(color, size, type);
+
+Default:
+    With no arguments, the button will be blue, large, solid. The background is $accessible-blue with $dark-periwinkle hover,
+    size is large (48px high) with $white text.
+
+Options:
+    Color: blue, green, pink, gray, white
+    Size: large, medium, small
+    Type: solid, outlined
+
+Modifiers:
+    mod-wide (expands horizontally to fill the width of its parent container)
+    mod-wide-mobile (expands horizontally to fill the width of its parent container when screen size is mobile)
+
+Example Sass:
+    .default {
+        @include sd-button();
+    }
+    .another-example {
+        @include sd-button(green, medium, outlined);
+    }
+
+Example HTML:
+    <button class="another-example">Button</button>
+
+    with modifier:
+    <button class="another-example mod-wide">Button</button>
+
+
+---------------- */
+
+// Variables
+$sd-button-height-large: 48px;
+$sd-button-height-medium: 36px;
+$sd-button-height-small: 24px;
+$sd-button-min-width-large: 120px;
+$sd-button-min-width-small: 72px;
+
+// Colors:
+// These are the currently available button colors with corresponding hover color. Add a color if needed.
+$button-colors-source: (
+    blue: (
+        default: $accessible-blue,
+        hover: $dark-periwinkle,
+    ),
+    green: (
+        default: $accessible-green,
+        hover: $dark-green,
+    ),
+    pink: (
+        default: $pink,
+        hover: $dark-pink,
+    ),
+    red: (
+        default: $dark-scarlet,
+        hover: $booster-red,
+    ),
+    gray: (
+        default: $gray2,
+        hover: $gray3,
+    ),
+    white: (
+        default: $white,
+        hover: $gray2,
+    ),
+    disabled: (
+        default: $gray2,
+        hover: $gray2,
+    ),
+);
+$sd-button-colors: $button-colors-source;
+$ttam-button-colors: $button-colors-source; // Deprecate this
+
+@mixin sd-button-source($color-name: blue, $size: large, $type: solid) {  // Remove this once 'ttam' namespace is deprecated
+    $sd-button-base-color: map-get(map-get($sd-button-colors, $color-name), default);
+    $sd-button-hover-color: map-get(map-get($sd-button-colors, $color-name), hover);
+
+    @include ttam-appearance(none);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    border: 0;
+    border-radius: $sd-button-border-radius;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: $sd-base-font-family;
+    font-size: $sd-base-text;
+    font-weight: $sd-font-weight-demi;
+    line-height: normal;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    // Remove external link icon from button
+    &:after {
+        @extend .no-external-icon;
+    }
+
+    // Button size
+    @if $size == small {
+        // small
+        font-size: $sd-x-small-text;
+        height: $sd-button-height-small;
+        min-width: $sd-button-min-width-small;
+        padding: 0 12px;
+    } @else if $size == medium {
+        // medium
+        font-size: $sd-x-small-text;
+        height: $sd-button-height-medium;
+        min-width: $sd-button-min-width-small;
+        padding: 0 18px;
+    } @else {
+        // large
+        height: $sd-button-height-large;
+        min-width: $sd-button-min-width-large;
+        padding: 0 24px;
+    }
+
+    // Button type
+    @if $type == outlined {
+        // outlined
+        background-color: transparent;
+        box-shadow: inset 0 0 0 2px $sd-button-base-color;
+        color: $sd-button-base-color;
+        &:hover,
+        &:focus {
+            box-shadow: inset 0 0 0 3px $sd-button-hover-color;
+            color: $sd-button-hover-color;
+            background-color: transparent;
+            text-decoration: none;
+        }
+        @if $color-name == gray {
+            box-shadow: inset 0 0 0 2px $gray7;
+            color: $gray7;
+            &:hover,
+            &:focus {
+                box-shadow: inset 0 0 0 3px $gray8;
+                color: $gray8;
+            }
+        }
+        @if $size == small {
+            box-shadow: inset 0 0 0 1px $sd-button-base-color;
+            &:hover {
+                box-shadow: inset 0 0 0 2px $sd-button-hover-color;
+            }
+        }
+    } @else {
+        // solid
+        background-color: $sd-button-base-color;
+        color: $white;
+        &:hover,
+        &:focus {
+            background-color: $sd-button-hover-color;
+            color: $white;
+            text-decoration: none;
+        }
+        @if $color-name == gray {
+            color: $gray8;
+            &:hover,
+            &:focus {
+                color: $gray8;
+            }
+        } @else if $color-name == white {
+            color: $accessible-blue;
+            &:hover,
+            &:focus {
+                color: $dark-periwinkle;
+            }
+        } @else if $color-name == disabled {
+            color: $gray5;
+            cursor: not-allowed;
+            &:hover,
+            &:focus {
+                color: $gray5;
+            }
+        }
+    }
+    &:disabled {
+        background-color: $gray2;
+        box-shadow: unset;
+        color: $gray5;
+        cursor: not-allowed;
+    }
+
+    // Modifier classes
+    &.mod-wide {
+        width: 100%;
+    }
+
+    &.mod-wide-mobile {
+        @include sd-viewport($sd-mobile) {
+            display: flex;
+            width: 100%;
+        }
+    }
 }
 
-.ttam-secondary-button {
-    @include ttam-button(green, large, outlined);
+@mixin sd-button($color-name: blue, $size: large, $type: solid) {
+    @include sd-button-source($color-name, $size, $type);
+}
+
+@mixin ttam-button($color-name: blue, $size: large, $type: solid) { // Deprecate this
+    @include sd-button-source($color-name, $size, $type);
+}
+
+.ttam-button, // Deprecate this
+.sd-button {
+    @include sd-button();
+}
+
+.ttam-secondary-button, // Deprecate this
+.sd-secondary-button {
+    @include sd-button(green, large, outlined);
 }
 
 // strip button styles
@@ -27,6 +239,7 @@
 }
 
 // for button with button styles removed
+.ttam-unbutton, // Deprecate this
 .sd-unbutton {
     @extend %sd-non-button;
     color: inherit;

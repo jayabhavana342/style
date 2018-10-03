@@ -2,7 +2,7 @@ import React from 'react'
 import BlockCode from '../components/block_code.jsx'
 import InlineCode from '../components/inline_code.jsx'
 
-class Contents extends React.Component {
+class Colors extends React.Component {
     render() {
         return (
             <div className="sg-section sg-colors" id="colors-section"  ref={this.props.innerRef}>
@@ -100,11 +100,11 @@ class Contents extends React.Component {
                 <h2 className="subsection-title">Accessible colors</h2>
                 <p>
                     For accessibility purposes, these colors are intended to be used with white overlaying text, or
-                    olored text on top of <InlineCode>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
+                    olored text on top of <InlineCode test_class='test-inline-code'>$white</InlineCode> or <InlineCode>$gray1</InlineCode>.
                     &nbsp;<a href="https://www.smashingmagazine.com/2014/10/color-contrast-tips-and-tools-for-accessibility/" target="_blank" rel="noopener noreferrer">
                     More on color contrast</a>. <a href="http://contrast-grid.eightshapes.com/" target="_blank" rel="noopener noreferrer">A useful contrast tool</a>.
                 </p>
-                <div className="sub-section ttam-colors-section">
+                <div className="sub-section">
                     <div className="colors">
                         <div className="accessible-blue">
                             $accessible-blue <span className="def">#1976D2</span>
@@ -116,7 +116,7 @@ class Contents extends React.Component {
                 </div>
 
                 <h2 className="subsection-title">Grays</h2>
-                <div className="sub-section ttam-colors-section">
+                <div className="sub-section">
                     <div className="colors">
                         <div className="white">
                             $white <span className="def">#FFF</span>
@@ -157,7 +157,7 @@ class Contents extends React.Component {
                     <div className="color-square-example">
                         TEXT
                     </div>
-                    <BlockCode language='scss' test_class='test-comp-colors-code'>
+                    <BlockCode language='scss' test_class='test-block-code'>
                         {
 `.example {
     background-color: $pink;
@@ -174,4 +174,4 @@ class Contents extends React.Component {
     }
 }
 
-export default Contents
+export default Colors

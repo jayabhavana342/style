@@ -1,6 +1,6 @@
 // mixins
 
-@mixin viewport($device) {
+@mixin sd-viewport($device) {
     @if $device == mobile {
         @media screen and (max-width: $sd-mobile-max - 1) {
             @content;
@@ -37,10 +37,10 @@
     @extends %sd-font-family;
     color: $gray8;
     font-weight: 500;
-    @include viewport($sd-mobile) {
+    @include sd-viewport($sd-mobile) {
         font-size: 26px;
     }
-    @include viewport($sd-tablet-plus) {
+    @include sd-viewport($sd-tablet-plus) {
         font-size: 32px;
     }
 }
