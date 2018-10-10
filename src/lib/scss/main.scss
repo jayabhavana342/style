@@ -5,8 +5,9 @@
 
 // Component SCSS
 // Load order matters
-@import 'colors';
+@import 'breadcrumbs';
 @import 'buttons';
-@import 'elevations';
 @import 'cards';
+@import 'colors';
+@import 'elevations';
 @import 'loading';

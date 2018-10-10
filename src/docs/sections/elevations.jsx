@@ -18,7 +18,7 @@ class Elevations extends React.Component {
 
                 <div className="sub-section">
                     <h3>Level 1</h3>
-                    <div className="sd-card sd-elevation-1">level 1 elevation</div>
+                    <div className="sd-card sd-elevation-1 example-box">level 1 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="sd-card sd-elevation-1">level 1 elevation</div>`
@@ -26,7 +26,7 @@ class Elevations extends React.Component {
                     </BlockCode>
 
                     <h3>Level 2</h3>
-                    <div className="sd-card sd-elevation-2">level 2 elevation</div>
+                    <div className="sd-card sd-elevation-2 example-box">level 2 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="sd-card sd-elevation-2">level 2 elevation</div>`
@@ -34,7 +34,7 @@ class Elevations extends React.Component {
                     </BlockCode>
 
                     <h3>Level 3</h3>
-                    <div className="sd-card sd-elevation-3">level 3 elevation</div>
+                    <div className="sd-card sd-elevation-3 example-box">level 3 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="sd-card sd-elevation-3">level 3 elevation</div>`
@@ -42,7 +42,7 @@ class Elevations extends React.Component {
                     </BlockCode>
 
                     <h3>Level 4</h3>
-                    <div className="sd-card sd-elevation-4">level 4 elevation</div>
+                    <div className="sd-card sd-elevation-4 example-box">level 4 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="sd-card sd-elevation-4">level 4 elevation</div>`
@@ -50,7 +50,7 @@ class Elevations extends React.Component {
                     </BlockCode>
 
                     <h3>Level 5</h3>
-                    <div className="sd-card sd-elevation-5">level 5 elevation</div>
+                    <div className="sd-card sd-elevation-5 example-box">level 5 elevation</div>
                     <BlockCode language='html'>
                         {
 `<div class="sd-card sd-elevation-5">level 5 elevation</div>`

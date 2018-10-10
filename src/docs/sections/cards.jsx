@@ -33,7 +33,7 @@ class Cards extends React.Component {
 
                 <h3 className="subsection-title mod-shorttop">Example: Card 1 (24px padding on desktop and mobile)</h3>
                 <div className="code-example">
-                    <div className="sd-card mod-card-1 sd-elevation-2" id="test-card1">
+                    <div className="sd-card mod-card-1 sd-elevation-2 example-box" id="test-card1">
                         <h5>Card 1</h5>
                         <h6>24px padding on desktop, 24px padding on mobile</h6>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec neque elementum, hendrerit dolor molestie, viverra erat. Fusce euismod velit quis nibh ornare, id luctus libero posuere. </p>
@@ -50,7 +50,7 @@ class Cards extends React.Component {
 
                 <h3 className="subsection-title mod-shorttop">Example: Card 2 (32px padding on desktop, 24px padding on mobile)</h3>
                 <div className="code-example">
-                    <div className="sd-card mod-card-2 sd-elevation-2">
+                    <div className="sd-card mod-card-2 sd-elevation-2 example-box">
                         <h5>Card 2</h5>
                         <h6>32px padding on desktop, 24px padding on mobile</h6>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec neque elementum, hendrerit dolor molestie, viverra erat. Fusce euismod velit quis nibh ornare, id luctus libero posuere.</p>
@@ -67,7 +67,7 @@ class Cards extends React.Component {
 
                 <h3 className="subsection-title mod-shorttop">Example: Card 3 (40px padding on desktop, 24px padding on mobile)</h3>
                 <div className="code-example">
-                    <div className="sd-card mod-card-3 sd-elevation-2">
+                    <div className="sd-card mod-card-3 sd-elevation-2 example-box">
                         <h5>Card 3</h5>
                         <h6>40px padding on desktop, 24px padding on mobile</h6>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec neque elementum, hendrerit dolor molestie, viverra erat. Fusce euismod velit quis nibh ornare, id luctus libero posuere.</p>
@@ -93,7 +93,7 @@ class Cards extends React.Component {
                     <InlineCode>js-sd-card-dismiss</InlineCode> class.
                 </p>
                 <div className="code-example">
-                    <div className="sd-card mod-card-2 sd-elevation-3" id="test-card3">
+                    <div className="sd-card mod-card-2 sd-elevation-3 example-box" id="test-card3">
                         <button type="button" className="sd-unbutton dismiss-button js-sd-card-dismiss" id="test-card2">
                             <img src='img/close.svg' alt='Close Menu Icon' alt="Close" />
                         </button>
@@ -122,7 +122,7 @@ class Cards extends React.Component {
                     If you do need to add custom handlers after the card is closed, you can hook into the <InlineCode>sdCard.dismissed</InlineCode> event, which fires when the card is finished closing:
                 </p>
                 <div className="code-example">
-                    <div className="sd-card mod-card-2 sd-elevation-3" id="custom-card-dismiss">
+                    <div className="sd-card mod-card-2 sd-elevation-3 example-box" id="custom-card-dismiss">
                         <button type="button" className="sd-unbutton dismiss-button js-sd-card-dismiss">
                             <img src='img/close.svg' alt='Close Menu Icon' alt="Close" />
                         </button>
@@ -160,7 +160,7 @@ TTAM.ready(function() {
                     The icon button will be in the top right of the content box. In this example, the gear icon button is the action icon.
                 </p>
                 <div className="code-example">
-                    <div className="sd-card mod-card-3 sd-elevation-2">
+                    <div className="sd-card mod-card-3 sd-elevation-2 example-box">
                         <button className="action-icon sample-card-icon-button ttam-icon-button mod-compact">
                             <svg><use xlinkHref="img/icon-set.svg#gear" /></svg>
                             <span>Settings</span>
@@ -192,7 +192,7 @@ TTAM.ready(function() {
                 </p>
 
                 <div className="code-example">
-                    <div className="sd-card mod-card-3 sd-elevation-2">
+                    <div className="sd-card mod-card-3 sd-elevation-2 example-box">
                         <div className="card-header">
                             <h5 className="card-title">This is a really long title that appears to go on forever so we can test overflowing This is a really long title that appears to go on forever so we can test overflowing</h5>
                             <img className="icon blood-clots-icon" src="img/blood_clots.svg" alt="Blood Clots" />
@@ -218,7 +218,7 @@ TTAM.ready(function() {
                     If the card has a button or call-to-action link on it, it should not be a link. Sometimes, however, the entire card will function as a link. In this case, the card element should be an <InlineCode>{`<a>`}</InlineCode> tag and there will be a darkened shadow hover effect.
                 </p>
                 <div className="code-example">
-                    <a className="sd-card mod-card-3 sd-elevation-3">
+                    <a className="sd-card mod-card-3 sd-elevation-3 example-box">
                         <h5>We've improved our Traits reports</h5>
 
                         <p>We've redesigned the design of our Traits reports as part of our ongoing improvements. Learn more about the genetics behind your traits with these updated reports.</p>
@@ -244,14 +244,14 @@ TTAM.ready(function() {
                     Shrink your browser window to smaller than 768px or use browser dev tools to simulate a phone screen to see this in action:
                 </p>
                 <div className="code-example">
-                    <a className="sd-card mod-card-2 sd-elevation-4 mod-has-gutter">
+                    <a className="sd-card mod-card-2 sd-elevation-4 mod-has-gutter example-box">
                         <h5>This card has an 8px gutter to the left and right on mobile</h5>
                         <p>We've redesigned the design of our Traits reports as part of our ongoing improvements. Learn more about the genetics behind your traits with these updated reports.</p>
                     </a>
                 </div>
                 <p>compared to</p>
                 <div className="code-example">
-                    <a className="sd-card mod-card-2 sd-elevation-4">
+                    <a className="sd-card mod-card-2 sd-elevation-4 example-box">
                         <h5>This card is a normal full bleed card on mobile</h5>
                         <p>We've redesigned the design of our Traits reports as part of our ongoing improvements. Learn more about the genetics behind your traits with these updated reports.</p>
                     </a>

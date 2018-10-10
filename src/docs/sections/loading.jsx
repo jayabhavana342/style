@@ -290,7 +290,7 @@ class Loading extends React.Component {
 `box($('.loading-example-box1'), 'Loading')`
                                     }
                                 </BlockCode>
-                                <div className="sg-loading-box-testcard loading-example-box loading-example-box1 sd-card sd-elevation-1">
+                                <div className="sg-loading-box-testcard loading-example-box loading-example-box1 sd-card sd-elevation-1 example-box">
                                     Some content
                                 </div>
                                 <div className="example-controls">
@@ -315,7 +315,7 @@ stop($('.loading-example-box2'), () => { // Stop
 });`
                                  }
                                 </BlockCode>
-                                <div className="sg-loading-box-testcard loading-example-box loading-example-box2 sd-card sd-elevation-1">
+                                <div className="sg-loading-box-testcard loading-example-box loading-example-box2 sd-card sd-elevation-1 example-box">
                                     Some content
                                 </div>
                                 <div className="example-controls">
@@ -336,7 +336,7 @@ stop($('.loading-example-box2'), () => { // Stop
 `box($('.loading-example-box3'), null, 'gray')`
                                     }
                                 </BlockCode>
-                                <div className="sg-loading-box-testcard loading-example-box loading-example-box3 sd-card sd-elevation-1">
+                                <div className="sg-loading-box-testcard loading-example-box loading-example-box3 sd-card sd-elevation-1 example-box">
                                     Some content
                                 </div>
                                 <div className="example-controls">
@@ -373,7 +373,7 @@ stop($('.loading-example-pill1'), () => {
 });`
                             }
                         </BlockCode>
-                        <div className="loading-example-pill1 loading-example-pill">
+                        <div className="loading-example-pill1 loading-example-pill example-box">
                             Some content
                         </div>
                         <div className="example-controls">
@@ -386,7 +386,7 @@ stop($('.loading-example-pill1'), () => {
 `pill($('.loading-example-pill2'), 'Loading', 'gray');`
                             }
                         </BlockCode>
-                        <div className="loading-example-pill2 loading-example-pill">
+                        <div className="loading-example-pill2 loading-example-pill example-box">
                             Some content
                         </div>
                         <div className="example-controls">
@@ -416,7 +416,7 @@ stop($('.loading-example-pill1'), () => {
                         <div className="example-controls">
                             <a href="#" className="testskeleton1-run">run</a> | <a href="#" className="testskeleton1-stop">stop</a>
                         </div>
-                        <div className="loading-example-skeleton loading-example-skeleton1">
+                        <div className="loading-example-skeleton loading-example-skeleton1 example-box">
                             Some content
                         </div>
                     </div>

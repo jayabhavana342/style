@@ -84,32 +84,32 @@ class Buttons extends React.Component {
 
                 <h3>Button color meanings</h3>
                 <div className="code-example">
-                    <div className="sg-buttons-sidebyside">
+                    <div className="sg-buttons-sidebyside example-box">
                         <div className="left-side"><button className="blue-primary">Blue Primary</button></div>
                         <div>Blue buttons are primary actions within the product. These actions drive the experience forward.</div>
                     </div>
 
-                    <div className="sg-buttons-sidebyside">
+                    <div className="sg-buttons-sidebyside example-box">
                         <div className="left-side"><button className="pink-primary">Pink Primary</button></div>
                         <div>Pink buttons are used to indicate a “sale” action like “add to cart” or “upgrade.”</div>
                     </div>
 
-                    <div className="sg-buttons-sidebyside">
+                    <div className="sg-buttons-sidebyside example-box">
                         <div className="left-side"><button className="green-primary">Green Primary</button></div>
                         <div>Green is used to filter results or indicate notifications.</div>
                     </div>
 
-                    <div className="sg-buttons-sidebyside">
+                    <div className="sg-buttons-sidebyside example-box">
                         <div className="left-side"><button className="red-primary">Red Primary</button></div>
                         <div>Red is used only for negative or critical actions like “Delete” or “No” which are permanent decisions.</div>
                     </div>
 
-                    <div className="sg-buttons-sidebyside">
+                    <div className="sg-buttons-sidebyside example-box">
                         <div className="left-side"><button className="gray-primary">Gray Primary</button></div>
                         <div>Light Gray buttons are for actions like “Back” or “Print” which do not drive the experience forward.</div>
                     </div>
 
-                    <div className="sg-buttons-sidebyside mod-dark-example">
+                    <div className="sg-buttons-sidebyside example-box mod-dark-example">
                         <div className="left-side"><button className="white-primary">White Primary</button></div>
                         <div>White buttons are used on dark backgrounds to create sufficient contrast but lack specific meaning.</div>
                     </div>
