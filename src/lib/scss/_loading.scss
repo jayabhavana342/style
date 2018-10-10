@@ -205,6 +205,9 @@ $sd-loading-button-trans: .25s;
 
 .ttam-loadingstate, // Deprecate this
 .sd-loadingstate {
+    div.ttam-box-loading, // Deprecate this
+    div.ttam-pill-loading,  // Deprecate this
+    div.ttam-button-loading,  // Deprecate this
     div.sd-box-loading,
     div.sd-pill-loading,
     div.sd-button-loading {
@@ -226,6 +229,9 @@ $sd-loading-button-trans: .25s;
     }
 
     &.mod-loading-white {
+        div.ttam-button-loading, // Deprecate this
+        div.ttam-box-loading, // Deprecate this
+        div.ttam-pill-loading, // Deprecate this
         div.sd-button-loading,
         div.sd-box-loading,
         div.sd-pill-loading {
@@ -243,6 +249,9 @@ $sd-loading-button-trans: .25s;
     }
 
     &.mod-loading-gray {
+        div.ttam-button-loading, // Deprecate this
+        div.ttam-box-loading, // Deprecate this
+        div.ttam-pill-loading, // Deprecate this
         div.sd-button-loading,
         div.sd-box-loading,
         div.sd-pill-loading {
@@ -254,6 +263,7 @@ $sd-loading-button-trans: .25s;
     }
 }
 
+.ttam-button-loading-wrapper, // Deprecate this
 .sd-button-loading-wrapper {
     animation: sd-loading-buttonDotsMovement $sd-loading-button-trans ease-out;
     overflow: hidden;
@@ -266,6 +276,7 @@ $sd-loading-button-trans: .25s;
     &.mod-loading-button-inline {
         display: inline-flex;
     }
+    .ttam-button-loading, // Deprecate this
     .sd-button-loading {
         margin-top: 5px;
         margin-right: 3px;
@@ -284,11 +295,13 @@ $sd-loading-button-trans: .25s;
         width: 100%;
         content: "";
     }
+    .ttam-box-loading, // Deprecate this
     .sd-box-loading {
         width: 36px;
         margin-right: 5px;
         overflow: hidden;
     }
+    .ttam-loading-box-wrapper, // Deprecate this
     .sd-loading-box-wrapper {
         position: absolute;
         z-index: 6;
@@ -311,6 +324,7 @@ $sd-loading-button-trans: .25s;
 .ttam-loading-pill.ttam-loadingstate, // Deprecate this
 .sd-loading-pill.sd-loadingstate {
     position: relative;
+    .ttam-loading-pill-wrapper, // Deprecate this
     .sd-loading-pill-wrapper {
         position: absolute;
         top: 60px;
@@ -324,6 +338,7 @@ $sd-loading-button-trans: .25s;
         font-size: 14px;
         animation: sd-loading-animateUpBox 500ms ease-out;
     }
+    .ttam-loading-pill-shape, // Deprecate this
     .sd-loading-pill-shape {
         @include sd-elevation(2);
         display: flex;
@@ -334,6 +349,7 @@ $sd-loading-button-trans: .25s;
         border-radius: 100px;
         background-color: $white;
     }
+    .ttam-pill-loading, // Deprecate this
     .sd-pill-loading {
         width: 36px;
         margin-right: 5px;
@@ -344,6 +360,7 @@ $sd-loading-button-trans: .25s;
 .ttam-loading-skeleton.ttam-loadingstate, // Deprecate this
 .sd-loading-skeleton.sd-loadingstate {
     position: relative;
+    .ttam-loading-skeleton-wrapper, // Deprecate this
     .sd-loading-skeleton-wrapper {
         position: absolute;
         top: 0;
