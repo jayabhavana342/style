@@ -223,11 +223,11 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
 
 .ttam-secondary-button, // Deprecate this
 .sd-secondary-button {
-    @include sd-button(green, large, outlined);
+    @include sd-button(blue, large, outlined);
 }
 
-.sd-cta-button,
-.ttam-cta-button {
+.ttam-cta-button, // Deprecate this
+.sd-cta-button {
     @include sd-button(pink, large, solid);
 }
 

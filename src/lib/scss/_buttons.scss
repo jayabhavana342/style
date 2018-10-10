@@ -101,7 +101,7 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
 
     // Remove external link icon from button
     &::after {
-        @extend .no-external-icon;
+        content: none !important;
     }
 
     // Button size
@@ -223,7 +223,12 @@ $ttam-button-colors: $button-colors-source; // Deprecate this
 
 .ttam-secondary-button, // Deprecate this
 .sd-secondary-button {
-    @include sd-button(green, large, outlined);
+    @include sd-button(blue, large, outlined);
+}
+
+.ttam-cta-button, // Deprecate this
+.sd-cta-button {
+    @include sd-button(pink, large, solid);
 }
 
 // strip button styles
